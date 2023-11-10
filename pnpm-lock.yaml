@@ -14,6 +14,9 @@ dependencies:
   '@nextui-org/link':
     specifier: ^2.0.26
     version: 2.0.26(@nextui-org/system@2.0.14)(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)
+  '@nextui-org/listbox':
+    specifier: ^2.1.15
+    version: 2.1.15(@nextui-org/system@2.0.14)(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18)
   '@nextui-org/navbar':
     specifier: ^2.0.26
     version: 2.0.26(@nextui-org/system@2.0.14)(@nextui-org/theme@2.1.16)(@types/react@18.0.0)(framer-motion@10.16.4)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18)
@@ -299,6 +302,26 @@ packages:
     dev: false
     optional: true
 
+  /@nextui-org/aria-utils@2.0.14(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18):
+    resolution: {integrity: sha512-3vqSDYbi4Zy2thpY4bpln7zCsmw+cj/MZg0IqevT2lLgkd4KrOoSA+2eHJ+1TAWoqZ2WjQhajuxCQWMZe61Rvw==}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      '@nextui-org/react-rsc-utils': 2.0.10
+      '@nextui-org/shared-utils': 2.0.4(react@18.0.0)
+      '@nextui-org/system': 2.0.14(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18)
+      '@react-aria/utils': 3.22.0(react@18.0.0)
+      '@react-stately/collections': 3.10.3(react@18.0.0)
+      '@react-types/overlays': 3.8.4(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
+    transitivePeerDependencies:
+      - '@nextui-org/theme'
+      - tailwind-variants
+    dev: false
+
   /@nextui-org/badge@2.0.23(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18):
     resolution: {integrity: sha512-moVdW9nM3e7V4Pu9sdjKxTNeTWx+rc7rwA/IvJ/qzxv8SYT28Du2sIwJOAlBnuSwIp1kqHtubtcXj96GRRWkEQ==}
     peerDependencies:
@@ -345,6 +368,24 @@ packages:
       - tailwind-variants
     dev: false
 
+  /@nextui-org/divider@2.0.24(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18):
+    resolution: {integrity: sha512-ZLrzeIjqeudlrNnUSB8yoNRyBesDr4G7pg6XX2iVQgDo0uCeDod0zbIZa1fCYs7Dr/irZI4N2xS29MgCNkq3cA==}
+    peerDependencies:
+      '@nextui-org/theme': '>=2.1.0'
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      '@nextui-org/react-rsc-utils': 2.0.10
+      '@nextui-org/shared-utils': 2.0.4(react@18.0.0)
+      '@nextui-org/system-rsc': 2.0.10(@nextui-org/theme@2.1.16)(react@18.0.0)(tailwind-variants@0.1.18)
+      '@nextui-org/theme': 2.1.16(tailwindcss@3.3.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
+    transitivePeerDependencies:
+      - tailwind-variants
+    dev: false
+
   /@nextui-org/framer-transitions@2.0.14(@nextui-org/theme@2.1.16)(framer-motion@10.16.4)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18):
     resolution: {integrity: sha512-fv11JZ2wYuu4dPV6+i4TawF82qdclrz9vpTFL1O4Vcn+jXI5DWNlgIx9J36Qbz72Jd6pIWyHbnzuf2HgTkQyZQ==}
     peerDependencies:
@@ -382,6 +423,35 @@ packages:
       '@react-types/link': 3.5.2(react@18.0.0)
       react: 18.0.0
       react-dom: 18.0.0(react@18.0.0)
+    dev: false
+
+  /@nextui-org/listbox@2.1.15(@nextui-org/system@2.0.14)(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18):
+    resolution: {integrity: sha512-ZytNEGuij7klFNRWwTzoGfp4543lZfCFBjNnTjojDGYm8gG2hD0lJb4wyg7o/FfBzkRAFwWmRFXTMczne9sGdQ==}
+    peerDependencies:
+      '@nextui-org/system': '>=2.0.0'
+      '@nextui-org/theme': '>=2.1.0'
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      '@nextui-org/aria-utils': 2.0.14(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18)
+      '@nextui-org/divider': 2.0.24(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18)
+      '@nextui-org/react-utils': 2.0.10(react@18.0.0)
+      '@nextui-org/shared-utils': 2.0.4(react@18.0.0)
+      '@nextui-org/system': 2.0.14(@nextui-org/theme@2.1.16)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18)
+      '@nextui-org/theme': 2.1.16(tailwindcss@3.3.0)
+      '@nextui-org/use-aria-press': 2.0.1(react@18.0.0)
+      '@nextui-org/use-is-mobile': 2.0.6(react@18.0.0)
+      '@react-aria/focus': 3.15.0(react@18.0.0)
+      '@react-aria/interactions': 3.20.0(react@18.0.0)
+      '@react-aria/listbox': 3.11.2(react-dom@18.0.0)(react@18.0.0)
+      '@react-aria/utils': 3.22.0(react@18.0.0)
+      '@react-stately/list': 3.10.1(react@18.0.0)
+      '@react-types/menu': 3.9.6(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
+    transitivePeerDependencies:
+      - tailwind-variants
     dev: false
 
   /@nextui-org/navbar@2.0.26(@nextui-org/system@2.0.14)(@nextui-org/theme@2.1.16)(@types/react@18.0.0)(framer-motion@10.16.4)(react-dom@18.0.0)(react@18.0.0)(tailwind-variants@0.1.18):
@@ -582,6 +652,15 @@ packages:
       react: 18.0.0
     dev: false
 
+  /@nextui-org/use-is-mobile@2.0.6(react@18.0.0):
+    resolution: {integrity: sha512-HeglWUoq6Ln8P5n6s1SZvBRatLYMKsiXQM7Mk2l+6jFByzZh3VWtZ05xmuX8te/1rGmeUxjeXtW6x+F7/f/JoA==}
+    peerDependencies:
+      react: '>=18'
+    dependencies:
+      '@react-aria/ssr': 3.9.0(react@18.0.0)
+      react: 18.0.0
+    dev: false
+
   /@nextui-org/use-scroll-position@2.0.4(react@18.0.0):
     resolution: {integrity: sha512-5ugiHqQ1OptBmujOsJGigbUt/rQ826+8RKYSpBp1uax1eF7TlpigXt6mS1PDsJIyEauHi8rjH5B3weOn1//tug==}
     peerDependencies:
@@ -664,6 +743,17 @@ packages:
       react: 18.0.0
     dev: false
 
+  /@react-aria/label@3.7.3(react@18.0.0):
+    resolution: {integrity: sha512-v1zuqbpYyYaPjrBWpceGjMpwP4ne6fLoOXdoIZoKLux2jkAcyIF2kIJFiyYoPQYQJWGRNo7q1oSwamxmng4xJw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/utils': 3.22.0(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      '@swc/helpers': 0.5.2
+      react: 18.0.0
+    dev: false
+
   /@react-aria/link@3.6.2(react@18.0.0):
     resolution: {integrity: sha512-v9gXgQ3Gev0JOlg2MAXcubDMgX+0BlJ+hTyFYFMuN/4jVBlAe426WKbjg+6MMzxwukWg9C3Q08JzqdFTi4cBng==}
     peerDependencies:
@@ -676,6 +766,25 @@ packages:
       '@react-types/shared': 3.22.0(react@18.0.0)
       '@swc/helpers': 0.5.2
       react: 18.0.0
+    dev: false
+
+  /@react-aria/listbox@3.11.2(react-dom@18.0.0)(react@18.0.0):
+    resolution: {integrity: sha512-FXdoqYLUTJn16OxodyS518PIcwzFkCfW5bxQepoy88NDMGtqp6u8fvEPpAoZbomvw/pV9MuEaMAw9qLyfkD4DA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/interactions': 3.20.0(react@18.0.0)
+      '@react-aria/label': 3.7.3(react@18.0.0)
+      '@react-aria/selection': 3.17.2(react-dom@18.0.0)(react@18.0.0)
+      '@react-aria/utils': 3.22.0(react@18.0.0)
+      '@react-stately/collections': 3.10.3(react@18.0.0)
+      '@react-stately/list': 3.10.1(react@18.0.0)
+      '@react-types/listbox': 3.4.6(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      '@swc/helpers': 0.5.2
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
     dev: false
 
   /@react-aria/overlays@3.19.0(react-dom@18.0.0)(react@18.0.0):
@@ -693,6 +802,23 @@ packages:
       '@react-stately/overlays': 3.6.4(react@18.0.0)
       '@react-types/button': 3.9.1(react@18.0.0)
       '@react-types/overlays': 3.8.4(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      '@swc/helpers': 0.5.2
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
+    dev: false
+
+  /@react-aria/selection@3.17.2(react-dom@18.0.0)(react@18.0.0):
+    resolution: {integrity: sha512-AXXY3eOIWnITabMn6c0bpLPXkSX7040LOZU+7pQgtZJwDdZorLuKw4i7WS5i71LcV71ywG4mtqc9mOb/GfhUbg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/focus': 3.15.0(react@18.0.0)
+      '@react-aria/i18n': 3.9.0(react@18.0.0)
+      '@react-aria/interactions': 3.20.0(react@18.0.0)
+      '@react-aria/utils': 3.22.0(react@18.0.0)
+      '@react-stately/selection': 3.14.1(react@18.0.0)
       '@react-types/shared': 3.22.0(react@18.0.0)
       '@swc/helpers': 0.5.2
       react: 18.0.0
@@ -734,6 +860,29 @@ packages:
       react: 18.0.0
     dev: false
 
+  /@react-stately/collections@3.10.3(react@18.0.0):
+    resolution: {integrity: sha512-fA28HIApAIz9sNGeOVXZJPgV5Kig6M72KI1t9sUbnRUr9Xq9OMJTR6ElDMXNe0iTeZffRFDOPYyqnX9zkxof6Q==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      '@swc/helpers': 0.5.2
+      react: 18.0.0
+    dev: false
+
+  /@react-stately/list@3.10.1(react@18.0.0):
+    resolution: {integrity: sha512-iVarLMd7FmMT0H20dRWsFOHHX5+c4gK51AXP2BSr1VtDSfbL4dgaGgu7IaAMVc/rO0au1e1tPM2hutiIFvPcnA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-stately/collections': 3.10.3(react@18.0.0)
+      '@react-stately/selection': 3.14.1(react@18.0.0)
+      '@react-stately/utils': 3.9.0(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      '@swc/helpers': 0.5.2
+      react: 18.0.0
+    dev: false
+
   /@react-stately/overlays@3.6.4(react@18.0.0):
     resolution: {integrity: sha512-tHEaoAGpE9dSnsskqLPVKum59yGteoSqsniTopodM+miQozbpPlSjdiQnzGLroy5Afx5OZYClE616muNHUILXA==}
     peerDependencies:
@@ -741,6 +890,18 @@ packages:
     dependencies:
       '@react-stately/utils': 3.9.0(react@18.0.0)
       '@react-types/overlays': 3.8.4(react@18.0.0)
+      '@swc/helpers': 0.5.2
+      react: 18.0.0
+    dev: false
+
+  /@react-stately/selection@3.14.1(react@18.0.0):
+    resolution: {integrity: sha512-96/CerrB6yH4Ad9FkzBzyVerSPjcIj1NBTWTFHo1N+oHECvyGsDxZl7Y4LQR++teFK66FhX5KjCJQGae4IZd6A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-stately/collections': 3.10.3(react@18.0.0)
+      '@react-stately/utils': 3.9.0(react@18.0.0)
+      '@react-types/shared': 3.22.0(react@18.0.0)
       '@swc/helpers': 0.5.2
       react: 18.0.0
     dev: false
@@ -788,6 +949,25 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      react: 18.0.0
+    dev: false
+
+  /@react-types/listbox@3.4.6(react@18.0.0):
+    resolution: {integrity: sha512-XOQvrTqNh5WIPDvKiWiep8T07RAsMfjAXTjDbnjxVlKACUXkcwpts9kFaLnJ9LJRFt6DwItfP+WMkzvmx63/NQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-types/shared': 3.22.0(react@18.0.0)
+      react: 18.0.0
+    dev: false
+
+  /@react-types/menu@3.9.6(react@18.0.0):
+    resolution: {integrity: sha512-w/RbFInOf4nNayQDv5c2L8IMJbcFOkBhsT3xvvpTy+CHvJcQdjggwaV1sRiw7eF/PwB81k2CwigmidUzHJhKDg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-types/overlays': 3.8.4(react@18.0.0)
       '@react-types/shared': 3.22.0(react@18.0.0)
       react: 18.0.0
     dev: false

@@ -6,7 +6,7 @@ const config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/components/(badge|button|link|navbar).js',
+    './node_modules/@nextui-org/theme/dist/components/(badge|button|link|listbox|navbar).js',
   ],
   theme: {
     extend: {},

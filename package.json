@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/button": "^2.0.25",
     "@nextui-org/link": "^2.0.26",
     "@nextui-org/navbar": "^2.0.26",
     "@nextui-org/system": "^2.0.14",

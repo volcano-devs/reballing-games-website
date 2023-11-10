@@ -45,7 +45,7 @@ export default function PageLayout({children}: PageLayoutProps) {
   const pathname = usePathname()
 
   return (
-    <div>
+    <div className="min-h-screen red-dark text-foreground bg-background">
       <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-background h-24">
         <NavbarContent>
           <NavbarMenuToggle

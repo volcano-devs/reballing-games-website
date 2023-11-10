@@ -9,14 +9,12 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
-import Image from 'next/image'
-import Logo from '@app/logo.png'
-
 import {useState} from 'react'
 import {Link} from '@nextui-org/link'
 import {usePathname} from 'next/navigation'
 import {Button} from '@nextui-org/button'
 import {Badge} from '@nextui-org/badge'
+import Logo from '@components/Logo'
 
 export interface PageLayoutProps {
   children: React.ReactNode
@@ -53,15 +51,7 @@ export default function PageLayout({children}: PageLayoutProps) {
             className="sm:hidden"
           />
           <NavbarBrand>
-            <div className="w-32 md:w-44 bg-background">
-              <Image
-                src={Logo.src}
-                alt="reballing games"
-                width={320}
-                height={100}
-                className="h-full w-full mix-blend-lighten"
-              />
-            </div>
+            <Logo />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify="end">

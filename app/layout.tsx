@@ -3,6 +3,8 @@ import {Inter} from 'next/font/google'
 import './globals.css'
 import {Providers} from './providers'
 
+import PageLayout from '@components/PageLayout'
+
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
@@ -11,10 +13,16 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
+  const isMenuOpen = false
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
+      <body
+        className={`${inter.className} red-dark text-foreground bg-background`}
+      >
+        <Providers>
+          <PageLayout>{children}</PageLayout>
+        </Providers>
       </body>
     </html>
   )

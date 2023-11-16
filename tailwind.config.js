@@ -6,7 +6,7 @@ const config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/components/(badge|button|link|listbox|navbar).js',
+    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|button|card|chip|link|listbox|navbar|user).js',
   ],
   theme: {
     extend: {},
@@ -18,7 +18,12 @@ const config = {
         'red-dark': {
           extend: 'dark',
           colors: {
-            background: '#0e1624',
+            background: {
+              DEFAULT: '#0e1624',
+              50: '#4B4B4B',
+              100: '#3F3F3F',
+              200: '#2E2E2E',
+            },
             foreground: '#ffffff',
             primary: {
               50: '#F8CAD2',

@@ -1,7 +1,32 @@
 'use client'
 import Logo from '@components/Logo'
-import {Listbox, ListboxItem} from '@nextui-org/listbox'
+import {
+  HouseIcon,
+  GamepadIcon,
+  MicrochipIcon,
+  TagsIcon,
+  LayerGroupIcon,
+  GearsIcon,
+} from '@components/icons'
+import {Badge} from '@nextui-org/badge'
+import {Button} from '@nextui-org/button'
+import {Link} from '@nextui-org/link'
+import {Listbox, ListboxItem, ListboxSection} from '@nextui-org/listbox'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from '@nextui-org/navbar'
+import {User} from '@nextui-org/user'
+import {Avatar} from '@nextui-org/avatar'
 import {usePathname} from 'next/navigation'
+import {useState} from 'react'
+import {Chip} from '@nextui-org/chip'
+import {Card} from '@nextui-org/card'
 
 export interface DashboardLayoutProps {
   children: React.ReactNode
@@ -10,69 +35,112 @@ export interface DashboardLayoutProps {
 const NAV_LINKS = [
   {
     href: '/dashboard',
-    label: 'inicio',
+    label: 'Inicio',
+    icon: <HouseIcon />,
+  },
+  {
+    href: '/dashboard/products',
+    label: 'Productos',
+    icon: <GamepadIcon />,
   },
   {
     href: '/dashboard/categories',
-    label: 'Categories',
+    label: 'Categorias',
+    icon: <LayerGroupIcon />,
   },
   {
     href: '/dashboard/tags',
     label: 'Tags',
+    icon: <TagsIcon />,
   },
   {
-    href: '/dashboard/products',
-    label: 'Products',
+    href: '/dashboard/services',
+    label: 'Servicios',
+    icon: <MicrochipIcon />,
   },
-  {
-    href: '/dashboard/orders',
-    label: 'Orders',
-  },
-
   {
     href: '/dashboard/settings',
-    label: 'Settings',
+    label: 'Configuración',
+    icon: <GearsIcon />,
   },
 ]
 
 export default function DashboardLayout({children}: DashboardLayoutProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const pathname = usePathname()
 
-  console.log(pathname)
-
   return (
-    <div className="grid grid-cols-[280px_1fr] h-screen">
-      <div className="bg-background text-foreground">
-        <div className="w-full px-4">
-          <Logo className="h-24 w-full" href="/dashboard" />
-        </div>
-        <Listbox
-          aria-label="Main navigation"
-          variant="flat"
-          color="primary"
-          classNames={{
-            base: 'p-4 gap-2',
-            list: 'gap-2',
-          }}
-          itemClasses={{
-            base: 'p-4 py-3',
-          }}
+    <div className="h-screen bg-background min-w-full max-w-none">
+      <div className="h-full lg:grid lg:grid-cols-[320px_1fr]">
+        <Navbar
+          onMenuOpenChange={setIsMenuOpen}
+          className="bg-background h-24 lg:hidden border-b-1 border-gray-700"
         >
-          {NAV_LINKS.map(({href, label}) => (
-            <ListboxItem
-              key={href}
-              href={href}
-              aria-label={label}
-              className={href === pathname ? 'bg-primary/20 text-primary' : ''}
-            >
-              {label}
-            </ListboxItem>
-          ))}
-        </Listbox>
-      </div>
-      <div className="bg-neutral-100">
-        <div className="bg-white shadow-sm">xd</div>
-        {children}
+          <NavbarContent className="text-white">
+            <NavbarMenuToggle
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            />
+            <NavbarBrand>
+              <Logo />
+            </NavbarBrand>
+          </NavbarContent>
+          <NavbarContent justify="end">
+            <NavbarItem className="ml-auto">
+              <Avatar src="https://avatars.githubusercontent.com/u/36524241?v=4" />
+            </NavbarItem>
+          </NavbarContent>
+
+          <NavbarMenu>
+            {NAV_LINKS.map(({href, label}) => (
+              <NavbarMenuItem key={href} isActive={pathname === href}>
+                <Link
+                  color={pathname === href ? 'primary' : 'foreground'}
+                  href={href}
+                >
+                  {label}
+                </Link>
+              </NavbarMenuItem>
+            ))}
+          </NavbarMenu>
+        </Navbar>
+        <div className="hidden bg-background h-screen lg:flex flex-col items-start gap-4">
+          <div className="p-6">
+            <Logo />
+          </div>
+          <Listbox className="p-4">
+            {NAV_LINKS.map(({href, label, icon}) => (
+              <ListboxItem
+                key={href}
+                className="text-white px-4 py-3.5 rounded-md"
+                variant="flat"
+                color="primary"
+                startContent={icon}
+              >
+                {label}
+              </ListboxItem>
+            ))}
+          </Listbox>
+          <div className="mt-auto p-4 w-full">
+            <Card className="p-4 bg-[#0B0C26]">
+              <User
+                className="text-white mt-auto"
+                name="Kevin Aguilar"
+                description={
+                  <Chip color="primary" variant="flat" size="sm">
+                    Administrador
+                  </Chip>
+                }
+                avatarProps={{
+                  src: 'https://avatars.githubusercontent.com/u/36524241?v=4',
+                }}
+              />
+            </Card>
+          </div>
+        </div>
+        <div className="h-full lg:p-4">
+          <div className="bg-white lg:rounded-xl h-full">{children}</div>
+        </div>
       </div>
     </div>
   )

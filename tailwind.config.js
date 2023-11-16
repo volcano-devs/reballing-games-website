@@ -19,10 +19,16 @@ const config = {
           extend: 'dark',
           colors: {
             background: {
-              DEFAULT: '#0e1624',
-              50: '#4B4B4B',
-              100: '#3F3F3F',
-              200: '#2E2E2E',
+              DEFAULT: '#010A18',
+              50: '#6F7989',
+              100: '#5B6676',
+              200: '#475262',
+              300: '#343E4E',
+              400: '#212B3A',
+              500: '#0E1725',
+              600: '#091322',
+              700: '#040E1E',
+              800: '#010A18',
             },
             foreground: '#ffffff',
             primary: {

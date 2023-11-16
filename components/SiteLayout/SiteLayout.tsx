@@ -16,7 +16,7 @@ import {Button} from '@nextui-org/button'
 import {Badge} from '@nextui-org/badge'
 import Logo from '@components/Logo'
 
-export interface PageLayoutProps {
+export interface SiteLayoutProps {
   children: React.ReactNode
 }
 
@@ -37,7 +37,7 @@ const NAV_LINKS = [
   },
 ]
 
-export default function PageLayout({children}: PageLayoutProps) {
+export default function SiteLayout({children}: SiteLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const pathname = usePathname()

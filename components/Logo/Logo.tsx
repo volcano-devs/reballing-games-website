@@ -11,7 +11,7 @@ export interface LogoProps {
 export default function Logo({className, href}: LogoProps) {
   return (
     <Link href={href ?? '/'}>
-      <div className={`w-32 md:w-44 bg-background ${className}`}>
+      <div className={`h-20 bg-background-500 ${className}`}>
         <Image
           priority
           src={ReballingGamesLogo.src}
@@ -21,6 +21,7 @@ export default function Logo({className, href}: LogoProps) {
           className="h-full w-full mix-blend-lighten object-cover"
         />
       </div>
+      {/* <div className="text-white text-2xl font-bold">LOGO</div> */}
     </Link>
   )
 }

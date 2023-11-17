@@ -7,6 +7,7 @@ import {
   TagsIcon,
   LayerGroupIcon,
   GearsIcon,
+  ArrowRightFromBracketIcon,
 } from '@components/icons'
 import {Badge} from '@nextui-org/badge'
 import {Button} from '@nextui-org/button'
@@ -25,8 +26,8 @@ import {User} from '@nextui-org/user'
 import {Avatar} from '@nextui-org/avatar'
 import {usePathname} from 'next/navigation'
 import {useState} from 'react'
-import {Chip} from '@nextui-org/chip'
-import {Card} from '@nextui-org/card'
+
+import {Card, CardBody} from '@nextui-org/card'
 
 export interface DashboardLayoutProps {
   children: React.ReactNode
@@ -71,18 +72,21 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
   const pathname = usePathname()
 
   return (
-    <div className="h-screen bg-background min-w-full max-w-none">
+    <div className="h-screen bg-background-500 min-w-full max-w-none">
       <div className="h-full lg:grid lg:grid-cols-[320px_1fr]">
         <Navbar
+          classNames={{
+            base: 'h-20 lg:hidden border-b-1 border-gray-700 bg-background-500 backdrop-filter backdrop-blur-sm bg-opacity-60',
+            menu: 'top-20',
+          }}
           onMenuOpenChange={setIsMenuOpen}
-          className="bg-background h-24 lg:hidden border-b-1 border-gray-700"
         >
           <NavbarContent className="text-white">
             <NavbarMenuToggle
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             />
             <NavbarBrand>
-              <Logo />
+              <Logo className="h-12 sm:h-14 md:h-16 lg:h-20" />
             </NavbarBrand>
           </NavbarContent>
           <NavbarContent justify="end">
@@ -91,30 +95,52 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
             </NavbarItem>
           </NavbarContent>
 
-          <NavbarMenu>
-            {NAV_LINKS.map(({href, label}) => (
-              <NavbarMenuItem key={href} isActive={pathname === href}>
+          <NavbarMenu className="gap-8 py-6" aria-label="Main navigation">
+            {NAV_LINKS.map(({href, label, icon}) => (
+              <NavbarMenuItem
+                key={href}
+                isActive={pathname === href}
+                aria-label={label}
+                onClick={() => {
+                  setIsMenuOpen(false)
+                  console.log('click')
+                }}
+              >
                 <Link
                   color={pathname === href ? 'primary' : 'foreground'}
                   href={href}
+                  size="sm"
                 >
-                  {label}
+                  <div className="flex items-center gap-6">
+                    {icon}
+                    {label}
+                  </div>
                 </Link>
               </NavbarMenuItem>
             ))}
           </NavbarMenu>
         </Navbar>
-        <div className="hidden bg-background h-screen lg:flex flex-col items-start gap-4">
+        <div className="hidden h-screen lg:flex flex-col items-start gap-4">
           <div className="p-6">
-            <Logo />
+            <Logo href="/dashboard" />
           </div>
-          <Listbox className="p-4">
+          <Listbox
+            aria-label="Main navigation"
+            aria-labelledby="main-navigation"
+            classNames={{
+              list: 'flex flex-col gap-1.5 p-4',
+            }}
+          >
             {NAV_LINKS.map(({href, label, icon}) => (
               <ListboxItem
                 key={href}
-                className="text-white px-4 py-3.5 rounded-md"
-                variant="flat"
+                href={href}
+                aria-label={label}
+                variant={pathname === href ? 'solid' : 'flat'}
                 color="primary"
+                className={`w-full flex justify-start items-center gap-4 p-3.5 rounded-xl text-white ${
+                  pathname === href ? 'bg-red-600' : ''
+                }`}
                 startContent={icon}
               >
                 {label}
@@ -122,24 +148,32 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
             ))}
           </Listbox>
           <div className="mt-auto p-4 w-full">
-            <Card className="p-4 bg-[#0B0C26]">
-              <User
-                className="text-white mt-auto"
-                name="Kevin Aguilar"
-                description={
-                  <Chip color="primary" variant="flat" size="sm">
-                    Administrador
-                  </Chip>
-                }
-                avatarProps={{
-                  src: 'https://avatars.githubusercontent.com/u/36524241?v=4',
-                }}
-              />
+            <Card isBlurred shadow="none">
+              <CardBody className="gap-4 items-start w-full">
+                <User
+                  className="text-white mt-auto"
+                  name="Kevin Aguilar"
+                  description="kevinaguilar0813@gmail.com"
+                  avatarProps={{
+                    src: 'https://avatars.githubusercontent.com/u/36524241?v=4',
+                  }}
+                />
+                <Button
+                  color="primary"
+                  variant="flat"
+                  className="self-stretch"
+                  startContent={<ArrowRightFromBracketIcon />}
+                >
+                  Logout
+                </Button>
+              </CardBody>
             </Card>
           </div>
         </div>
-        <div className="h-full lg:p-4">
-          <div className="bg-white lg:rounded-xl h-full">{children}</div>
+        <div className="h-full lg:p-4 lg:pl-0">
+          <div className="bg-background-600 text-foreground lg:rounded-xl h-full">
+            {children}
+          </div>
         </div>
       </div>
     </div>

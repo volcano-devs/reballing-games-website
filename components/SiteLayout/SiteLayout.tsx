@@ -43,15 +43,21 @@ export default function SiteLayout({children}: SiteLayoutProps) {
   const pathname = usePathname()
 
   return (
-    <div className="min-h-screen red-dark text-foreground bg-background">
-      <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-background h-24">
+    <div className="min-h-screen red-dark text-foreground bg-neutral-200">
+      <Navbar
+        onMenuOpenChange={setIsMenuOpen}
+        classNames={{
+          base: 'h-20 border-b-1 border-gray-700 bg-background-500',
+          menu: 'top-20',
+        }}
+      >
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             className="sm:hidden"
           />
           <NavbarBrand>
-            <Logo />
+            <Logo className="h-12 sm:h-14 md:h-16 lg:h-20" />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify="end">

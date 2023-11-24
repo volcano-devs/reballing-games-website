@@ -20,6 +20,7 @@
     "@nextui-org/system": "^2.0.14",
     "@nextui-org/theme": "^2.1.16",
     "@nextui-org/user": "^2.0.25",
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/supabase-js": "^2.38.5",
     "framer-motion": "^10.16.4",
     "next": "14.0.2",

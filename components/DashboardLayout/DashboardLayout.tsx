@@ -86,7 +86,7 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             />
             <NavbarBrand>
-              <Logo className="h-12 sm:h-14 md:h-16 lg:h-20" />
+              <Logo className="h-12 md:h-14 lg:h-20" />
             </NavbarBrand>
           </NavbarContent>
           <NavbarContent justify="end">

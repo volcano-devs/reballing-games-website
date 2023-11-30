@@ -6,10 +6,15 @@ const config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|button|card|chip|link|listbox|navbar|user).js',
+    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|button|card|chip|input|link|listbox|navbar|user).js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'login-bg':
+          'radial-gradient(circle at top,#580B17,#040E1E,#040E1E 100%)',
+      },
+    },
   },
   darkMode: 'class',
   plugins: [
@@ -44,6 +49,20 @@ const config = {
               900: '#26050A',
               950: '#0D0203',
               DEFAULT: '#E42745',
+              foreground: '#ffffff',
+            },
+            secondary: {
+              50: '#E5E5E5',
+              100: '#CCCCCC',
+              200: '#B2B2B2',
+              300: '#999999',
+              400: '#7F7F7F',
+              500: '#666666',
+              600: '#4C4C4C',
+              700: '#333333',
+              800: '#191919',
+              900: '#000000',
+              DEFAULT: '#666666',
               foreground: '#ffffff',
             },
             focus: '#E42745',

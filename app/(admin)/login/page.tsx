@@ -2,10 +2,22 @@ import Logo from '@components/Logo'
 import {Button} from '@nextui-org/button'
 import {Card, CardBody, CardFooter} from '@nextui-org/card'
 import LoginForm from './components/LoginForm'
+import {
+  createPagesServerClient,
+  createServerComponentClient,
+} from '@supabase/auth-helpers-nextjs'
+import {Database} from 'types/database'
+import {cookies} from 'next/headers'
 
 export interface LoginPageProps {}
 
-export default function LoginPage(props: LoginPageProps) {
+export default async function LoginPage(props: LoginPageProps) {
+  const cookieStore = cookies()
+  const supabase = createServerComponentClient<Database>({
+    cookies: () => cookieStore,
+  })
+  const {data} = await supabase.auth.getUser()
+
   return (
     <div
       className="bg-login-bg max-h-screen min-h-screen text-white flex justify-center items-center
@@ -18,8 +30,8 @@ export default function LoginPage(props: LoginPageProps) {
             <div className="w-full p-6">
               <Logo className="mix-blend-lighten" />
             </div>
-
             <p className="">Reballing games - CMS Login</p>
+            return <pre>{JSON.stringify(data, null, 2)}</pre>
             <LoginForm />
           </CardBody>
           <CardFooter className="p-6">

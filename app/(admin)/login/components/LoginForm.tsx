@@ -5,22 +5,22 @@ import {useRouter} from 'next/navigation'
 import * as React from 'react'
 import {Database} from 'types/database'
 
+const supabase = createClientComponentClient<Database>()
+
 export default function LoginForm() {
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const router = useRouter()
-  const supabase = createClientComponentClient<Database>()
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const res = await supabase.auth.signInWithPassword({
+    await supabase.auth.signInWithPassword({
       email,
       password,
     })
-    router.refresh()
 
-    console.log(res)
+    router.push('/dashboard ')
   }
 
   return (

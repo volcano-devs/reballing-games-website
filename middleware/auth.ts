@@ -4,8 +4,8 @@ import {Database} from 'types/database'
 
 const authMiddleware: Middleware = {
   matcher: (request) =>
-    request.nextUrl.pathname.match(/^\/dashboard/) ||
-    request.nextUrl.pathname === '/login',
+    request.nextUrl.pathname.startsWith('/dashboard') ||
+    request.nextUrl.pathname.startsWith('/login'),
   handler: async (req: NextRequest) => {
     const res = NextResponse.next()
     const supabase = createMiddlewareClient<Database>({req, res})
@@ -15,15 +15,15 @@ const authMiddleware: Middleware = {
     } = await supabase.auth.getUser()
 
     if (user) {
+      if (req.nextUrl.pathname.startsWith('/login')) {
+        return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
+      }
+
       return NextResponse.next()
     }
 
-    if (!user && req.nextUrl.pathname.match(/^\/dashboard/)) {
+    if (!user && req.nextUrl.pathname.startsWith('/dashboard')) {
       return NextResponse.redirect(new URL('/login', req.nextUrl))
-    }
-
-    if (user && req.nextUrl.pathname.startsWith('/login')) {
-      return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
     }
 
     return res

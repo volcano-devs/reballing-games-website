@@ -4,15 +4,11 @@ import {type NextRequest} from 'next/server'
 const middlewares: Middleware[] = [authMiddleware]
 
 export async function middleware(req: NextRequest) {
-  middlewares.reduce(async (acc, middleware) => {
-    await acc
-
-    if (middleware.matcher(req)) {
-      return middleware.handler(req)
+  for (const m of middlewares) {
+    if (m.matcher(req)) {
+      return m.handler(req)
     }
-
-    return null
-  }, Promise.resolve())
+  }
 
   return null
 }

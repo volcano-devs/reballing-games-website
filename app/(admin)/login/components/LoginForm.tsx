@@ -2,23 +2,25 @@
 import {Input} from '@nextui-org/input'
 import {createClientComponentClient} from '@supabase/auth-helpers-nextjs'
 import {useRouter} from 'next/navigation'
-import * as React from 'react'
+import {FormEvent} from 'react'
 import {Database} from 'types/database'
 
 const supabase = createClientComponentClient<Database>()
 
 export default function LoginForm() {
-  const [email, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
   const router = useRouter()
 
-  const handleSignIn = async (e: React.FormEvent) => {
+  async function handleSignIn(e: FormEvent) {
     e.preventDefault()
 
-    await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
+    // await supabase.auth.signInWithPassword({
+    //   email,
+    //   password,
+    // })
+
+    console.log()
 
     router.push('/dashboard ')
   }
@@ -33,8 +35,8 @@ export default function LoginForm() {
         type="email"
         variant="bordered"
         label="Email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
+        // onChange={(e) => setEmail(e.target.value)}
+        // value={email}
         placeholder="Enter your email"
       />
 
@@ -42,8 +44,8 @@ export default function LoginForm() {
         type="password"
         variant="bordered"
         label="Password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
+        // onChange={(e) => setPassword(e.target.value)}
+        // value={password}
         placeholder="Enter your password"
         isClearable
       />

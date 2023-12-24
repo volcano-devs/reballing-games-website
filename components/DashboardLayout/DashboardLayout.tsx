@@ -12,7 +12,7 @@ import {
 import {Badge} from '@nextui-org/badge'
 import {Button} from '@nextui-org/button'
 import {Link} from '@nextui-org/link'
-import {Listbox, ListboxItem, ListboxSection} from '@nextui-org/listbox'
+import {Listbox, ListboxItem} from '@nextui-org/listbox'
 import {
   Navbar,
   NavbarBrand,
@@ -24,10 +24,12 @@ import {
 } from '@nextui-org/navbar'
 import {User} from '@nextui-org/user'
 import {Avatar} from '@nextui-org/avatar'
-import {usePathname} from 'next/navigation'
+import {usePathname, useRouter} from 'next/navigation'
 import {useState} from 'react'
 
 import {Card, CardBody} from '@nextui-org/card'
+import {createClientComponentClient} from '@supabase/auth-helpers-nextjs'
+import type {Database} from 'types/database'
 
 export interface DashboardLayoutProps {
   children: React.ReactNode
@@ -66,10 +68,14 @@ const NAV_LINKS = [
   },
 ]
 
+const supabase = createClientComponentClient<Database>()
+
 export default function DashboardLayout({children}: DashboardLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const pathname = usePathname()
+
+  const router = useRouter()
 
   return (
     <div className="h-screen bg-background-500 min-w-full max-w-none">
@@ -86,7 +92,7 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             />
             <NavbarBrand>
-              <Logo className="h-12 sm:h-14 md:h-16 lg:h-20" />
+              <Logo className="h-12 md:h-14 lg:h-20" />
             </NavbarBrand>
           </NavbarContent>
           <NavbarContent justify="end">
@@ -163,6 +169,17 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
                   variant="flat"
                   className="self-stretch"
                   startContent={<ArrowRightFromBracketIcon />}
+                  onClick={() => {
+                    supabase.auth
+                      .signOut()
+                      .then((data) => {
+                        console.log(data)
+                        router.refresh()
+                      })
+                      .catch((error) => {
+                        console.log(error)
+                      })
+                  }}
                 >
                   Logout
                 </Button>

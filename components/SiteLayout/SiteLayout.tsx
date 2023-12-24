@@ -57,7 +57,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
             className="sm:hidden"
           />
           <NavbarBrand>
-            <Logo className="h-12 sm:h-14 md:h-16 lg:h-20" />
+            <Logo className="h-12 md:h-14 lg:h-20" />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify="end">

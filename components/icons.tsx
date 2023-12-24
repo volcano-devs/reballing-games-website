@@ -14,7 +14,7 @@ export function IconWrapper({children, className}: IconWrapperProps) {
     <div
       className={cn(
         className,
-        'flex items-center rounded-small justify-center'
+        'flex items-center rounded-small justify-center',
       )}
     >
       {children}

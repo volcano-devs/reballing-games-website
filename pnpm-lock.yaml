@@ -56,6 +56,9 @@ dependencies:
   '@tanstack/zod-form-adapter':
     specifier: ^0.10.3
     version: 0.10.3(zod@3.22.4)
+  date-fns:
+    specifier: ^3.1.0
+    version: 3.1.0
   framer-motion:
     specifier: ^10.16.4
     version: 10.16.4(react-dom@18.0.0)(react@18.0.0)
@@ -2281,6 +2284,10 @@ packages:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
     dev: true
+
+  /date-fns@3.1.0:
+    resolution: {integrity: sha512-ZO7yefXV/wCWzd3I9haCHmfzlfA3i1a2HHO7ZXjtJrRjXt8FULKJ2Vl8wji3XYF4dQ0ZJ/tokXDZeYlFvgms9Q==}
+    dev: false
 
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

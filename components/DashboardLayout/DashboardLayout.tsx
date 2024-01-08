@@ -188,7 +188,7 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
           </div>
         </div>
         <div className="h-full lg:p-4 lg:pl-0">
-          <div className="bg-background-600 text-foreground lg:rounded-xl h-full">
+          <div className="bg-background-800 text-foreground lg:rounded-xl h-full">
             {children}
           </div>
         </div>

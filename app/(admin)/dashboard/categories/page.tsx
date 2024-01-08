@@ -31,6 +31,9 @@ export default async function CategoriesPage({
   console.log(response)
 
   return (
-    <CategoriesList categories={response.data ?? []} count={response.count} />
+    <CategoriesList
+      categories={response.data ?? []}
+      count={response.count ?? 0}
+    />
   )
 }

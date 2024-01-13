@@ -1,7 +1,6 @@
 'use client'
 import Logo from '@components/Logo'
 import {
-  HouseIcon,
   GamepadIcon,
   MicrochipIcon,
   TagsIcon,
@@ -9,7 +8,6 @@ import {
   GearsIcon,
   ArrowRightFromBracketIcon,
 } from '@components/icons'
-import {Badge} from '@nextui-org/badge'
 import {Button} from '@nextui-org/button'
 import {Link} from '@nextui-org/link'
 import {Listbox, ListboxItem} from '@nextui-org/listbox'
@@ -36,11 +34,11 @@ export interface DashboardLayoutProps {
 }
 
 const NAV_LINKS = [
-  {
-    href: '/dashboard',
-    label: 'Inicio',
-    icon: <HouseIcon />,
-  },
+  // {
+  //   href: '/dashboard',
+  //   label: 'Inicio',
+  //   icon: <HouseIcon />,
+  // },
   {
     href: '/dashboard/products',
     label: 'Productos',

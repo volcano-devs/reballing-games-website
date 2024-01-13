@@ -20,9 +20,7 @@ export default function LoginForm() {
       password,
     })
 
-    console.log()
-
-    router.push('/dashboard ')
+    router.push('/dashboard/products')
   }
 
   return (

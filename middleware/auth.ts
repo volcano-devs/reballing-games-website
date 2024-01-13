@@ -16,7 +16,9 @@ const authMiddleware: Middleware = {
 
     if (user) {
       if (req.nextUrl.pathname.startsWith('/login')) {
-        return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
+        return NextResponse.redirect(
+          new URL('/dashboard/products', req.nextUrl),
+        )
       }
 
       return NextResponse.next()

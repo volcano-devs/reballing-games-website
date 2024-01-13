@@ -17,15 +17,12 @@ import {
 import {format} from 'date-fns'
 import {usePathname, useRouter, useSearchParams} from 'next/navigation'
 
-export interface CategoriesListProps {
-  categories: Category[]
+export interface ProductsListProps {
+  products: Products[]
   count: number
 }
 
-export default function CategoriesList({
-  categories,
-  count,
-}: CategoriesListProps) {
+export default function CategoriesList({categories, count}: ProductsListProps) {
   const pathname = usePathname()
   const {push} = useRouter()
 

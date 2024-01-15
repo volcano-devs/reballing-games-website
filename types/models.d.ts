@@ -23,6 +23,8 @@ declare interface Category extends BaseModel {
 
 declare interface Tag extends BaseModel {
   name: string
+  slug: string
+  description: string | null
 }
 
 declare interface Service extends BaseModel {

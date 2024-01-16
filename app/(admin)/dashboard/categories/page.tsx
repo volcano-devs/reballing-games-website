@@ -1,3 +1,4 @@
+import ky from 'ky'
 import {getRange} from 'lib/pagination'
 import {createServerClient} from 'lib/supabase'
 import CategoriesList from 'sections/admin/categories/CategoriesList'
@@ -9,30 +10,32 @@ export interface CategoriesPageProps {
 }
 
 async function getCategories({page}: {page?: number}) {
-  const supabase = createServerClient()
+  const res = await await fetch(
+    `${process.env.NEXT_URL}/api/categories?page=${page ?? 1}`,
+    {
+      headers: {
+        accept: 'application/json',
+      },
+      cache: 'no-cache',
+    },
+  )
 
-  const range = getRange(page ?? 1)
-
-  const categories = await supabase
-    .from('categories')
-    .select('*, categories(parent_id, name)', {count: 'exact'})
-    .range(range.start, range.end)
-
-  return categories
+  return res
 }
 
 export default async function CategoriesPage({
   searchParams,
 }: CategoriesPageProps) {
-  const response = await getCategories({
+  const response: Response & {
+    data?: Category[]
+    count?: number
+  } = await getCategories({
     page: searchParams.page ? parseInt(searchParams.page) : 1,
-  })
-
-  console.log(response)
+  }).then((res) => res.json())
 
   return (
     <CategoriesList
-      categories={response.data ?? []}
+      categories={response.data! ?? []}
       count={response.count ?? 0}
     />
   )

@@ -18,11 +18,11 @@ import {format} from 'date-fns'
 import {usePathname, useRouter, useSearchParams} from 'next/navigation'
 
 export interface ProductsListProps {
-  products: Products[]
+  products: Product[]
   count: number
 }
 
-export default function CategoriesList({categories, count}: ProductsListProps) {
+export default function ProductList({products, count}: ProductsListProps) {
   const pathname = usePathname()
   const {push} = useRouter()
 
@@ -34,25 +34,26 @@ export default function CategoriesList({categories, count}: ProductsListProps) {
       title={
         <div className="flex items-center justify-between tracking-tighter">
           <div className="flex flex-col ">
-            <h1 className="text-2xl font-bold">Categorias</h1>
+            <h1 className="text-2xl font-bold">Productos</h1>
             <p className="text-gray-300 text-xs font-medium">
-              {count} categorias encontradas
+              {count} Productos encontradas
             </p>
           </div>
           <Button
             color="primary"
             className="ml-4"
             onClick={() => {
-              push('/dashboard/categories/create')
+              push('/dashboard/products/create')
             }}
           >
-            Nueva Categoria
+            Nuevo producto
           </Button>
         </div>
       }
     >
       <Table
         isVirtualized
+        aria-labelledby="products-table"
         classNames={{
           wrapper: 'bg-background-500',
           table: 'bg-background-400',
@@ -92,10 +93,10 @@ export default function CategoriesList({categories, count}: ProductsListProps) {
               key: 'name',
               label: 'Nombre',
             },
-            {
-              key: 'slug',
-              label: 'Slug',
-            },
+            // {
+            //   key: 'slug',
+            //   label: 'Slug',
+            // },
             {
               key: 'description',
               label: 'Descripción',
@@ -126,18 +127,18 @@ export default function CategoriesList({categories, count}: ProductsListProps) {
             <TableColumn key={column.key}>{column.label}</TableColumn>
           )}
         </TableHeader>
-        <TableBody emptyContent="No hay categorias para mostrar">
-          {categories.map((category, index) => (
-            <TableRow key={category.id}>
-              <TableCell>{category.name}</TableCell>
-              <TableCell>{category.slug}</TableCell>
-              <TableCell>{category.description ?? 'N/A'}</TableCell>
+        <TableBody emptyContent="No hay productos para mostrar">
+          {products.map((product, index) => (
+            <TableRow key={product.id}>
+              <TableCell>{product.name}</TableCell>
+              {/* <TableCell>{product.slug}</TableCell> */}
+              <TableCell>{product.description ?? 'N/A'}</TableCell>
               <TableCell>
-                {category.thumbnail ? (
+                {product.thumbnail ? (
                   <div className="w-10 h-10">
                     <img
                       className="w-10 h-10 p-1 object-cover"
-                      src={category.thumbnail}
+                      src={product.thumbnail}
                     />
                   </div>
                 ) : (
@@ -145,16 +146,16 @@ export default function CategoriesList({categories, count}: ProductsListProps) {
                 )}
               </TableCell>
               <TableCell>
-                {format(new Date(category.created_at), 'Ppp')}
+                {format(new Date(product.created_at), 'Ppp')}
               </TableCell>
-              <TableCell>{category.updated_at ?? 'N/A'}</TableCell>
+              <TableCell>{product.updated_at ?? 'N/A'}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
                   <Button
                     isIconOnly
                     size="sm"
                     variant="flat"
-                    // onClick={() => handleEditCategory(category)}
+                    // onClick={() => handleEditProduct(product)}
                   >
                     <PenToSquareIcon className="h-2 w-2 text-xs" />
                   </Button>
@@ -164,7 +165,7 @@ export default function CategoriesList({categories, count}: ProductsListProps) {
                     variant="flat"
                     color="primary"
 
-                    // onClick={() => handleDeleteCategory(category)}
+                    // onClick={() => handleDeleteProduct(product)}
                   >
                     <div className="w-4 h-4">
                       <TrashIcon />

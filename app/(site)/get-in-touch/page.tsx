@@ -3,20 +3,22 @@ import {Button} from '@nextui-org/button'
 export default function GetInTouch() {
   return (
     <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col justify-center gap-2">
-      <div className="container mx-auto pt-14 leading-tight px-6">
+      <div className="container mx-auto pt-14 leading-tight px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900">
-          Tienes alguna duda?
+          ¡Conéctate con nosotros ahora mismo!
         </h1>
 
-        <p className="mt-4 text-center text-gray-500">
-          Envíanos un mensaje y te responderemos lo más pronto posible.
+        <p className="mt-4 max-w-2xl mx-auto text-center text-gray-500">
+          Si tienes alguna duda o consulta sobre nuestros servicios, no dudes en
+          contactarnos a través de nuestro formulario de contacto o en nuestras
+          redes sociales.
           <br />
         </p>
       </div>
       <section className="bg-white dark:bg-gray-900 container mx-auto">
         <div className=" px-6 py-12">
-          <div className="lg:flex lg:items-center lg:-mx-6">
-            <div className="lg:w-1/2 lg:mx-6">
+          <div className="lg:flex lg:items-center lg:-mx-6 justify-center gap-10">
+            <div className="lg:w-2/6">
               <h1 className="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
                 Contáctenos para <br /> más información.
               </h1>
@@ -137,8 +139,8 @@ export default function GetInTouch() {
               </div>
             </div>
 
-            <div className="mt-8 lg:w-1/2 lg:mx-6">
-              <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white rounded-lg shadow-2xl dark:bg-gray-900 lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
+            <div className="mt-8 lg:w-2/5 ">
+              <div className="w-full px-12 py-14 overflow-hidden bg-white rounded-2xl shadow-xl dark:bg-gray-900 lg:max-w-xl shadow-gray-300/60 dark:shadow-black/50">
                 <h1 className="text-lg font-medium text-gray-700">
                   Qué podemos hacer por ti?
                 </h1>

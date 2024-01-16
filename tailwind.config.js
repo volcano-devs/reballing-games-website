@@ -13,6 +13,7 @@ const config = {
       backgroundImage: {
         'login-bg':
           'radial-gradient(circle at top,#580B17,#040E1E,#040E1E 100%)',
+        hero: 'radial-gradient(circle at right ,#580B17,#26050A,#091322 80%)',
       },
     },
   },
@@ -34,6 +35,7 @@ const config = {
               600: '#091322',
               700: '#040E1E',
               800: '#010A18',
+              900: '#00060F',
             },
             foreground: '#ffffff',
             primary: {

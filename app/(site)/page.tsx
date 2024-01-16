@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      //features section about reballing games technical service
+      {/* features section about reballing games technical service */}
       <div className="-mt-20 container mx-auto pb-20  px-6 sm:px-10 md:px-12">
         <section>
           <div>
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      {/* //products section */}
+      {/* products section */}
       <section id="services" className="container mx-auto py-20">
         <div className="mt-4 md:mt-0 text-center max-w-xl mx-auto">
           <h1 className="text-2xl font-semibold tracking-tight xl:text-3xl text-red-600 capitalize dark:text-white">
@@ -274,7 +274,7 @@ export default function Home() {
                 {services[0].title}
               </h2>
 
-              <p className="max-w-lg mt-6 text-gray-400 ">
+              <p className="max-w-lg mt-6 t©®©ext-gray-400 ">
                 {services[0].description}
               </p>
 

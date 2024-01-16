@@ -11,13 +11,13 @@ export interface LogoProps {
 export default function Logo({className, href}: LogoProps) {
   return (
     <Link href={href ?? '/'}>
-      <div className={`h-20 bg-background-500 ${className}`}>
+      <div className={`h-10 ${className}`}>
         <Image
           priority
           src={ReballingGamesLogo.src}
           alt="Reballing games"
           width={320}
-          height={100}
+          height={80}
           className="h-full w-full mix-blend-lighten object-cover"
         />
       </div>

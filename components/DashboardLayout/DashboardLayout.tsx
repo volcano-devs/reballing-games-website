@@ -1,13 +1,6 @@
 'use client'
 import Logo from '@components/Logo'
-import {
-  GamepadIcon,
-  MicrochipIcon,
-  TagsIcon,
-  LayerGroupIcon,
-  GearsIcon,
-  ArrowRightFromBracketIcon,
-} from '@components/icons'
+import {GamepadIcon, TagsIcon, LayerGroupIcon} from '@components/icons'
 import {Button} from '@nextui-org/button'
 import {Link} from '@nextui-org/link'
 import {Listbox, ListboxItem} from '@nextui-org/listbox'
@@ -20,14 +13,13 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
-import {User} from '@nextui-org/user'
 import {Avatar} from '@nextui-org/avatar'
 import {usePathname, useRouter} from 'next/navigation'
-import {useState} from 'react'
+import {Suspense, useMemo, useState} from 'react'
 
-import {Card, CardBody} from '@nextui-org/card'
 import {createClientComponentClient} from '@supabase/auth-helpers-nextjs'
 import type {Database} from 'types/database'
+import UserCard from './components/UserCard'
 
 export interface DashboardLayoutProps {
   children: React.ReactNode
@@ -54,16 +46,16 @@ const NAV_LINKS = [
     label: 'Tags',
     icon: <TagsIcon />,
   },
-  {
-    href: '/dashboard/services',
-    label: 'Servicios',
-    icon: <MicrochipIcon />,
-  },
-  {
-    href: '/dashboard/settings',
-    label: 'Configuración',
-    icon: <GearsIcon />,
-  },
+  // {
+  //   href: '/dashboard/services',
+  //   label: 'Servicios',
+  //   icon: <MicrochipIcon />,
+  // },
+  // {
+  //   href: '/dashboard/settings',
+  //   label: 'Configuración',
+  //   icon: <GearsIcon />,
+  // },
 ]
 
 const supabase = createClientComponentClient<Database>()
@@ -72,8 +64,6 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const pathname = usePathname()
-
-  const router = useRouter()
 
   return (
     <div className="h-screen bg-background-500 min-w-full max-w-none">
@@ -126,7 +116,7 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
         </Navbar>
         <div className="hidden h-screen lg:flex flex-col items-start gap-4">
           <div className="p-6">
-            <Logo href="/dashboard" />
+            <Logo href="/dashboard/products" />
           </div>
           <Listbox
             aria-label="Main navigation"
@@ -152,37 +142,9 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
             ))}
           </Listbox>
           <div className="mt-auto p-4 w-full">
-            <Card isBlurred shadow="none">
-              <CardBody className="gap-4 items-start w-full">
-                <User
-                  className="text-white mt-auto"
-                  name="Kevin Aguilar"
-                  description="kevinaguilar0813@gmail.com"
-                  avatarProps={{
-                    src: 'https://avatars.githubusercontent.com/u/36524241?v=4',
-                  }}
-                />
-                <Button
-                  color="primary"
-                  variant="flat"
-                  className="self-stretch"
-                  startContent={<ArrowRightFromBracketIcon />}
-                  onClick={() => {
-                    supabase.auth
-                      .signOut()
-                      .then((data) => {
-                        console.log(data)
-                        router.refresh()
-                      })
-                      .catch((error) => {
-                        console.log(error)
-                      })
-                  }}
-                >
-                  Logout
-                </Button>
-              </CardBody>
-            </Card>
+            <Suspense fallback={<div>Loading...</div>}>
+              <UserCard />
+            </Suspense>
           </div>
         </div>
         <div className="h-full lg:p-4 lg:pl-0">

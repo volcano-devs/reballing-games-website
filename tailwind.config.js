@@ -6,13 +6,14 @@ const config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|button|card|chip|input|link|listbox|navbar|user).js',
+    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|button|card|chip|input|link|listbox|navbar|pagination|table|user).js',
   ],
   theme: {
     extend: {
       backgroundImage: {
         'login-bg':
           'radial-gradient(circle at top,#580B17,#040E1E,#040E1E 100%)',
+        hero: 'radial-gradient(circle at right ,#580B17,#26050A,#091322 80%)',
       },
     },
   },
@@ -34,6 +35,7 @@ const config = {
               600: '#091322',
               700: '#040E1E',
               800: '#010A18',
+              900: '#00060F',
             },
             foreground: '#ffffff',
             primary: {

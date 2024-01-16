@@ -3,8 +3,8 @@ import {Button} from '@nextui-org/button'
 export default function GetInTouch() {
   return (
     <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col justify-center gap-2">
-      <div className="">
-        <h1 className="text-5xl font-bold text-center text-gray-900">
+      <div className="container mx-auto pt-14 leading-tight px-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900">
           Tienes alguna duda?
         </h1>
 
@@ -13,8 +13,8 @@ export default function GetInTouch() {
           <br />
         </p>
       </div>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-12 mx-auto">
+      <section className="bg-white dark:bg-gray-900 container mx-auto">
+        <div className=" px-6 py-12">
           <div className="lg:flex lg:items-center lg:-mx-6">
             <div className="lg:w-1/2 lg:mx-6">
               <h1 className="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
@@ -101,6 +101,7 @@ export default function GetInTouch() {
                   <a
                     className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
                     href="https://www.facebook.com/ReballingGames"
+                    target="_blank"
                   >
                     <svg
                       className="w-8 h-8"
@@ -117,6 +118,7 @@ export default function GetInTouch() {
 
                   <a
                     className="mx-1.5 dark:hover:text-pink-400 text-gray-400 transition-colors duration-300 transform hover:text-pink-500"
+                    target="_blank"
                     href="https://www.instagram.com/reballing.games"
                   >
                     <svg
@@ -143,10 +145,14 @@ export default function GetInTouch() {
 
                 <form className="mt-6">
                   <div className="flex-1">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                    <label
+                      htmlFor="name"
+                      className="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                    >
                       Nombre completo
                     </label>
                     <input
+                      name="name"
                       type="text"
                       placeholder="Kevin Aguilar"
                       className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -154,10 +160,14 @@ export default function GetInTouch() {
                   </div>
 
                   <div className="flex-1 mt-6">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                    <label
+                      htmlFor="email"
+                      className="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                    >
                       Correo electrónico
                     </label>
                     <input
+                      name="email"
                       type="email"
                       placeholder="email@example.com"
                       className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -165,10 +175,14 @@ export default function GetInTouch() {
                   </div>
 
                   <div className="w-full mt-6">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                    <label
+                      htmlFor="message"
+                      className="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                    >
                       Mensaje
                     </label>
                     <textarea
+                      name="message"
                       className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       placeholder="Escribe tu mensaje aquí"
                     ></textarea>

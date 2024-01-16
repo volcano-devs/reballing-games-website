@@ -1,25 +1,32 @@
 import {Button} from '@nextui-org/button'
 import {Card, CardBody} from '@nextui-org/card'
-import {User} from '@nextui-org/user'
-import {createClientComponentClient} from '@supabase/auth-helpers-nextjs'
+import {
+  User as SupabaseUser,
+  createClientComponentClient,
+} from '@supabase/auth-helpers-nextjs'
 import {Database} from 'types/database'
 
 import UserImg from '@app/no-user.png'
-import {useMemo} from 'react'
+import {useEffect, useState} from 'react'
 import {ArrowRightFromBracketIcon} from '@components/icons'
 import {useRouter} from 'next/navigation'
+import {User} from '@nextui-org/user'
 
 export interface UserCardProps {}
 
 const supabase = createClientComponentClient<Database>()
 
-export default async function UserCard(props: UserCardProps) {
+export default function UserCard(props: UserCardProps) {
   const router = useRouter()
 
-  const viewer = await supabase.auth.getUser().then(
-    (data) => data?.data.user,
-    (error) => console.log(error),
-  )
+  const [viewer, setViewer] = useState<SupabaseUser | null>(null)
+
+  useEffect(() => {
+    supabase.auth.getUser().then(
+      (data) => setViewer(data.data.user),
+      (error) => console.log(error),
+    )
+  }, [])
 
   return (
     <Card isBlurred shadow="none">

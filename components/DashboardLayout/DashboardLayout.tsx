@@ -1,7 +1,6 @@
 'use client'
 import Logo from '@components/Logo'
 import {GamepadIcon, TagsIcon, LayerGroupIcon} from '@components/icons'
-import {Button} from '@nextui-org/button'
 import {Link} from '@nextui-org/link'
 import {Listbox, ListboxItem} from '@nextui-org/listbox'
 import {
@@ -14,11 +13,9 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
 import {Avatar} from '@nextui-org/avatar'
-import {usePathname, useRouter} from 'next/navigation'
-import {Suspense, useMemo, useState} from 'react'
+import {usePathname} from 'next/navigation'
+import {Suspense, useState} from 'react'
 
-import {createClientComponentClient} from '@supabase/auth-helpers-nextjs'
-import type {Database} from 'types/database'
 import UserCard from './components/UserCard'
 
 export interface DashboardLayoutProps {
@@ -57,8 +54,6 @@ const NAV_LINKS = [
   //   icon: <GearsIcon />,
   // },
 ]
-
-const supabase = createClientComponentClient<Database>()
 
 export default function DashboardLayout({children}: DashboardLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

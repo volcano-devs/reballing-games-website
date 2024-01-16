@@ -15,7 +15,6 @@ import {usePathname} from 'next/navigation'
 import {Button} from '@nextui-org/button'
 import {Badge} from '@nextui-org/badge'
 import Logo from '@components/Logo'
-import path from 'path'
 
 export interface SiteLayoutProps {
   children: React.ReactNode
@@ -153,7 +152,11 @@ export default function SiteLayout({children}: SiteLayoutProps) {
                   </Link>
                 </div>
                 <div className="flex flex-row space-x-8 items-center justify-between">
-                  <a>
+                  <a
+                    href="https://www.facebook.com/ReballingGames"
+                    target="_blank"
+                    className="cursor-pointer"
+                  >
                     <svg
                       width="6"
                       height="12"
@@ -167,7 +170,11 @@ export default function SiteLayout({children}: SiteLayoutProps) {
                       />
                     </svg>
                   </a>
-                  <a>
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/reballing.games"
+                    className="cursor-pointer"
+                  >
                     <svg
                       width="12"
                       height="13"

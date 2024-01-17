@@ -89,7 +89,7 @@ export default function Home() {
           className="container mx-auto flex w-full flex-col
       justify-center gap-20 xl:flex-row min-h-screen lg:min-h-[1080px]"
         >
-          <div className="flex max-w-2xl flex-col self-center px-6 text-center md:px-8 md:text-left lg:px-0">
+          <div className="flex max-w-2xl flex-col self-center px-6 text-center md:px-8 md:text-left lg:px-0 tracking-tight leading-2">
             <h1 className=" text-4xl font-bold  tracking-tight sm:text-6xl">
               Servicio técnico especializado
             </h1>
@@ -98,14 +98,14 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex w-full flex-col gap-x-4 gap-y-4 md:flex-row md:items-center">
-              <Link href="#">
-                <Button color="primary" className="w-full md:w-auto py-8">
+              <Link href="/get-in-touch">
+                <Button color="primary" className="w-full md:w-auto py-6">
                   Realizar una consulta
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="self-center md:w-[440px] lg:w-[540px] xl:w-[760px]">
+          <div className="self-center w-[340px]  md:w-[440px] lg:w-[540px] xl:w-[760px]">
             <Image className="w-full" src={consolesGroup} alt="consoles" />
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function Home() {
         </section>
       </div>
       {/* products section */}
-      <section id="services" className="container mx-auto py-20">
+      <section id="services" className="container mx-auto py-20  px-6">
         <div className="mt-4 md:mt-0 text-center max-w-xl mx-auto">
           <h1 className="text-2xl font-semibold tracking-tight xl:text-3xl text-red-600 capitalize dark:text-white">
             Nuestros productos
@@ -205,7 +205,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className=" mt-8 grid grid-cols-3 lg:max-w-5xl mx-auto gap-4 divide-x">
+        <div className=" mt-10 flex flex-col sm:grid grid-cols-3 lg:max-w-5xl mx-auto gap-10 sm:divide-x">
           <div className="flex items-center justify-center ">
             <svg
               className="filter grayscale hover:grayscale-0 h-6 lg:h-12"
@@ -264,9 +264,9 @@ export default function Home() {
         </div>
       </section>
       {/* //services section */}
-      <section className="container mx-auto bg-hero rounded-3xl mt-16">
+      <section className="container mx-auto bg-hero sm:rounded-3xl mt-16">
         <div className="container px-12 py-12 mx-auto">
-          <div className="lg:-mx-6 lg:flex lg:items-center justify-center gap-16">
+          <div className="lg:-mx-6 flex flex-col lg:flex-row items-center justify-center gap-16">
             <div className="mt-8 lg:w-1/3 lg:px-6 lg:mt-0">
               <p className="mt-6 text-lg font-medium text-red-500">Servicio</p>
 
@@ -323,7 +323,7 @@ export default function Home() {
 
             <div className="w-56">
               <Image
-                className="object-cover  w-full h-full"
+                className="object-cover w-full h-full"
                 src={chip.src}
                 alt="chip"
                 width={chip.width}

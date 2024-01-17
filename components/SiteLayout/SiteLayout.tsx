@@ -63,7 +63,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
             className="sm:hidden"
           />
           <NavbarBrand>
-            <Logo className="h-6 sm:h-10 md:h-12" />
+            <Logo className="h-8 sm:h-10 md:h-12 w-28 md:w-32" />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify="end">
@@ -121,10 +121,9 @@ export default function SiteLayout({children}: SiteLayoutProps) {
         <div className="w-full flex items-center justify-center">
           <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
             <div className="flex flex-col">
-              <div className="flex mt-24 mb-12 flex-row justify-between">
-                <div className="">
-                  <Logo />
-                </div>
+              <div className="flex mt-24 mb-12 flex-row justify-between items-center px-4">
+                <Logo className="h-8 sm:h-10 md:h-12 w-28" />
+
                 <div className="flex gap-6 flex-col lg:flex-row">
                   <Link
                     href="/"

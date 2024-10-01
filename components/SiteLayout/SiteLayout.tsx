@@ -11,7 +11,7 @@ import {
 } from '@nextui-org/navbar'
 import {useState} from 'react'
 import {Link} from '@nextui-org/link'
-import {usePathname} from 'next/navigation'
+import {usePathname, useParams} from 'next/navigation'
 import {Button} from '@nextui-org/button'
 import {Badge} from '@nextui-org/badge'
 import Logo from '@components/Logo'
@@ -22,14 +22,17 @@ export interface SiteLayoutProps {
 
 const NAV_LINKS = [
   {href: '/', label: 'Inicio'},
-
   {
-    href: '/#services',
+    href: '/services',
     label: 'Servicios',
   },
   {
     href: '/shop',
     label: 'Tienda',
+  },
+  {
+    href: '/about',
+    label: 'Sobre Nosotros',
   },
   {
     href: '/get-in-touch',
@@ -42,16 +45,18 @@ export default function SiteLayout({children}: SiteLayoutProps) {
 
   const pathname = usePathname()
 
+  const fullpath = useParams()
+
   return (
     <>
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
         isBlurred
         classNames={{
-          base: `bg-background-600 h-20 z-10 fixed top-0 ${
+          base: `bg-background-600 h-20 z-10 fixed top-0 transition-all duration-800 px-0 ease-in-out ${
             pathname === '/'
               ? ' lg:animate-[header-blur_linear_both_1ms] lg:backdrop-blur-md lg:[animation-range:0_1000px] lg:[animation-timeline:scroll()]'
-              : ''
+              : 'container mx-auto rounded-b-2xl shadow-lg px-6'
           }`,
           wrapper: 'max-w-screen-2xl mx-auto',
           menu: 'top-20',
@@ -66,7 +71,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
             <Logo className="h-8 sm:h-10 md:h-12 w-28 md:w-32" />
           </NavbarBrand>
         </NavbarContent>
-        <NavbarContent justify="end">
+        <NavbarContent justify="center">
           <div className="hidden sm:flex gap-10">
             {NAV_LINKS.map(({href, label}) => (
               <NavbarItem key={href} isActive={pathname === href}>
@@ -79,8 +84,11 @@ export default function SiteLayout({children}: SiteLayoutProps) {
               </NavbarItem>
             ))}
           </div>
+        </NavbarContent>
+
+        <NavbarContent justify="end">
           <NavbarItem className="ml-auto">
-            <Badge content="0" color="primary" variant="shadow">
+            <Badge content="0" color="primary" variant="solid">
               <Button
                 as={Link}
                 aria-label="Open cart"
@@ -88,6 +96,8 @@ export default function SiteLayout({children}: SiteLayoutProps) {
                 color="primary"
                 href="#"
                 variant="flat"
+                className="rounded-full"
+                size="lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -108,6 +118,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
               <Link
                 color={pathname === href ? 'primary' : 'foreground'}
                 href={href}
+                className="text-lg px-2 py-3"
               >
                 {label}
               </Link>
@@ -115,7 +126,15 @@ export default function SiteLayout({children}: SiteLayoutProps) {
           ))}
         </NavbarMenu>
       </Navbar>
-      <>{children}</>
+      <main
+        className={
+          pathname !== '/' && !NAV_LINKS.some(({href}) => pathname === href)
+            ? 'lg:mt-[80px]'
+            : ''
+        }
+      >
+        {children}
+      </main>
 
       <footer className="relative bg-background-600 pt-10 pb-6">
         <div className="w-full flex items-center justify-center">

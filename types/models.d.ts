@@ -33,3 +33,23 @@ declare interface Service extends BaseModel {
   price: number
   thumbnail: string | null
 }
+
+export interface ServiceOrder {
+  date?: string
+  order_id: string
+  status?:
+    | 'committed'
+    | 'finalized'
+    | 'in_progress'
+    | 'revision'
+    | 'no_approved'
+  statuses: Status[]
+}
+
+export interface Status {
+  value: string
+  label: string
+  current: boolean
+  pending: boolean
+  marked: boolean
+}

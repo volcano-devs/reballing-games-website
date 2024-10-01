@@ -110,6 +110,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div></div>
       {/* features section about reballing games technical service */}
       <div className="-mt-20 container mx-auto pb-20  px-6 sm:px-10 md:px-12">
         <section>

@@ -14,8 +14,8 @@ export default function NotFoundPage() {
 
   return (
     <Layout>
-      <main className="grid min-h-screen place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
-        <div className="container mx-auto flex items-center bg-gray-50 p-10 rounded-3xl lg:min-h-[70%]">
+      <main className="grid min-h-screen place-items-center bg-white px-6 sm:py-32 lg:px-8">
+        <div className="container mx-auto flex items-center bg-gray-50 p-10 rounded-3xl lg:min-h-[90%]">
           <div className="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-700">
             <div className="w-full lg:w-1/2 mx-8">
               <div className="text-7xl  font-dark font-extrabold mb-8">404</div>

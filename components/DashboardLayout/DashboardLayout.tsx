@@ -61,92 +61,65 @@ export default function DashboardLayout({children}: DashboardLayoutProps) {
   const pathname = usePathname()
 
   return (
-    <div className="h-screen bg-background-500 min-w-full max-w-none">
-      <div className="h-full lg:grid lg:grid-cols-[320px_1fr]">
-        <Navbar
-          classNames={{
-            base: 'h-20 lg:hidden border-b-1 border-gray-700 bg-background-500 backdrop-filter backdrop-blur-sm bg-opacity-60',
-            menu: 'top-20',
-          }}
-          onMenuOpenChange={setIsMenuOpen}
-        >
-          <NavbarContent className="text-white">
-            <NavbarMenuToggle
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            />
-            <NavbarBrand>
-              <Logo className="h-12 md:h-14 lg:h-20" />
-            </NavbarBrand>
-          </NavbarContent>
-          <NavbarContent justify="end">
-            <NavbarItem className="ml-auto">
-              <Avatar src="https://avatars.githubusercontent.com/u/36524241?v=4" />
-            </NavbarItem>
-          </NavbarContent>
-
-          <NavbarMenu className="gap-8 py-6" aria-label="Main navigation">
-            {NAV_LINKS.map(({href, label, icon}) => (
-              <NavbarMenuItem
-                key={href}
-                isActive={pathname === href}
-                aria-label={label}
-                onClick={() => {
-                  setIsMenuOpen(false)
-                  console.log('click')
-                }}
-              >
+    <div className="relative">
+      <Navbar
+        onMenuOpenChange={setIsMenuOpen}
+        isBlurred
+        classNames={{
+          base: `bg-background-600 h-20 z-10 fixed top-0 ${
+            pathname === '/'
+              ? ' lg:animate-[header-blur_linear_both_1ms] lg:backdrop-blur-md lg:[animation-range:0_1000px] lg:[animation-timeline:scroll()]'
+              : ''
+          }`,
+          wrapper: 'max-w-screen-2xl mx-auto',
+          menu: 'top-20',
+        }}
+      >
+        <NavbarContent className="flex-grow-0">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            className="sm:hidden"
+          />
+          <NavbarBrand>
+            <Logo className="h-8 sm:h-10 md:h-12 w-28 md:w-32" />
+          </NavbarBrand>
+        </NavbarContent>
+        <NavbarContent>
+          <div className="hidden sm:flex gap-10">
+            {NAV_LINKS.map(({href, icon, label}) => (
+              <NavbarItem key={href} isActive={pathname === href}>
                 <Link
                   color={pathname === href ? 'primary' : 'foreground'}
                   href={href}
-                  size="sm"
                 >
                   <div className="flex items-center gap-6">
                     {icon}
                     {label}
                   </div>
                 </Link>
-              </NavbarMenuItem>
+              </NavbarItem>
             ))}
-          </NavbarMenu>
-        </Navbar>
-        <div className="hidden h-screen lg:flex flex-col items-start gap-4">
-          <div className="p-6">
-            <Logo href="/dashboard/products" />
           </div>
-          <Listbox
-            aria-label="Main navigation"
-            aria-labelledby="main-navigation"
-            classNames={{
-              list: 'flex flex-col gap-1.5 p-4',
-            }}
-          >
-            {NAV_LINKS.map(({href, label, icon}) => (
-              <ListboxItem
-                key={href}
+          <NavbarItem className="ml-auto">
+            <Avatar src="/images/avatar.jpg" />
+          </NavbarItem>
+        </NavbarContent>
+
+        <NavbarMenu>
+          {NAV_LINKS.map(({href, label}) => (
+            <NavbarMenuItem key={href} isActive={pathname === href}>
+              <Link
+                color={pathname === href ? 'primary' : 'foreground'}
                 href={href}
-                aria-label={label}
-                variant={pathname === href ? 'solid' : 'flat'}
-                color="primary"
-                className={`w-full flex justify-start items-center gap-4 p-3.5 rounded-xl text-white ${
-                  pathname === href ? 'bg-red-600' : ''
-                }`}
-                startContent={icon}
               >
                 {label}
-              </ListboxItem>
-            ))}
-          </Listbox>
-          <div className="mt-auto p-4 w-full">
-            <Suspense fallback={<div>Loading...</div>}>
-              <UserCard />
-            </Suspense>
-          </div>
-        </div>
-        <div className="h-full lg:p-4 lg:pl-0">
-          <div className="bg-background-800 text-foreground lg:rounded-xl h-full">
-            {children}
-          </div>
-        </div>
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+      <div className="absolute top-16 inset-x-0 bg-background-500">
+        {children}
       </div>
     </div>
   )

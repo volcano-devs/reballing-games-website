@@ -1,4 +1,4 @@
-import ServiceDetailsSection from 'sections/site/service/ServiceDetails/ServiceDetails'
+import ServiceDetailsSection from 'sections/site/Services/ServiceDetails'
 import type {ServiceOrder} from 'types/models'
 
 interface ServiceDetailsPageProps {
@@ -17,8 +17,6 @@ async function getData(searchParams: SearchParams) {
     }
   }
 
-  console.log('searchParams', searchParams)
-
   const res = await fetch(
     `${process.env.NEXT_URL}/api/services/${searchParams.order}`,
     {
@@ -29,11 +27,7 @@ async function getData(searchParams: SearchParams) {
     },
   )
 
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data')
   }
 

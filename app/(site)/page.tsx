@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import consolesGroup from 'public/consolas-group.png'
 import chip from 'public/chip.png'
+import {ChevronRightIcon} from '@components/icons'
 
 const services = [
   {
@@ -99,8 +100,21 @@ export default function Home() {
 
             <div className="mt-10 flex w-full flex-col gap-x-4 gap-y-4 md:flex-row md:items-center">
               <Link href="/get-in-touch">
-                <Button color="primary" className="w-full md:w-auto py-6">
+                <Button
+                  color="primary"
+                  className="w-full md:w-auto py-6 rounded-2xl"
+                >
                   Realizar una consulta
+                </Button>
+              </Link>
+
+              <Link href="/shop">
+                <Button
+                  color="primary"
+                  className="w-full md:w-auto py-6 rounded-2xl"
+                  variant="ghost"
+                >
+                  Ver Productos <ChevronRightIcon />
                 </Button>
               </Link>
             </div>

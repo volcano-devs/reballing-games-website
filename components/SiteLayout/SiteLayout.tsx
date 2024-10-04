@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import {
   Navbar,
   NavbarBrand,
@@ -11,7 +12,7 @@ import {
 } from '@nextui-org/navbar'
 import {useState} from 'react'
 import {Link} from '@nextui-org/link'
-import {usePathname, useParams} from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import {Button} from '@nextui-org/button'
 import {Badge} from '@nextui-org/badge'
 import Logo from '@components/Logo'
@@ -31,10 +32,6 @@ const NAV_LINKS = [
     label: 'Tienda',
   },
   {
-    href: '/about',
-    label: 'Sobre Nosotros',
-  },
-  {
     href: '/get-in-touch',
     label: 'Contacto',
   },
@@ -45,7 +42,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
 
   const pathname = usePathname()
 
-  const fullpath = useParams()
+  console.log(pathname)
 
   return (
     <>
@@ -56,7 +53,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
           base: `bg-background-600 h-20 z-10 fixed top-0 transition-all duration-800 px-0 ease-in-out ${
             pathname === '/'
               ? ' lg:animate-[header-blur_linear_both_1ms] lg:backdrop-blur-md lg:[animation-range:0_1000px] lg:[animation-timeline:scroll()]'
-              : 'container mx-auto rounded-b-2xl shadow-lg px-6'
+              : 'md:container md:mx-auto md:rounded-b-2xl shadow-lg px-6'
           }`,
           wrapper: 'max-w-screen-2xl mx-auto',
           menu: 'top-20',
@@ -65,24 +62,28 @@ export default function SiteLayout({children}: SiteLayoutProps) {
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            className="sm:hidden"
+            className="lg:hidden"
           />
           <NavbarBrand>
             <Logo className="h-8 sm:h-10 md:h-12 w-28 md:w-32" />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify="center">
-          <div className="hidden sm:flex gap-10">
-            {NAV_LINKS.map(({href, label}) => (
-              <NavbarItem key={href} isActive={pathname === href}>
-                <Link
-                  color={pathname === href ? 'primary' : 'foreground'}
-                  href={href}
-                >
-                  {label}
-                </Link>
-              </NavbarItem>
-            ))}
+          <div className="hidden lg:flex gap-10">
+            {NAV_LINKS.map(({href, label}) => {
+              const isActive =
+                href === '/'
+                  ? pathname === href
+                  : pathname.startsWith(href) || pathname === href
+
+              return (
+                <NavbarItem key={href} isActive={isActive}>
+                  <Link color={isActive ? 'primary' : 'foreground'} href={href}>
+                    {label}
+                  </Link>
+                </NavbarItem>
+              )
+            })}
           </div>
         </NavbarContent>
 
@@ -116,7 +117,11 @@ export default function SiteLayout({children}: SiteLayoutProps) {
           {NAV_LINKS.map(({href, label}) => (
             <NavbarMenuItem key={href} isActive={pathname === href}>
               <Link
-                color={pathname === href ? 'primary' : 'foreground'}
+                color={
+                  pathname === href || href.includes(pathname)
+                    ? 'primary'
+                    : 'foreground'
+                }
                 href={href}
                 className="text-lg px-2 py-3"
               >

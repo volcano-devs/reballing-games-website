@@ -6,19 +6,28 @@ declare interface BaseModel {
 
 declare interface Product extends BaseModel {
   name: string
+  slug: string
   description: string | null
   price: number
-  thumbnail: string | null
-  category_id: number
+  stock: number
+  tags: Tag[]
+  category: Category
+  media: Media[]
 }
 
 declare interface Category extends BaseModel {
-  description: string | null
-  display_type: string
   name: string
-  parent_id: string | null
+  description: string | null
   slug: string
-  thumbnail: string | null
+  parent: Category | null
+  sub_categories: Category[]
+}
+
+declare interface Media extends BaseModel {
+  name: string | null
+  preview_url: string | null
+  original_url: string | null
+  extension: string
 }
 
 declare interface Tag extends BaseModel {

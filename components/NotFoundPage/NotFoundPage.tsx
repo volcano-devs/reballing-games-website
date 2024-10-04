@@ -1,6 +1,5 @@
 'use client'
 
-import DashboardLayout from '@components/DashboardLayout'
 import SiteLayout from '@components/SiteLayout'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
@@ -8,12 +7,8 @@ import {usePathname} from 'next/navigation'
 export default function NotFoundPage() {
   const pathname = usePathname()
 
-  const Layout = pathname.startsWith('/dashboard')
-    ? DashboardLayout
-    : SiteLayout
-
   return (
-    <Layout>
+    <SiteLayout>
       <main className="grid min-h-screen place-items-center bg-white px-6 sm:py-32 lg:px-8">
         <div className="container mx-auto flex items-center bg-gray-50 p-10 rounded-3xl lg:min-h-[90%]">
           <div className="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-700">
@@ -348,6 +343,6 @@ export default function NotFoundPage() {
           </div>
         </div>
       </main>
-    </Layout>
+    </SiteLayout>
   )
 }

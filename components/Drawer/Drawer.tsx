@@ -19,10 +19,10 @@ export default function CustomDrawer({...props}: CustomDrawerProps) {
       isOpen={props.isOpen}
       onOpenChange={props.onOpenChange}
       placement="center"
-      backdrop="opaque"
       size="full"
       classNames={{
         wrapper: 'flex justify-end',
+        backdrop: 'bg-black bg-opacity-30',
       }}
       motionProps={{
         variants: {
@@ -30,7 +30,7 @@ export default function CustomDrawer({...props}: CustomDrawerProps) {
             x: 0,
             opacity: 1,
             transition: {
-              duration: 0.3,
+              duration: 0.1,
               ease: 'easeOut',
             },
           },
@@ -38,15 +38,17 @@ export default function CustomDrawer({...props}: CustomDrawerProps) {
             x: 50,
             opacity: 0,
             transition: {
-              duration: 0.2,
+              duration: 0.1,
               ease: 'easeIn',
             },
           },
         },
       }}
-      className="max-w-md  w-full rounded-2xl h-[calc(100dvh)] max-h-screen"
+      className="max-w-lg w-full rounded-2xl h-[calc(100dvh)] max-h-screen"
     >
-      <ModalContent>{(onClose) => <>{props.children}</>}</ModalContent>
+      <ModalContent className="z-50">
+        {(onClose) => <>{props.children}</>}
+      </ModalContent>
     </Modal>
   )
 }

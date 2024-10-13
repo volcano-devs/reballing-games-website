@@ -3,11 +3,11 @@ import {nextui} from '@nextui-org/theme'
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './sections/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|breadcrumbs|button|card|chip|input|link|listbox|navbar|pagination|table|user|ripple|spinner|divider|checkbox|spacer).js',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./sections/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/components/(avatar|badge|breadcrumbs|button|card|chip|divider|input|link|listbox|modal|navbar|pagination|table|user|ripple|spinner|checkbox|spacer).js"
   ],
   theme: {
     extend: {
@@ -23,7 +23,7 @@ const config = {
     nextui({
       themes: {
         'red-dark': {
-          extend: 'dark',
+          extend: 'light',
           colors: {
             background: {
               DEFAULT: '#010A18',
@@ -38,7 +38,7 @@ const config = {
               800: '#010A18',
               900: '#00060F',
             },
-            foreground: '#ffffff',
+            foreground: '#52525B',
             primary: {
               50: '#F8CAD2',
               100: '#F6B8C2',

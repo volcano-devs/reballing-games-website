@@ -3,11 +3,11 @@ import {nextui} from '@nextui-org/theme'
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./sections/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(avatar|badge|breadcrumbs|button|card|chip|divider|input|link|listbox|modal|navbar|pagination|table|user|ripple|spinner|checkbox|spacer).js"
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './sections/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|breadcrumbs|button|card|chip|divider|input|link|listbox|modal|navbar|pagination|table|user|ripple|spinner|checkbox|spacer).js',
   ],
   theme: {
     extend: {

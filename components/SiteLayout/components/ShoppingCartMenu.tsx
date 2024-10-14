@@ -12,6 +12,7 @@ import {useStore} from '@tanstack/react-store'
 import {shoppingCart} from '@app/store/shopping-cart'
 import {ProductCard} from 'sections/site/Products/components'
 import {usePathname, useRouter} from 'next/navigation'
+import Image from 'next/image'
 
 export interface ShoppingCartMenuProps {}
 
@@ -25,13 +26,13 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
 
   React.useEffect(() => {
     getBestSellers()
-  }, [])
+  }, []) // eslint-disable-line
 
   React.useEffect(() => {
     if (isOpen) {
       onOpenChange()
     }
-  }, [pathname])
+  }, [pathname]) // eslint-disable-line
 
   return (
     <>
@@ -89,7 +90,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
                   {bestSellers.map((product) => (
-                    <ProductCard product={product} size="sm" />
+                    <ProductCard key={product.id} product={product} size="sm" />
                   ))}
                 </div>
               </div>
@@ -99,14 +100,17 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
               <div className="flex flex-col gap-3">
                 {cart.map((product, i) => (
                   <div
+                    key={product.id}
                     className={`flex py-6 w-full gap-4 ${
                       i === cart.length - 1 ? '' : 'border-b border-gray-100'
                     }`}
                   >
                     <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-neutral-100">
-                      <img
+                      <Image
                         src={product.imageUrl}
                         alt={product.name}
+                        height={96}
+                        width={80}
                         className="absolute inset-0 object-cover rounded w-full h-full aspect-square"
                       />
                     </div>

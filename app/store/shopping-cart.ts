@@ -1,3 +1,5 @@
+'use client'
+
 import {Store} from '@tanstack/react-store'
 import {Product} from 'types/models'
 

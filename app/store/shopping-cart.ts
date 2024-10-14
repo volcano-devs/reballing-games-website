@@ -1,7 +1,7 @@
 'use client'
 
 import {Store} from '@tanstack/react-store'
-import {Product} from 'types/models'
+import {Product, ProductVariant} from 'types/models'
 
 type Item = Omit<
   Product,
@@ -12,9 +12,11 @@ type Item = Omit<
   | 'category'
   | 'created_at'
   | 'updated_at'
+  | 'variants'
 > & {
   quantity: number
   imageUrl: string
+  variant?: Omit<ProductVariant, 'media' | 'created_at' | 'updated_at'>
 }
 
 export const shoppingCart = new Store({
@@ -34,7 +36,7 @@ export const shoppingCart = new Store({
     }
   },
 
-  addItem(product: Product, quantity: number) {
+  addItem(product: Product, quantity: number, variant: ProductVariant) {
     shoppingCart.setState((state) => {
       const item = state.cart.find((item) => item.id === product.id)
 
@@ -48,6 +50,7 @@ export const shoppingCart = new Store({
           imageUrl: product.media[0]?.original_url || '',
           name: product.name,
           slug: product.slug,
+          variant: variant,
         })
       }
 

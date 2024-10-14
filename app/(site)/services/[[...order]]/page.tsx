@@ -39,6 +39,8 @@ export default async function ServicesPage({
 }: ServiceDetailsPageProps) {
   const {data: service}: {data: ServiceOrder} = await getData(searchParams)
 
+  console.log(service)
+
   return (
     <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col justify-center gap-2">
       <div className="flex flex-col gap-12 text-center max-w-sm mx-auto px-6 md:px-0">

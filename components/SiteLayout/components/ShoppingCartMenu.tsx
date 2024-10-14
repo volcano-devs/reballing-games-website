@@ -57,7 +57,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
       </Badge>
 
       <CustomDrawer isOpen={isOpen} onOpenChange={onOpenChange}>
-        <div className="flex flex-col p-8 h-screen">
+        <div className="flex flex-col p-8 h-screen overflow-y-scroll">
           <h3 className="text-xl font-semibold">
             Lista de compras
             <span className="text-sm font-semibold text-gray-900 ml-1">
@@ -88,7 +88,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
                   Productos Mas Vendidos
                 </h4>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 overflow-y-scroll">
                   {bestSellers.map((product) => (
                     <ProductCard key={product.id} product={product} size="sm" />
                   ))}
@@ -165,7 +165,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
                     className="rounded-3xl p-7 flex-1"
                     onClick={() => onOpenChange()}
                   >
-                    <LeftArrowIcon />
+                    <LeftArrowIcon className="hidden md:block" />
                     Continuar comprando
                   </Button>
 

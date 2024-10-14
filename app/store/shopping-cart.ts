@@ -18,9 +18,7 @@ type Item = Omit<
 }
 
 export const shoppingCart = new Store({
-  cart: (localStorage.getItem('cart')
-    ? JSON.parse(localStorage.getItem('cart')!)
-    : []) as Item[],
+  cart: [] as Item[],
   bestSellers: [] as Product[],
   getBestSellers: async () => {
     const response = await fetch('/api/products')

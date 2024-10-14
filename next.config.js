@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: 'cms-reballing-games.s3.amazonaws.com',
         pathname: '**/*',
       },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        pathname: '**/*',
+      },
     ],
   },
 }

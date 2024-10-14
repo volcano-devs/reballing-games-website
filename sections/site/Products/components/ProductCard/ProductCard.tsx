@@ -6,6 +6,7 @@ import {ChevronRightIcon, ShoppingBagIcon} from '@components/icons'
 import {useRouter} from 'next/navigation'
 import {shoppingCart} from '@app/store/shopping-cart'
 import {useStore} from '@tanstack/react-store'
+import Image from 'next/image'
 
 interface ProductCardProps {
   product: Product
@@ -43,9 +44,13 @@ export default function ProductCard({product, size = 'lg'}: ProductCardProps) {
         className={`relative group overflow-hidden w-full ${sizeClasses.image[size]} bg-gray-200 rounded-3xl`}
       >
         <div className={`overflow-hidden w-full h-full bg-gray-200`}>
-          <img
-            src={product.media[0]?.original_url || ''}
+          <Image
+            src={
+              product.media[0]?.original_url || 'https://placehold.co/800x800'
+            }
             alt={product.name}
+            width={640}
+            height={640}
             className="h-full w-full object-cover object-center"
           />
         </div>

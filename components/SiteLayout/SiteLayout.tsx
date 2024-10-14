@@ -16,6 +16,8 @@ import {usePathname} from 'next/navigation'
 import {Button} from '@nextui-org/button'
 import {Badge} from '@nextui-org/badge'
 import Logo from '@components/Logo'
+import {ShoppingBagIcon} from '@components/icons'
+import ShoppingCartMenu from './components/ShoppingCartMenu'
 
 export interface SiteLayoutProps {
   children: React.ReactNode
@@ -42,7 +44,9 @@ export default function SiteLayout({children}: SiteLayoutProps) {
 
   const pathname = usePathname()
 
-  console.log(pathname)
+  React.useLayoutEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   return (
     <>
@@ -53,7 +57,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
           base: `bg-background-600 h-20 z-10 fixed top-0 transition-all duration-800 px-0 ease-in-out ${
             pathname === '/'
               ? ' lg:animate-[header-blur_linear_both_1ms] lg:backdrop-blur-md lg:[animation-range:0_1000px] lg:[animation-timeline:scroll()]'
-              : 'md:container md:mx-auto md:rounded-b-2xl shadow-lg px-6'
+              : ''
           }`,
           wrapper: 'max-w-screen-2xl mx-auto',
           menu: 'top-20',
@@ -78,7 +82,10 @@ export default function SiteLayout({children}: SiteLayoutProps) {
 
               return (
                 <NavbarItem key={href} isActive={isActive}>
-                  <Link color={isActive ? 'primary' : 'foreground'} href={href}>
+                  <Link
+                    href={href}
+                    className={`${isActive ? 'text-primary' : 'text-white'}`}
+                  >
                     {label}
                   </Link>
                 </NavbarItem>
@@ -89,90 +96,58 @@ export default function SiteLayout({children}: SiteLayoutProps) {
 
         <NavbarContent justify="end">
           <NavbarItem className="ml-auto">
-            <Badge content="0" color="primary" variant="solid">
-              <Button
-                as={Link}
-                aria-label="Open cart"
-                isIconOnly
-                color="primary"
-                href="#"
-                variant="flat"
-                className="rounded-full"
-                size="lg"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 448 512"
-                  fill="currentColor"
-                >
-                  <path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
-                </svg>
-              </Button>
-            </Badge>
+            <ShoppingCartMenu />
           </NavbarItem>
         </NavbarContent>
 
         <NavbarMenu>
-          {NAV_LINKS.map(({href, label}) => (
-            <NavbarMenuItem key={href} isActive={pathname === href}>
-              <Link
-                color={
-                  pathname === href || href.includes(pathname)
-                    ? 'primary'
-                    : 'foreground'
-                }
-                href={href}
-                className="text-lg px-2 py-3"
-              >
-                {label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
+          {NAV_LINKS.map(({href, label}) => {
+            const isActive =
+              href === '/'
+                ? pathname === href
+                : pathname.startsWith(href) || pathname === href
+            return (
+              <NavbarMenuItem key={href} isActive={pathname === href}>
+                <Link
+                  className={`text-lg px-2 py-3 ${
+                    isActive ? 'text-primary' : 'text-white'
+                  }`}
+                  href={href}
+                >
+                  {label}
+                </Link>
+              </NavbarMenuItem>
+            )
+          })}
         </NavbarMenu>
       </Navbar>
       <main
-        className={
+        className={`${
           pathname !== '/' && !NAV_LINKS.some(({href}) => pathname === href)
             ? 'lg:mt-[80px]'
             : ''
-        }
+        } min-h-[calc(100vh-370px)]`}
       >
         {children}
       </main>
 
       <footer className="relative bg-background-600 pt-10 pb-6">
         <div className="w-full flex items-center justify-center">
-          <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
+          <div className="md:container w-full px-4 text-white flex flex-col">
             <div className="flex flex-col">
               <div className="flex mt-24 mb-12 flex-row justify-between items-center px-4">
                 <Logo className="h-8 sm:h-10 md:h-12 w-28" />
 
-                <div className="flex gap-6 flex-col lg:flex-row">
-                  <Link
-                    href="/"
-                    className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase"
-                  >
-                    Inicio
-                  </Link>
-                  <Link
-                    href="/#services"
-                    className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase"
-                  >
-                    Servicios
-                  </Link>
-                  <Link
-                    href="shop"
-                    className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase"
-                  >
-                    Tienda
-                  </Link>
-                  <Link
-                    href="get-in-touch"
-                    className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase"
-                  >
-                    Contacto
-                  </Link>
+                <div className="flex gap-4 lg:gap-10">
+                  {NAV_LINKS.map(({href, label}) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="hidden md:block text-sm lg:text-md cursor-pointer text-gray-400 hover:text-white uppercase"
+                    >
+                      {label}
+                    </Link>
+                  ))}
                 </div>
                 <div className="flex flex-row space-x-8 items-center justify-between">
                   <a
@@ -221,8 +196,8 @@ export default function SiteLayout({children}: SiteLayoutProps) {
                   </a>
                 </div>
               </div>
-              <hr className="border-gray-600" />
-              <p className="w-full text-center my-12 text-gray-600">
+              <hr className="border-background-400" />
+              <p className="w-full text-center my-12 text-gray-400">
                 Copyright © 2024 Reballing Games
               </p>
             </div>

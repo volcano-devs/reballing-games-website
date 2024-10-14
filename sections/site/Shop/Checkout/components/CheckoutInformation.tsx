@@ -11,8 +11,12 @@ export interface CheckoutInfoProps {}
 export default function CheckoutInfo(props: CheckoutInfoProps) {
   const {cart} = useStore(shoppingCart)
 
+  if (cart.length === 0) {
+    return null
+  }
+
   return (
-    <div className="lg:pl-16 lg:min-w-[570px]">
+    <div className="lg:pl-16 lg:min-w-[570px] border-t-px border-t-gray-200 lg:border-t-0">
       <div className="mb-14">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">
           Información de envío
@@ -48,7 +52,7 @@ export default function CheckoutInfo(props: CheckoutInfoProps) {
           />
         </form>
       </div>
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between mb-2 border-t-px border-t-gray-300 lg:border-t-0">
         <span className="text-lg font-semibold text-gray-900">Subtotal</span>
 
         <span className="text-lg font-semibold text-gray-900">

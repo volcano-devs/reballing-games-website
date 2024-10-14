@@ -1,6 +1,7 @@
 'use client'
 
 import {shoppingCart} from '@app/store/shopping-cart'
+import {ShoppingBagIcon} from '@components/icons'
 import {Button} from '@nextui-org/button'
 import {useStore} from '@tanstack/react-store'
 import {useRouter} from 'next/navigation'
@@ -9,12 +10,33 @@ import * as React from 'react'
 export interface CheckoutProductListProps {}
 
 export default function CheckoutProductList(props: CheckoutProductListProps) {
-  const {cart, bestSellers, getBestSellers, removeItem} = useStore(shoppingCart)
+  const {cart, removeItem} = useStore(shoppingCart)
 
-  const {refresh} = useRouter()
+  const {refresh, push} = useRouter()
 
   return (
     <div className="flex flex-col gap-8 flex-1 lg:border-r border-gray-200 lg:pr-16">
+      {cart.length === 0 && (
+        <div className="flex flex-col gap-4 items-center justify-center">
+          <h3 className="text-2xl font-semibold text-center text-gray-900">
+            No hay productos en tu carrito de compras aún 🛒
+          </h3>
+
+          <Button
+            variant="solid"
+            color="primary"
+            size="lg"
+            className="mt-4"
+            onClick={() => {
+              push('/shop')
+            }}
+          >
+            <ShoppingBagIcon />
+            Ir a la tienda
+          </Button>
+        </div>
+      )}
+
       {cart.map((product, i) => (
         <div
           className={`flex w-full gap-4 ${

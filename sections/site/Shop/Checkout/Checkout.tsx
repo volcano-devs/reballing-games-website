@@ -27,9 +27,9 @@ export default function Checkout(props: CheckoutProps) {
         />
       </div>
 
-      <Divider className="mb-4 mt-16 bg-gray-200" />
+      <Divider className="mb-4 mt-6 md:mt-16 bg-gray-200" />
 
-      <div className="flex flex-col lg:flex-row items-stretch w-full gap-10 lg:gap-0 pt-12">
+      <div className="flex flex-col lg:flex-row items-stretch w-full gap-10 lg:gap-0 pt-4 md:pt-12">
         <CheckoutProductList />
         <CheckoutInfo />
       </div>

@@ -2,8 +2,8 @@ import React from 'react'
 import {Button} from '@nextui-org/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import consolesGroup from 'public/consolas-group.png'
-import chip from 'public/chip.png'
+import consolesGroup from 'public/assets/images/consolas-group.png'
+import chip from 'public/assets/images/chip.png'
 import {ChevronRightIcon} from '@components/icons'
 
 const services = [

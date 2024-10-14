@@ -42,13 +42,11 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
         variant="solid"
       >
         <Button
-          as={Link}
           aria-label="Open cart"
           isIconOnly
           color="primary"
-          href="#"
           variant="solid"
-          className="rounded-full text-base p-2"
+          className="rounded-full text-base p-2 w-max"
           size="lg"
           onClick={() => onOpenChange()}
         >
@@ -121,7 +119,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
                           {product.name}
                         </h4>
 
-                        <span className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium text-green-500">
+                        <span className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium text-green-500 h-max">
                           ${product.price}
                         </span>
                       </div>

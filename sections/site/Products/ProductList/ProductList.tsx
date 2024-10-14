@@ -47,7 +47,6 @@ export default function ProductListSectionPage({
             <span className="text-sm text-gray-700 dark:text-gray-400 ml-2 tracking-normal font-semibold">
               {'('}
               {products.length}
-              {' Result'}
               {products.length === 1 && 's'})
             </span>
           </h1>

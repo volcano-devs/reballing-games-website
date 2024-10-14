@@ -14,7 +14,7 @@ export interface BreadcrumbsProps {
 
 export default function Breadcrumbs(props: BreadcrumbsProps) {
   return (
-    <BreadcrumbsBase size="lg" className="mb-10">
+    <BreadcrumbsBase size="lg" className="mb-2">
       {props.items.map((item, i) => (
         <BreadcrumbItem key={i} href={item.href}>
           {item.label}

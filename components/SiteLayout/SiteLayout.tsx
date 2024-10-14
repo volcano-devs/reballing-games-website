@@ -96,7 +96,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
         </NavbarContent>
 
         <NavbarContent justify="end">
-          <NavbarItem className="ml-auto">
+          <NavbarItem>
             <ShoppingCartMenu />
           </NavbarItem>
         </NavbarContent>

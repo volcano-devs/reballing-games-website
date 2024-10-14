@@ -61,7 +61,7 @@ export default function ProductForm({product}: ProductFormProps) {
           color="primary"
           className="w-full flex-1 px-10 py-4 md:py-6"
           onClick={() => {
-            addItem(product, quantity)
+            addItem(product, quantity, product.variants[0])
             setQuantity(1)
             refresh()
           }}

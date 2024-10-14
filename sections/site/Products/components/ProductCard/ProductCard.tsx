@@ -77,15 +77,17 @@ export default function ProductCard({product, size = 'lg'}: ProductCardProps) {
       </div>
       <div className="mt-6 flex justify-between pb-4">
         <div className="w-full">
-          <div className="flex gap-2 mb-4">
-            {product.variants.map((variant, i) => (
-              <div
-                key={i}
-                style={{background: variant.color}}
-                className={`flex items-center justify-center w-4 h-4 rounded-full`}
-              />
-            ))}
-          </div>
+          {product.variants && (
+            <div className="flex gap-2 mb-4">
+              {product.variants?.map((variant, i) => (
+                <div
+                  key={i}
+                  style={{background: variant.color}}
+                  className={`flex items-center justify-center w-4 h-4 rounded-full`}
+                />
+              ))}
+            </div>
+          )}
           <div className="flex justify-between text-sm w-full">
             <span className={`${sizeClasses.title[size]} font-semibold`}>
               {product.name}

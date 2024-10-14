@@ -3,7 +3,6 @@ import * as React from 'react'
 import type {Product} from 'types/models'
 import ProductForm from './components/ProductForm'
 import Image from 'next/image'
-import {Divider} from '@nextui-org/divider'
 
 export interface ProductDetailsProps {
   product: Product
@@ -31,7 +30,7 @@ export default function ProductDetails({product}: ProductDetailsProps) {
           <div className="flex mt-4 gap-4 w-full overflow-x-auto">
             {[
               ...product.media,
-              ...product.variants.reduce(
+              ...product.variants?.reduce(
                 (acc, variant) => [...acc, ...variant.media],
                 [] as Product['media'],
               ),

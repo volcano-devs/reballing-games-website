@@ -40,7 +40,7 @@ export default async function ServicesPage({
   const {data: service}: {data: ServiceOrder} = await getData(searchParams)
 
   return (
-    <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col justify-center gap-2">
+    <div className="container min-h-[80vh] px-8 md:px-0 mx-auto mt-20 flex flex-col justify-center gap-2">
       <div className="flex flex-col gap-10 text-center max-w-[540px] mx-auto">
         <div className="flex flex-col gap-2">
           <h1

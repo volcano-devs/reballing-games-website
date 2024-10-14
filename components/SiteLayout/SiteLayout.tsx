@@ -44,14 +44,15 @@ export default function SiteLayout({children}: SiteLayoutProps) {
 
   const pathname = usePathname()
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     setIsMenuOpen(false)
-  }, [pathname])
+  }, [pathname, setIsMenuOpen])
 
   return (
     <>
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
+        isMenuOpen={isMenuOpen}
         isBlurred
         classNames={{
           base: `bg-background-600 h-20 z-10 fixed top-0 transition-all duration-800 px-0 ease-in-out ${
@@ -107,12 +108,17 @@ export default function SiteLayout({children}: SiteLayoutProps) {
                 ? pathname === href
                 : pathname.startsWith(href) || pathname === href
             return (
-              <NavbarMenuItem key={href} isActive={pathname === href}>
+              <NavbarMenuItem
+                key={href}
+                isActive={pathname === href}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 <Link
-                  className={`text-lg px-2 py-3 ${
+                  href={href}
+                  className={`text-lg text-center px-2 bg-transparent w-full py-10 ${
                     isActive ? 'text-primary' : 'text-white'
                   }`}
-                  href={href}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {label}
                 </Link>

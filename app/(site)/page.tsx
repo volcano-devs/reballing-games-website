@@ -86,7 +86,7 @@ const services = [
 export default function Home() {
   return (
     <div className="relative">
-      <div className="text-white bg-hero static top-0">
+      <div className="text-white bg-hero static top-0 mt-10 md:mt-0">
         <div
           className="container mx-auto flex w-full flex-col
       justify-center gap-20 xl:flex-row min-h-screen lg:min-h-[1080px]"

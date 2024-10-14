@@ -39,7 +39,7 @@ export default function ProductListSectionPage({
   }, [category])
 
   return (
-    <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col gap-2 text-black py-16 px-4">
+    <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col gap-2 text-black py-8 md:py-16 px-4">
       <div className="flex gap-4 justify-between text-center items-center pb-16 px-6">
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl w-max font-bold text-gray-700 tracking-tighter">
@@ -87,7 +87,7 @@ export default function ProductListSectionPage({
     /> */}
       </div>
 
-      <div className="grid grid-cols-1 gap-8 xl:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-10">
+      <div className="grid grid-cols-1 gap-8 xl:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-8 md:pb-10 px-4 md:px-0">
         {products.map((_, i) => (
           <ProductCard key={i} product={products[i]} />
         ))}

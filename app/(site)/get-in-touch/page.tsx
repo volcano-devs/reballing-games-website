@@ -19,7 +19,7 @@ export default function GetInTouch() {
         <div className=" px-6 py-12">
           <div className="lg:flex lg:items-center lg:-mx-6 justify-center gap-10">
             <div className="lg:w-2/6">
-              <h1 className="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
+              <h1 className="text-2xl text-center md:text-left font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
                 Contáctenos para <br /> más información.
               </h1>
 
@@ -140,7 +140,7 @@ export default function GetInTouch() {
             </div>
 
             <div className="mt-8 lg:w-2/5 ">
-              <div className="w-full px-12 py-14 overflow-hidden bg-white rounded-2xl shadow-xl dark:bg-gray-900 lg:max-w-xl shadow-gray-300/60 dark:shadow-black/50">
+              <div className="w-full md:px-12 pt-6 md:pt-0 md:py-14 overflow-hidden md:bg-white md:rounded-2xl md:shadow-xl md:dark:bg-gray-900 lg:max-w-xl md:shadow-gray-300/60 md:dark:shadow-black/50">
                 <h1 className="text-lg font-medium text-gray-700">
                   Qué podemos hacer por ti?
                 </h1>

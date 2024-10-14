@@ -2,6 +2,7 @@ import Breadcrumbs from '@components/Breadcrumbs'
 import * as React from 'react'
 import type {Product} from 'types/models'
 import ProductForm from './components/ProductForm'
+import Image from 'next/image'
 
 export interface ProductDetailsProps {
   product: Product
@@ -9,7 +10,7 @@ export interface ProductDetailsProps {
 
 export default function ProductDetails({product}: ProductDetailsProps) {
   return (
-    <div className="container my-36 mx-auto p-8 bg-white">
+    <div className="container my-20 lg:my-32 mx-auto p-8 bg-white">
       <Breadcrumbs
         items={[
           {
@@ -27,12 +28,16 @@ export default function ProductDetails({product}: ProductDetailsProps) {
         ]}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
         <div>
-          <div className="w-full h-1/2  md:h-[680px] bg-gray-100 rounded-3xl overflow-hidden">
-            <img
-              src={product.media[0].original_url ?? ''}
+          <div className="w-full h-[280px] md:h-[680px] bg-gray-100 rounded-xl md:rounded-3xl overflow-hidden">
+            <Image
+              src={
+                product.media[0].original_url ?? 'https://placehold.co/800x800'
+              }
               alt={product.name}
+              width={800}
+              height={800}
               className="w-full h-full object-cover"
             />
           </div>

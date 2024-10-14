@@ -1,49 +1,91 @@
-import {Button} from '@nextui-org/button'
+'use client'
 import {Product} from 'types/models'
+import {Chip} from '@nextui-org/chip'
+import {Button} from '@nextui-org/button'
+import {ChevronRightIcon, ShoppingBagIcon} from '@components/icons'
+import {useRouter} from 'next/navigation'
+import {shoppingCart} from '@app/store/shopping-cart'
+import {useStore} from '@tanstack/react-store'
 
-export default function ProductCard({product}: {product: Product}) {
+interface ProductCardProps {
+  product: Product
+  size?: 'sm' | 'md' | 'lg'
+}
+
+export default function ProductCard({product, size = 'lg'}: ProductCardProps) {
+  const {push, refresh} = useRouter()
+
+  const {addItem} = useStore(shoppingCart)
+
+  const sizeClasses = {
+    image: {
+      sm: 'h-[190px]',
+      md: 'h-[300px]',
+      lg: 'h-[350px]',
+    },
+    title: {
+      sm: 'text-base',
+      md: 'text-sm',
+      lg: 'text-lg',
+    },
+    category: {
+      sm: 'text-xs',
+      md: 'text-xs',
+      lg: 'text-sm',
+    },
+  }
   return (
-    <div className="cursor-pointer p-4 rounded-2xl border border-gray-200">
-      <div className="overflow-hidden w-full bg-gray-200 group-hover:opacity-80 rounded-2xl">
-        <img
-          src={product.media[0]?.original_url || ''}
-          alt={product.name}
-          className="h-full w-full object-cover object-center"
-        />
+    <div
+      className="relative cursor-pointer lg:max-w-[340px]"
+      onClick={() => push(`/products/${product.slug}`)}
+    >
+      <div
+        className={`relative group overflow-hidden w-full ${sizeClasses.image[size]} bg-gray-200 rounded-3xl`}
+      >
+        <div className={`overflow-hidden w-full h-full bg-gray-200`}>
+          <img
+            src={product.media[0]?.original_url || ''}
+            alt={product.name}
+            className="h-full w-full object-cover object-center"
+          />
+        </div>
+        <div
+          className="z-50 absolute bottom-0 left-0 w-full overflow-hidden h-[40%]  flex items-end pb-8 px-4 justify-center
+          transition-transform duration-[500ms] ease
+          transform translate-y-full group-hover:translate-y-0
+          bg-gradient-to-t from-gray-800 to-transparent rounded-3xl
+        "
+        >
+          <Button
+            color="primary"
+            variant="shadow"
+            className="w-max z-50 text-white text-sm rounded-xl"
+            onClick={() => {
+              addItem(product, 1)
+              refresh()
+            }}
+          >
+            <ShoppingBagIcon />
+            Agregar al carrito
+          </Button>
+        </div>
       </div>
-      <div className="mt-4 flex justify-between pb-4">
+      <div className="mt-8 flex justify-between pb-4">
         <div>
           <h3 className="text-sm text-gray-700">
-            <span className="text-md font-semibold">
-              <span aria-hidden="true" className="absolute inset-0"></span>
+            <span className={`${sizeClasses.title[size]} font-semibold `}>
               {product.name}
             </span>
           </h3>
-          <p className="mt-1 text-sm text-gray-500">{product.category.name}</p>
+          <p className={`mb-4 ${sizeClasses.category[size]} text-gray-500`}>
+            {product.category.name}
+          </p>
         </div>
-        <p className="text-sm font-medium text-gray-900">{`$${Number(
-          product.price,
-        ).toFixed(2)}`}</p>
-      </div>
 
-      <div className="flex gap-2">
-        <Button
-          color="secondary"
-          variant="bordered"
-          className="w-full mt-4 text-gray-700 border-gray-200 border hover:border-primary-50 hover:bg-primary hover:text-white hover:shadow-lg
-        transition-background  duration-500 ease-in-out"
-        >
-          Agregar al Carrito
-        </Button>
-
-        <Button
-          color="primary"
-          variant="shadow"
-          className="w-full mt-4 text-white hover:border-primary-50 hover:bg-primary hover:text-white hover:shadow-lg
-        transition-background  duration-500 ease-in-out"
-        >
-          Comprar Ahora
-        </Button>
+        <Chip
+          variant="solid"
+          className="text-sm font-medium text-green-800 bg-green-200"
+        >{`$${Number(product.price).toFixed(2)}`}</Chip>
       </div>
     </div>
   )

@@ -13,6 +13,15 @@ declare interface Product extends BaseModel {
   tags: Tag[]
   category: Category
   media: Media[]
+  variants: ProductVariant[]
+}
+
+declare interface ProductVariant extends BaseModel {
+  name: string
+  price: number
+  stock: number
+  color: string
+  media: Media[]
 }
 
 declare interface Category extends BaseModel {

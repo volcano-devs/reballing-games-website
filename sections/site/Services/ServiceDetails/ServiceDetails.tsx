@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import {Button} from '@nextui-org/button'
 import {Input} from '@nextui-org/input'
@@ -11,7 +9,6 @@ import {
   CircleExclamationIcon,
 } from '@components/icons'
 import {Divider} from '@nextui-org/divider'
-import {Link} from '@nextui-org/link'
 import ReballingGamesIcon from '@app/favicon.ico'
 import Image from 'next/image'
 import {Chip, ChipProps} from '@nextui-org/chip'
@@ -62,15 +59,17 @@ export default function ServiceDetailsSection({
 }: ServiceDetailsSectionProps) {
   // const [serviceOrder, setServiceOrder] = useState(service)
 
-  const {push} = useRouter()
+  // const {push} = useRouter()
 
   return (
     <>
       <form
-        onSubmit={(e: BaseSyntheticEvent) => {
-          e.preventDefault()
-          push(`/services?order=${e.target.order.value}`)
-        }}
+        // onSubmit={(e: BaseSyntheticEvent) => {
+        //   e.preventDefault()
+        //   push(`/services?order=${e.target.order.value}`)
+        // }}
+        method="get"
+        action={`/services?order=${service?.order_id}`}
       >
         <Input
           type="text"

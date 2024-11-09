@@ -9,8 +9,6 @@ export interface ProductDetailsProps {
 }
 
 export default function ProductDetails({product}: ProductDetailsProps) {
-  console.log(product)
-
   return (
     <div className="container my-20 lg:my-32 mx-auto p-8 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">

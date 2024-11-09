@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import {Button} from '@nextui-org/button'
 import {Input} from '@nextui-org/input'
@@ -57,20 +58,16 @@ export default function ServiceDetailsSection({
   service,
   currentServiceId,
 }: ServiceDetailsSectionProps) {
-  // const [serviceOrder, setServiceOrder] = useState(service)
+  const [order, setOrder] = useState({
+    ...service,
+    order_id: service?.order_id ?? currentServiceId,
+  })
 
-  // const {push} = useRouter()
+  const router = useRouter()
 
   return (
     <>
-      <form
-        // onSubmit={(e: BaseSyntheticEvent) => {
-        //   e.preventDefault()
-        //   push(`/services?order=${e.target.order.value}`)
-        // }}
-        method="get"
-        action={`/services?order=${service?.order_id}`}
-      >
+      <form onSubmit={handleSubmit}>
         <Input
           type="text"
           name="order"
@@ -93,7 +90,7 @@ export default function ServiceDetailsSection({
         />
       </form>
       <div className="w-full">
-        {currentServiceId && !service?.order_id && (
+        {currentServiceId && !order?.order_id && (
           <Card className="bg-warning-200 text-warning-800">
             <CardBody>
               <div className="flex px-4 gap-4">
@@ -106,7 +103,7 @@ export default function ServiceDetailsSection({
           </Card>
         )}
 
-        {service?.status && (
+        {order?.status && (
           <>
             <Card className="dark bg-neutral-700">
               <CardHeader className="flex gap-2 md:gap-6 p-4 md:p-6">
@@ -122,23 +119,21 @@ export default function ServiceDetailsSection({
                 </div>
                 <div className="text-left w-full">
                   <div className="flex w-full justify-between">
-                    <span className="text-md">
-                      Servicio {service?.order_id}
-                    </span>
+                    <span className="text-md">Servicio {order?.order_id}</span>
 
                     <Chip
-                      color={statusAttrs[service.status].color}
+                      color={statusAttrs[order.status].color}
                       className="text-xs"
                     >
-                      {statusAttrs[service.status].label}
+                      {statusAttrs[order.status].label}
                     </Chip>
                   </div>
-                  <p className="text-small text-default-500">{service?.date}</p>
+                  <p className="text-small text-default-500">{order?.date}</p>
                 </div>
               </CardHeader>
               <Divider />
               <CardBody className="p-4 md:p-6">
-                <p>{statusAttrs[service.status].description}</p>
+                <p>{statusAttrs[order.status].description}</p>
               </CardBody>
               <Divider />
               {service?.status !== 'committed' && (
@@ -183,4 +178,34 @@ export default function ServiceDetailsSection({
       </div>
     </>
   )
+
+  async function handleSubmit(e: BaseSyntheticEvent) {
+    e.preventDefault()
+
+    const form = e.target
+    const formData = new FormData(form)
+
+    if (!formData.get('order')) {
+      return
+    }
+
+    router.push(`/services?order=${formData.get('order')}`)
+
+    const resp = await fetch(`api/services/${formData.get('order')}`, {
+      headers: {
+        accept: 'application/json',
+      },
+    })
+
+    if (!resp.ok) {
+      setOrder({
+        order_id: '',
+        statuses: [],
+      })
+    }
+
+    const {data: service} = await resp.json()
+
+    setOrder(service)
+  }
 }

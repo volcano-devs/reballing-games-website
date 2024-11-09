@@ -26,8 +26,6 @@ export const shoppingCart = new Store({
     const response = await fetch('/api/products')
     const {data} = (await response.json()) as APIResponse<Product[]>
 
-    console.log(data)
-
     if (response.ok) {
       shoppingCart.setState((state) => ({
         ...state,

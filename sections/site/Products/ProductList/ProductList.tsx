@@ -61,9 +61,9 @@ export default function ProductListSectionPage({
                   item: 'text-gray-500 hover:text-gray-700',
                   separator: 'text-gray-500',
                 }}
-                onClick={() => {
-                  console.log('Home clicked')
-                }}
+                // onClick={() => {
+                //   console.log('Home clicked')
+                // }}
               >
                 {breadcrumb?.label}
               </BreadcrumbItem>

@@ -11,5 +11,5 @@ export default defineConfig({
     schema: {}
   },
 
-  integrations: [react(), tailwind()]
+  integrations: [react(), tailwind({ applyBaseStyles: false })]
 });

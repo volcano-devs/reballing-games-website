@@ -37,3 +37,5 @@ next-env.d.ts
 
 .envrc
 .env
+/.astro/
+.DS_Store

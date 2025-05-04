@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import {Mail, MapPin, Phone} from 'lucide-react'
 
 export default function GetInTouchSection() {
   return (
@@ -101,5 +101,5 @@ export default function GetInTouchSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,101 +1,39 @@
 ---
-import { Button } from "@/components/ui/button";
-import  Logo  from "@/components/logo";
-import { ShoppingCart, Search } from 'lucide-react'
+import Navigation from '@/components/navigation'
 
 import '@/styles/globals.css'
-import { ClientRouter } from "astro:transitions";
-
+import {ClientRouter} from 'astro:transitions'
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Reballing Games</title>
-		<ClientRouter />
-	</head>
-	<body>
-		<div class="flex flex-col min-h-screen bg-white text-gray-900">
-      <header class="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-xl">
-        <div class="container mx-auto grid grid-cols-2 lg:grid-cols-3 items-center">
-          <nav class="hidden lg:flex space-x-6">
-            <a class="text-sm font-medium hover:text-[#E72647] transition-colors" href="/products">Tienda</a>
-            <a class="text-sm font-medium hover:text-[#E72647] transition-colors" href="#services">Servicios</a>
-            <a class="text-sm font-medium hover:text-[#E72647] transition-colors" href="/about">Nosotros</a>
-            <a class="text-sm font-medium hover:text-[#E72647] transition-colors" href="#get-in-touch">Contacto</a>
-          </nav>
-
-					<a href="/" class="flex items-center self-center space-x-2 w-36 md:w-48 lg:mx-auto">
-						<Logo/>
-					</a>
-
-          <div class="flex items-center justify-end space-x-4">
-            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-[#E72647]">
-              <Search className="h-5 w-5" />
-              <span class="sr-only">Search</span>
-            </Button>
-            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-[#E72647]">
-              <ShoppingCart className="h-5 w-5" />
-              <span class="sr-only">Cart</span>
-            </Button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Reballing Games</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen bg-white text-gray-900">
+      <header
+        class="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-xl"
+      >
+        <Navigation page={Astro.props.page} />
+      </header>
+      <slot />
+      <footer class="w-full py-6 bg-gray-100">
+        <div class="container px-4 md:px-6 mx-auto">
+          <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+              © {new Date().getFullYear()} Reballing Games. All Rights Reserved
+            </p>
           </div>
         </div>
-      </header>
-				<slot/>
-		<footer class="w-full py-6 bg-gray-100">
-			<div class="container px-4 md:px-6 mx-auto">
-				<div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-					<div class="space-y-3">
-						<h4 class="text-sm font-bold">About Us</h4>
-						<ul class="space-y-1">
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Our Story</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Press</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Careers</a></li>
-						</ul>
-					</div>
-					<div class="space-y-3">
-						<h4 class="text-sm font-bold">Customer Service</h4>
-						<ul class="space-y-1">
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">FAQ</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Shipping</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Returns</a></li>
-						</ul>
-					</div>
-					<div class="space-y-3">
-						<h4 class="text-sm font-bold">Social Media</h4>
-						<ul class="space-y-1">
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Facebook</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Twitter</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Instagram</a></li>
-						</ul>
-					</div>
-					<div class="space-y-3">
-						<h4 class="text-sm font-bold">Legal</h4>
-						<ul class="space-y-1">
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Terms of Service</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Privacy Policy</a></li>
-							<li><a class="text-sm text-gray-600 hover:text-[#E72647]" href="#">Cookie Policy</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="mt-6 text-center">
-					<p class="text-sm text-gray-600">© 2024 GameTech Hub. All rights reserved.</p>
-				</div>
-			</div>
-		</footer>
-		</div>
-	</body>
+      </footer>
+    </div>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<style></style>

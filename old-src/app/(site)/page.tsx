@@ -6,8 +6,6 @@ import consolesGroup from 'public/assets/images/consolas-group.png'
 import chip from 'public/assets/images/chip.png'
 import {ChevronRightIcon} from '@components/icons'
 
-
-
 export default function Home() {
   return (
     <div className="relative">

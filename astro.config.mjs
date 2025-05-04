@@ -1,15 +1,15 @@
 // @ts-check
-import { defineConfig, envField } from "astro/config";
+import {defineConfig, envField} from 'astro/config'
 
-import react from "@astrojs/react";
+import react from '@astrojs/react'
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
   env: {
-    schema: {}
+    schema: {},
   },
 
-  integrations: [react(), tailwind({ applyBaseStyles: false })]
-});
+  integrations: [react(), tailwind({applyBaseStyles: false})],
+})

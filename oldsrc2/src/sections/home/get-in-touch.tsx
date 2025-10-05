@@ -2,7 +2,7 @@ import {Mail, MapPin, Phone} from 'lucide-react'
 
 export default function GetInTouchSection() {
   return (
-    <section className="py-32">
+    <section id="get-in-touch" className="py-32">
       <div className="container">
         <div className="mb-14">
           <span className="text-sm font-semibold">Contáctenos</span>

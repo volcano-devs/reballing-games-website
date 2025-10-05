@@ -1,11 +1,4 @@
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
-import {
   ComputerIcon,
   Cpu,
   Disc3,
@@ -23,6 +16,8 @@ import {
 
 import Autoplay from 'embla-carousel-autoplay'
 import {useRef, useState} from 'react'
+import type {EmblaOptionsType} from 'embla-carousel'
+import EmblaCarousel from '@/components/ui/carousel/EmblaCarouselReact'
 
 const services = [
   {
@@ -114,6 +109,14 @@ const services = [
   },
 ]
 
+const OPTIONS: EmblaOptionsType = {
+  align: 'start',
+  loop: true,
+  slidesToScroll: 1,
+}
+const SLIDE_COUNT = 6
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
 export default function OurServicesSection() {
   const plugin = useRef(
     Autoplay({delay: 2000, stopOnInteraction: false, playOnInit: true}),
@@ -125,12 +128,44 @@ export default function OurServicesSection() {
       id="services"
       className="w-full py-12 md:py-24 lg:py-32 bg-gray-50"
     >
-      <div className="container px-4 md:px-6">
+      <div>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
           Nuestros servicios
         </h2>
 
-        <Carousel
+        <EmblaCarousel options={OPTIONS}>
+          {services.map(({title, description, icon}, index) => {
+            return (
+              <div className="embla__slide" key={index}>
+                <div className="min-w-[240px] p-4 rounded-lg border bg-white shadow-md border-gray-200'">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div
+                      className="w-8 h-8 flex justify-center items-center rounded-full bg-blue-100' : 'bg-purple-100'
+                      "
+                    >
+                      {icon}
+                    </div>
+                    <h3
+                      className="text-lg font-medium text-gray-800' : 'text-gray-600'
+                      "
+                    >
+                      {title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-600">{description}</p>
+                  <a
+                    href="#"
+                    className="mt-4 inline-flex items-center text-sm font-medium text-blue-500' : 'text-gray-400'
+                    "
+                  >
+                    Explore Now <span className="ml-1">→</span>
+                  </a>
+                </div>
+              </div>
+            )
+          })}
+        </EmblaCarousel>
+        {/* <Carousel
           plugins={[plugin.current]}
           // className="w-full max-w-xs"
           onMouseEnter={plugin.current.stop}
@@ -181,7 +216,7 @@ export default function OurServicesSection() {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
-        </Carousel>
+        </Carousel> */}
       </div>
     </section>
   )

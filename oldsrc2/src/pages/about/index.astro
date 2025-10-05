@@ -1,0 +1,230 @@
+---
+import {Button} from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import {
+  GamepadIcon,
+  Users,
+  Lightbulb,
+  Handshake,
+  Award,
+  Mail,
+  Phone,
+  Search,
+  ShoppingCart,
+} from 'lucide-react'
+---
+
+<Layout>
+  <main class="flex-1">
+    {/* Hero Section */}
+    <section
+      class="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-100 via-white to-blue-50"
+    >
+      <div class="container px-4 md:px-6 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+          <h1
+            class="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-[#E72647]"
+          >
+            Sobre Reballing Games
+          </h1>
+          <p class="text-gray-600 md:text-xl">
+            Tu destino definitivo para la excelencia en juegos y servicios
+            técnicos fiables.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Our Story Section */}
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-white">
+      <div
+        class="container px-4 md:px-6 grid gap-8 lg:grid-cols-2 items-center"
+      >
+        <div class="space-y-4">
+          <h2
+            class="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-900"
+          >
+            Our Story
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            GameTech Hub was founded in 2015 by a group of passionate gamers and
+            tech enthusiasts who saw a need for a reliable, community-focused
+            platform. What started as a small repair shop quickly grew into a
+            comprehensive hub offering the latest games, cutting-edge consoles,
+            and expert technical services. Our journey has been driven by a
+            commitment to quality, customer satisfaction, and a deep love for
+            the gaming world.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Over the years, we've expanded our offerings, built a strong
+            community, and adapted to the ever-evolving landscape of gaming
+            technology. We pride ourselves on being more than just a store;
+            we're a place where gamers can connect, explore, and get the support
+            they need to truly level up their experience.
+          </p>
+        </div>
+        <div class="relative">
+          <img
+            alt="Our Story"
+            class="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:aspect-square"
+            height="400"
+            src="https://placehold.co/600x400"
+            width="600"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* Mission & Vision Section */}
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      <div class="container px-4 md:px-6 text-center">
+        <div class="max-w-4xl mx-auto grid gap-10 md:grid-cols-2">
+          <div
+            class="space-y-4 p-6 bg-white rounded-lg shadow-sm border border-gray-100"
+          >
+            <Lightbulb className="h-10 w-10 text-blue-600 mx-auto" />
+            <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+            <p class="text-gray-600">
+              To empower gamers with access to the best products and services,
+              fostering a vibrant community where passion meets performance.
+            </p>
+          </div>
+          <div
+            class="space-y-4 p-6 bg-white rounded-lg shadow-sm border border-gray-100"
+          >
+            <Award className="h-10 w-10 text-[#E72647] mx-auto" />
+            <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
+            <p class="text-gray-600">
+              To be the leading hub for gaming enthusiasts, recognized for our
+              exceptional service, innovative solutions, and unwavering
+              commitment to the gaming community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Our Values Section */}
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-white">
+      <div class="container px-4 md:px-6 text-center">
+        <h2
+          class="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-900 mb-12"
+        >
+          Our Values
+        </h2>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="space-y-3 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <Handshake className="h-8 w-8 text-blue-600 mx-auto" />
+            <h3 class="text-xl font-bold text-gray-900">Customer First</h3>
+            <p class="text-gray-600 text-sm">
+              We prioritize our customers' needs, ensuring satisfaction and
+              building lasting relationships.
+            </p>
+          </div>
+          <div class="space-y-3 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <GamepadIcon className="h-8 w-8 text-[#E72647] mx-auto" />
+            <h3 class="text-xl font-bold text-gray-900">Passion for Gaming</h3>
+            <p class="text-gray-600 text-sm">
+              Our love for gaming drives us to deliver the best products and
+              experiences.
+            </p>
+          </div>
+          <div class="space-y-3 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <Users className="h-8 w-8 text-blue-600 mx-auto" />
+            <h3 class="text-xl font-bold text-gray-900">Community Driven</h3>
+            <p class="text-gray-600 text-sm">
+              We foster a welcoming environment where gamers can connect and
+              thrive together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Our Team Section (Placeholder) */}
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+      <div class="container px-4 md:px-6 text-center">
+        <h2
+          class="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-900 mb-12"
+        >
+          Conoce a Nuestro Equipo
+        </h2>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            [
+              {
+                name: 'Gabriel Rocha',
+                role: 'CEO & Fundador',
+                image: '/person-headshot.png',
+              },
+              {
+                name: 'John Smith',
+                role: 'Lead Technician',
+                image: '/person-headshot.png',
+              },
+              {
+                name: 'Emily White',
+                role: 'Product Manager',
+                image: '/person-headshot.png',
+              },
+              {
+                name: 'David Green',
+                role: 'Community Manager',
+                image: '/person-headshot.png',
+              },
+            ].map((member, i) => (
+              <div
+                key={i}
+                class="flex flex-col items-center space-y-3 p-6 bg-white rounded-lg shadow-sm"
+              >
+                <img
+                  alt={member.name}
+                  class="rounded-full object-cover"
+                  height="120"
+                  src="https://placehold.co/200"
+                  width="120"
+                />
+                <h3 class="text-lg font-semibold text-gray-900">
+                  {member.name}
+                </h3>
+                <p class="text-sm text-gray-600">{member.role}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* Call to Action / Contact Section */}
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-blue-600 text-white">
+      <div class="container px-4 md:px-6 text-center">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl mb-4">
+          Have Questions?
+        </h2>
+        <p class="max-w-2xl mx-auto text-gray-100 md:text-xl/relaxed mb-8">
+          We're here to help! Reach out to us for any inquiries, support, or
+          just to chat about gaming.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contact">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 transition-colors"
+            >
+              <Mail className="h-5 w-5 mr-2" />
+              Email Us
+            </Button>
+          </a>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-blue-600 transition-colors bg-transparent"
+          >
+            <Phone className="h-5 w-5 mr-2" />
+            Call Us
+          </Button>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

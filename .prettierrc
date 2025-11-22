@@ -1,10 +1,11 @@
 {
-  "plugins": ["prettier-plugin-astro"],
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "bracketSpacing": false,
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
+  "pluginSearchDirs": false,
   "overrides": [
     {
       "files": "*.astro",

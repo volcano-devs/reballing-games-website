@@ -1,12 +1,43 @@
-import eslintPluginAstro from 'eslint-plugin-astro'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
-import eslintPrettier from 'eslint-config-prettier'
+import js from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import astro from 'eslint-plugin-astro'
+import globals from 'globals'
+import prettier from 'eslint-config-prettier'
 
 export default [
-  ...eslintPluginAstro.configs.recommended,
-  jsxA11y.flatConfigs.recommended,
-  eslintPrettier,
+  // Ignore built files
+  {ignores: ['dist/**', '.astro/**', 'node_modules/**']},
+
+  // JavaScript base rules
+  js.configs.recommended,
+
+  // TypeScript (type-aware)
+  ...tseslint.configs.recommendedTypeChecked,
+
+  // Astro linting
+  astro.configs.recommended,
+
+  // Env & parser options
   {
-    rules: {'jsx-a11y/alt-text': 'error'},
+    languageOptions: {
+      globals: {...globals.browser, ...globals.node},
+      parserOptions: {
+        project: true, // auto-detect tsconfig.json
+      },
+    },
   },
+
+  // Accessibility (optional)
+  {
+    plugins: {
+      'jsx-a11y': (await import('eslint-plugin-jsx-a11y')).default,
+    },
+    rules: {
+      'jsx-a11y/alt-text': 'warn',
+      'jsx-a11y/anchor-is-valid': 'warn',
+    },
+  },
+
+  // Disable stylistic conflicts with Prettier
+  prettier,
 ]

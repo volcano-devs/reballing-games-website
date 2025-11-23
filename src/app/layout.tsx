@@ -10,12 +10,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Reballing Games",
   description: "Technical Services and Consulting for the Video Game Industry",
-};
+}
 
 export default function RootLayout({
   children,

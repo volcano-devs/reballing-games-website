@@ -44,7 +44,7 @@ export default function CustomDrawer({...props}: CustomDrawerProps) {
           },
         },
       }}
-      className="max-w-lg w-full rounded-2xl h-[calc(100dvh)] max-h-screen"
+      className="h-[calc(100dvh)] max-h-screen w-full max-w-lg rounded-2xl"
     >
       <ModalContent className="z-50">
         {(onClose) => <>{props.children}</>}

@@ -10,22 +10,22 @@ export default function NotFoundPage() {
   return (
     <SiteLayout>
       <main className="grid min-h-screen place-items-center bg-white px-6 sm:py-32 lg:px-8">
-        <div className="container mx-auto flex items-center bg-gray-50 p-10 rounded-3xl lg:min-h-[90%]">
-          <div className="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-700">
-            <div className="w-full lg:w-1/2 mx-8">
-              <div className="text-7xl  font-dark font-extrabold mb-8">404</div>
-              <p className="text-2xl md:text-3xl font-light leading-normal mb-8">
+        <div className="container mx-auto flex items-center rounded-3xl bg-gray-50 p-10 lg:min-h-[90%]">
+          <div className="container flex flex-col items-center justify-between px-5 text-gray-700 md:flex-row">
+            <div className="mx-8 w-full lg:w-1/2">
+              <div className="font-dark mb-8 text-7xl font-extrabold">404</div>
+              <p className="mb-8 text-2xl leading-normal font-light md:text-3xl">
                 Lo sentimos, la página que estás buscando no existe.
               </p>
 
               <Link
                 href="/"
-                className="px-5 inline py-3 text-sm font-medium leading-5 shadow-2xl text-white transition-all duration-400 border border-transparent rounded-lg focus:outline-none bg-red-600 active:bg-red-600 hover:bg-red-700"
+                className="inline rounded-lg border border-transparent bg-red-600 px-5 py-3 text-sm leading-5 font-medium text-white shadow-2xl transition-all duration-400 hover:bg-red-700 focus:outline-none active:bg-red-600"
               >
                 Ir a la página principal
               </Link>
             </div>
-            <div className="w-full lg:flex lg:justify-end lg:w-1/2 mx-5 my-12">
+            <div className="mx-5 my-12 w-full lg:flex lg:w-1/2 lg:justify-end">
               <svg
                 id="aa03ddf9-f8f2-4819-a4ce-be9b0a220741"
                 data-name="Layer 1"

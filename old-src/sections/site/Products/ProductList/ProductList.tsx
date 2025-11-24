@@ -39,12 +39,12 @@ export default function ProductListSectionPage({
   }, [category])
 
   return (
-    <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col gap-2 text-black py-8 md:py-16 px-4">
-      <div className="flex gap-4 justify-between text-center items-center pb-16 px-6">
+    <div className="container mx-auto mt-20 flex min-h-[80vh] flex-col gap-2 px-4 py-8 text-black md:py-16">
+      <div className="flex items-center justify-between gap-4 px-6 pb-16 text-center">
         <div className="flex flex-col gap-2">
-          <h1 className="text-4xl w-max font-bold text-gray-700 tracking-tighter">
+          <h1 className="w-max text-4xl font-bold tracking-tighter text-gray-700">
             {`${category?.name ?? 'All Products'}`}
-            <span className="text-sm text-gray-700 dark:text-gray-400 ml-2 tracking-normal font-semibold">
+            <span className="ml-2 text-sm font-semibold tracking-normal text-gray-700 dark:text-gray-400">
               {'('}
               {products.length}
               {products.length === 1 && 's'})
@@ -86,7 +86,7 @@ export default function ProductListSectionPage({
     /> */}
       </div>
 
-      <div className="grid grid-cols-1 gap-8 xl:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-8 md:pb-10 px-4 md:px-0">
+      <div className="grid grid-cols-1 gap-8 px-4 pb-8 sm:grid-cols-2 md:px-0 md:pb-10 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
         {products.map((_, i) => (
           <ProductCard key={i} product={products[i]} />
         ))}

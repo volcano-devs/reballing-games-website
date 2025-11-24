@@ -9,13 +9,10 @@ import {ChevronRightIcon} from '@components/icons'
 export default function Home() {
   return (
     <div className="relative">
-      <div className="text-white bg-hero static top-0 mt-10 md:mt-0">
-        <div
-          className="container mx-auto flex w-full flex-col
-      justify-center gap-20 xl:flex-row min-h-screen lg:min-h-[1080px]"
-        >
-          <div className="flex max-w-2xl flex-col self-center px-6 text-center md:px-8 md:text-left lg:px-0 tracking-tight leading-2">
-            <h1 className=" text-4xl font-bold  tracking-tight sm:text-6xl">
+      <div className="bg-hero static top-0 mt-10 text-white md:mt-0">
+        <div className="container mx-auto flex min-h-screen w-full flex-col justify-center gap-20 lg:min-h-[1080px] xl:flex-row">
+          <div className="flex max-w-2xl flex-col self-center px-6 text-center leading-2 tracking-tight md:px-8 md:text-left lg:px-0">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
               Servicio técnico especializado
             </h1>
             <p className="mt-6 text-lg leading-8">
@@ -26,7 +23,7 @@ export default function Home() {
               <Link href="/get-in-touch">
                 <Button
                   color="primary"
-                  className="w-full md:w-auto py-6 rounded-2xl"
+                  className="w-full rounded-2xl py-6 md:w-auto"
                 >
                   Realizar una consulta
                 </Button>
@@ -35,7 +32,7 @@ export default function Home() {
               <Link href="/shop">
                 <Button
                   color="primary"
-                  className="w-full md:w-auto py-6 rounded-2xl"
+                  className="w-full rounded-2xl py-6 md:w-auto"
                   variant="ghost"
                 >
                   Ver Productos <ChevronRightIcon />
@@ -43,22 +40,22 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="self-center w-[340px]  md:w-[440px] lg:w-[540px] xl:w-[760px]">
+          <div className="w-[340px] self-center md:w-[440px] lg:w-[540px] xl:w-[760px]">
             <Image className="w-full" src={consolesGroup} alt="consoles" />
           </div>
         </div>
       </div>
       <div></div>
       {/* features section about reballing games technical service */}
-      <div className="-mt-20 container mx-auto pb-20  px-6 sm:px-10 md:px-12">
+      <div className="container mx-auto -mt-20 px-6 pb-20 sm:px-10 md:px-12">
         <section>
           <div>
-            <div className="grid grid-cols-1 gap-8 xl:gap-10 xl:grid-cols-3">
-              <div className="space-y-3 bg-white rounded-2xl px-6 py-10 border border-gray-200 shadow-lg shadow-gray-100">
-                <span className="inline-block p-3 text-red-500 bg-red-100 rounded-full dark:text-white dark:bg-red-500">
+            <div className="grid grid-cols-1 gap-8 xl:grid-cols-3 xl:gap-10">
+              <div className="space-y-3 rounded-2xl border border-gray-200 bg-white px-6 py-10 shadow-lg shadow-gray-100">
+                <span className="inline-block rounded-full bg-red-100 p-3 text-red-500 dark:bg-red-500 dark:text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                     viewBox="0 0 512 512"
                     fill="currentColor"
                   >
@@ -77,11 +74,11 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="space-y-3 bg-white rounded-2xl px-6 py-10 border border-gray-200 shadow-lg shadow-gray-100">
-                <span className="inline-block p-3 text-red-500 bg-red-100 rounded-full dark:text-white dark:bg-red-500">
+              <div className="space-y-3 rounded-2xl border border-gray-200 bg-white px-6 py-10 shadow-lg shadow-gray-100">
+                <span className="inline-block rounded-full bg-red-100 p-3 text-red-500 dark:bg-red-500 dark:text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                     fill="currentColor"
                     viewBox="0 0 512 512"
                   >
@@ -99,11 +96,11 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="space-y-3 bg-white rounded-2xl px-6 py-10 border border-gray-200 shadow-lg shadow-gray-100">
-                <span className="inline-block p-3 text-red-500 bg-red-100 rounded-full dark:text-white dark:bg-red-500">
+              <div className="space-y-3 rounded-2xl border border-gray-200 bg-white px-6 py-10 shadow-lg shadow-gray-100">
+                <span className="inline-block rounded-full bg-red-100 p-3 text-red-500 dark:bg-red-500 dark:text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -132,9 +129,9 @@ export default function Home() {
         </section>
       </div>
       {/* products section */}
-      <section id="services" className="container mx-auto py-20  px-6">
-        <div className="mt-4 md:mt-0 text-center max-w-xl mx-auto">
-          <h1 className="text-2xl font-semibold tracking-tight xl:text-3xl text-red-600 capitalize dark:text-white">
+      <section id="services" className="container mx-auto px-6 py-20">
+        <div className="mx-auto mt-4 max-w-xl text-center md:mt-0">
+          <h1 className="text-2xl font-semibold tracking-tight text-red-600 capitalize xl:text-3xl dark:text-white">
             Nuestros productos
           </h1>
 
@@ -144,10 +141,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className=" mt-10 flex flex-col sm:grid grid-cols-3 lg:max-w-5xl mx-auto gap-10 sm:divide-x">
-          <div className="flex items-center justify-center ">
+        <div className="mx-auto mt-10 flex grid-cols-3 flex-col gap-10 sm:grid sm:divide-x lg:max-w-5xl">
+          <div className="flex items-center justify-center">
             <svg
-              className="filter grayscale hover:grayscale-0 h-6 lg:h-12"
+              className="h-6 grayscale filter hover:grayscale-0 lg:h-12"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="-3.734 0 1004.5267543546614 181.25623795219727"
             >
@@ -162,11 +159,11 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="flex items-center justify-center ">
+          <div className="flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 62.59 19.022"
-              className="filter grayscale hover:grayscale-0 h-6 lg:h-12"
+              className="h-6 grayscale filter hover:grayscale-0 lg:h-12"
             >
               <path
                 fill="#0F7C10"
@@ -181,7 +178,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="filter grayscale hover:grayscale-0 h-20 lg:h-32"
+              className="h-20 grayscale filter hover:grayscale-0 lg:h-32"
               viewBox="0 0 192.756 192.756"
             >
               <g fillRule="evenodd" clip-rule="evenodd">
@@ -203,28 +200,28 @@ export default function Home() {
         </div>
       </section>
       {/* //services section */}
-      <section className="container mx-auto bg-hero sm:rounded-3xl mt-16">
-        <div className="container px-12 py-12 mx-auto">
-          <div className="lg:-mx-6 flex flex-col lg:flex-row items-center justify-center gap-16">
-            <div className="mt-8 lg:w-1/3 lg:px-6 lg:mt-0">
+      <section className="bg-hero container mx-auto mt-16 sm:rounded-3xl">
+        <div className="container mx-auto px-12 py-12">
+          <div className="flex flex-col items-center justify-center gap-16 lg:-mx-6 lg:flex-row">
+            <div className="mt-8 lg:mt-0 lg:w-1/3 lg:px-6">
               <p className="mt-6 text-lg font-medium text-red-500">Servicio</p>
 
-              <h2 className="text-2xl font-semibold text-white lg:text-3xl lg:w-96">
+              <h2 className="text-2xl font-semibold text-white lg:w-96 lg:text-3xl">
                 {services[0].title}
               </h2>
 
-              <p className="max-w-lg mt-6 t©®©ext-gray-400 ">
+              <p className="t©®©ext-gray-400 mt-6 max-w-lg">
                 {services[0].description}
               </p>
 
-              <div className="flex items-center justify-between mt-12 lg:justify-start">
+              <div className="mt-12 flex items-center justify-between lg:justify-start">
                 <button
                   title="left arrow"
-                  className="p-2  transition-colors duration-300 border rounded-full rtl:-scale-x-100 border-gray-700 text-gray-200  hover:bg-gray-100 hover:text-red-500"
+                  className="rounded-full border border-gray-700 p-2 text-gray-200 transition-colors duration-300 hover:bg-gray-100 hover:text-red-500 rtl:-scale-x-100"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -240,11 +237,11 @@ export default function Home() {
 
                 <button
                   title="right arrow"
-                  className="p-2  transition-colors duration-300 border rounded-full rtl:-scale-x-100 border-gray-700 text-gray-200  lg:mx-6 hover:bg-gray-100 hover:text-red-500"
+                  className="rounded-full border border-gray-700 p-2 text-gray-200 transition-colors duration-300 hover:bg-gray-100 hover:text-red-500 lg:mx-6 rtl:-scale-x-100"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -262,7 +259,7 @@ export default function Home() {
 
             <div className="w-56">
               <Image
-                className="object-cover w-full h-full"
+                className="h-full w-full object-cover"
                 src={chip.src}
                 alt="chip"
                 width={chip.width}
@@ -273,25 +270,25 @@ export default function Home() {
         </div>
       </section>
       {/* //contact call to action */}
-      <section className="bg-white dark:bg-gray-900 py-20 mt-16">
-        <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
-          <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white">
+      <section className="mt-16 bg-white py-20 dark:bg-gray-900">
+        <div className="container mx-auto flex flex-col items-center px-4 py-12 text-center">
+          <h2 className="mx-auto max-w-2xl text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white">
             ¿Tienes alguna duda o consulta?{' '}
             <span className="text-red-500">
               ¡Conéctate con nosotros ahora mismo!
             </span>
           </h2>
 
-          <p className="max-w-4xl mt-6 text-center text-gray-500 dark:text-gray-300">
+          <p className="mt-6 max-w-4xl text-center text-gray-500 dark:text-gray-300">
             Si tienes alguna duda o consulta sobre nuestros servicios, no dudes
             en contactarnos a través de nuestro formulario de contacto o en
             nuestras redes sociales.
           </p>
 
-          <div className="inline-flex w-full mt-6 sm:w-auto">
+          <div className="mt-6 inline-flex w-full sm:w-auto">
             <Link
               href="/get-in-touch"
-              className="inline-flex items-center justify-center w-full px-6 py-2 text-white duration-300 bg-red-600 rounded-lg hover:bg-red-500 focus:ring focus:ring-red-300 focus:ring-opacity-80"
+              className="focus:ring-opacity-80 inline-flex w-full items-center justify-center rounded-lg bg-red-600 px-6 py-2 text-white duration-300 hover:bg-red-500 focus:ring focus:ring-red-300"
             >
               ¡Contáctenos!
             </Link>

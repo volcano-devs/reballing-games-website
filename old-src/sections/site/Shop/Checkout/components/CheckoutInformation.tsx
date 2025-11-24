@@ -16,9 +16,9 @@ export default function CheckoutInfo(props: CheckoutInfoProps) {
   }
 
   return (
-    <div className="lg:pl-16 lg:min-w-[570px] border-t-px border-t-gray-200 lg:border-t-0">
+    <div className="border-t-px border-t-gray-200 lg:min-w-[570px] lg:border-t-0 lg:pl-16">
       <div className="mb-14">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 className="mb-4 text-lg font-semibold text-gray-900">
           Información de envío
         </h2>
         <form className="flex flex-col gap-4">
@@ -52,7 +52,7 @@ export default function CheckoutInfo(props: CheckoutInfoProps) {
           />
         </form>
       </div>
-      <div className="flex justify-between mb-2 border-t-px border-t-gray-300 lg:border-t-0">
+      <div className="border-t-px mb-2 flex justify-between border-t-gray-300 lg:border-t-0">
         <span className="text-lg font-semibold text-gray-900">Subtotal</span>
 
         <span className="text-lg font-semibold text-gray-900">
@@ -64,7 +64,7 @@ export default function CheckoutInfo(props: CheckoutInfoProps) {
       <Button
         color="primary"
         variant="solid"
-        className="w-full rounded-3xl p-7 mt-10"
+        className="mt-10 w-full rounded-3xl p-7"
         onClick={() => {}}
       >
         Finalizar compra

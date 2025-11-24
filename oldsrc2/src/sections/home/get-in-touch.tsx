@@ -6,31 +6,31 @@ export default function GetInTouchSection() {
       <div className="container">
         <div className="mb-14">
           <span className="text-sm font-semibold">Contáctenos</span>
-          <h1 className="mb-1 mt-1 text-balance text-3xl font-semibold md:text-4xl text-rose-700">
+          <h1 className="mt-1 mb-1 text-3xl font-semibold text-balance text-rose-700 md:text-4xl">
             Habla con nuestro amable equipo
           </h1>
-          <p className="text-lg text-muted-foreground text-gray-500">
+          <p className="text-muted-foreground text-lg text-gray-500">
             Nos encantaría ayudarte. Visita nuestras sucursales, escríbenos por
             nuestras redes sociales o llámanos.
           </p>
         </div>
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
+            <span className="bg-accent mb-3 flex size-12 flex-col items-center justify-center rounded-full">
               <Mail className="h-6 w-auto text-sky-600" />
             </span>
             <p className="mb-2 text-lg font-semibold">Nuestras redes</p>
-            <p className="mb-3 text-muted-foreground">
+            <p className="text-muted-foreground mb-3">
               Escríbenos para cualquier consulta.
             </p>
-            <div className="flex mt-4 -mx-1.5 ">
+            <div className="-mx-1.5 mt-4 flex">
               <a
-                className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                className="mx-1.5 transform text-gray-400 transition-colors duration-300 hover:text-blue-500 dark:hover:text-blue-400"
                 href="https://www.facebook.com/ReballingGames"
                 target="_blank"
               >
                 <svg
-                  className="w-8 h-8"
+                  className="h-8 w-8"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,12 +43,12 @@ export default function GetInTouchSection() {
               </a>
 
               <a
-                className="mx-1.5 dark:hover:text-pink-400 text-gray-400 transition-colors duration-300 transform hover:text-pink-500"
+                className="mx-1.5 transform text-gray-400 transition-colors duration-300 hover:text-pink-500 dark:hover:text-pink-400"
                 target="_blank"
                 href="https://www.instagram.com/reballing.games"
               >
                 <svg
-                  className="w-8 h-8"
+                  className="h-8 w-8"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,11 +62,11 @@ export default function GetInTouchSection() {
             </div>
           </div>
           <div>
-            <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
+            <span className="bg-accent mb-3 flex size-12 flex-col items-center justify-center rounded-full">
               <MapPin className="h-6 w-auto" color="red" />
             </span>
             <p className="mb-2 text-lg font-semibold">Ven a visitarnos</p>
-            <p className="mb-3 text-muted-foreground">
+            <p className="text-muted-foreground mb-3">
               Te esperamos en nuestras sucursales.
             </p>
             <a href="#" className="font-semibold hover:underline">
@@ -75,11 +75,11 @@ export default function GetInTouchSection() {
             </a>
           </div>
           <div>
-            <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
+            <span className="bg-accent mb-3 flex size-12 flex-col items-center justify-center rounded-full">
               <Phone className="h-6 w-auto" color="green" />
             </span>
             <p className="mb-2 text-lg font-semibold"> Call Us</p>
-            <p className="mb-3 text-muted-foreground">
+            <p className="text-muted-foreground mb-3">
               Atendemos tus llamadas en horario de oficina.
             </p>
             <div className="flex flex-col gap-2">

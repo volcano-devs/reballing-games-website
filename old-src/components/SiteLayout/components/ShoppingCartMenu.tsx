@@ -46,7 +46,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
           isIconOnly
           color="primary"
           variant="solid"
-          className="rounded-full text-base p-2 w-max"
+          className="w-max rounded-full p-2 text-base"
           size="lg"
           onClick={() => onOpenChange()}
         >
@@ -55,10 +55,10 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
       </Badge>
 
       <CustomDrawer isOpen={isOpen} onOpenChange={onOpenChange}>
-        <div className="flex flex-col p-8 h-screen overflow-y-scroll">
+        <div className="flex h-screen flex-col overflow-y-scroll p-8">
           <h3 className="text-xl font-semibold">
             Lista de compras
-            <span className="text-sm font-semibold text-gray-900 ml-1">
+            <span className="ml-1 text-sm font-semibold text-gray-900">
               ({cart.length})
             </span>
           </h3>
@@ -66,7 +66,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
 
           {cart.length === 0 ? (
             <>
-              <p className="tracking-tighter text-lg mb-6">
+              <p className="mb-6 text-lg tracking-tighter">
                 Parece que aún no has añadido nada a la lista, ¿qué esperas para
                 hacerlo?
               </p>
@@ -82,11 +82,11 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
               </Button>
 
               <div className="mt-8">
-                <h4 className="text-lg font-semibold mt-8 text-gray-900">
+                <h4 className="mt-8 text-lg font-semibold text-gray-900">
                   Productos Mas Vendidos
                 </h4>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 overflow-y-scroll">
+                <div className="mt-4 grid grid-cols-1 gap-8 overflow-y-scroll md:grid-cols-2">
                   {bestSellers.map((product) => (
                     <ProductCard key={product.id} product={product} size="sm" />
                   ))}
@@ -99,7 +99,7 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
                 {cart.map((product, i) => (
                   <div
                     key={product.id}
-                    className={`flex py-6 w-full gap-4 ${
+                    className={`flex w-full gap-4 py-6 ${
                       i === cart.length - 1 ? '' : 'border-b border-gray-100'
                     }`}
                   >
@@ -109,27 +109,27 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
                         alt={product.name}
                         height={96}
                         width={80}
-                        className="absolute inset-0 object-cover rounded w-full h-full aspect-square"
+                        className="absolute inset-0 aspect-square h-full w-full rounded object-cover"
                       />
                     </div>
 
-                    <div className="flex flex-col w-full h-24">
-                      <div className="flex justify-between w-full">
+                    <div className="flex h-24 w-full flex-col">
+                      <div className="flex w-full justify-between">
                         <h4 className="text-lg font-semibold text-gray-900">
                           {product.name}
                         </h4>
 
-                        <span className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium text-green-500 h-max">
+                        <span className="flex h-max items-center rounded-lg border-2 border-green-500 px-2 py-1 text-sm font-medium text-green-500 md:px-2.5 md:py-1.5">
                           ${product.price}
                         </span>
                       </div>
-                      <div className="flex justify-between mt-auto">
-                        <span className="text-sm text-gray-500 ">
+                      <div className="mt-auto flex justify-between">
+                        <span className="text-sm text-gray-500">
                           Qty {product.quantity}
                         </span>
 
                         <Button
-                          className="p-0 text-sm text-blue-600 font-semibold bg-transparent h-max"
+                          className="h-max bg-transparent p-0 text-sm font-semibold text-blue-600"
                           onClick={() => {
                             removeItem(product.id)
                             refresh()
@@ -143,8 +143,8 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
                 ))}
               </div>
 
-              <div className="mt-auto justify-self">
-                <div className="flex justify-between mb-2">
+              <div className="justify-self mt-auto">
+                <div className="mb-2 flex justify-between">
                   <span className="text-lg font-semibold text-gray-900">
                     Subtotal
                   </span>
@@ -156,11 +156,11 @@ export default function ShoppingCartMenu(props: ShoppingCartMenuProps) {
 
                 <p>El total con el envío se calculan al finalizar la compra.</p>
 
-                <div className="flex w-full gap-2 justify-between mt-6">
+                <div className="mt-6 flex w-full justify-between gap-2">
                   <Button
                     color="default"
                     variant="bordered"
-                    className="rounded-3xl p-7 flex-1"
+                    className="flex-1 rounded-3xl p-7"
                     onClick={() => onOpenChange()}
                   >
                     <LeftArrowIcon className="hidden md:block" />

@@ -18,13 +18,13 @@ export interface NavigationProps {
 export default function Navigation(props: NavigationProps) {
   return (
     <div>
-      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-3 items-center">
+      <div className="container mx-auto grid grid-cols-2 items-center lg:grid-cols-3">
         <nav className="hidden lg:block">
           <ul className="flex space-x-6">
             {navigationLinks.map((link) => (
               <li key={link.name}>
                 <a
-                  className="text-sm font-medium hover:text-[#E72647] transition-colors"
+                  className="text-sm font-medium transition-colors hover:text-[#E72647]"
                   href={link.href}
                 >
                   {link.name}
@@ -36,7 +36,7 @@ export default function Navigation(props: NavigationProps) {
 
         <a
           href="/"
-          className="flex items-center self-center space-x-2 w-36 md:w-48 lg:mx-auto"
+          className="flex w-36 items-center space-x-2 self-center md:w-48 lg:mx-auto"
         >
           <Logo />
         </a>

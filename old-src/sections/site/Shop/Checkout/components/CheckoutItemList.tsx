@@ -15,10 +15,10 @@ export default function CheckoutProductList(props: CheckoutProductListProps) {
   const {refresh, push} = useRouter()
 
   return (
-    <div className="flex flex-col gap-8 flex-1 lg:border-r border-gray-200 lg:pr-16">
+    <div className="flex flex-1 flex-col gap-8 border-gray-200 lg:border-r lg:pr-16">
       {cart.length === 0 && (
-        <div className="flex flex-col gap-4 items-center justify-center">
-          <h3 className="text-2xl font-semibold text-center text-gray-900">
+        <div className="flex flex-col items-center justify-center gap-4">
+          <h3 className="text-center text-2xl font-semibold text-gray-900">
             No hay productos en tu carrito de compras aún 🛒
           </h3>
 
@@ -47,27 +47,27 @@ export default function CheckoutProductList(props: CheckoutProductListProps) {
             <img
               src={product.imageUrl}
               alt={product.name}
-              className="absolute inset-0 object-cover rounded w-full h-full aspect-square"
+              className="absolute inset-0 aspect-square h-full w-full rounded object-cover"
             />
           </div>
 
-          <div className="flex flex-col w-full h-24">
-            <div className="flex justify-between w-full">
+          <div className="flex h-24 w-full flex-col">
+            <div className="flex w-full justify-between">
               <h4 className="text-lg font-semibold text-gray-900">
                 {product.name}
               </h4>
 
-              <span className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium text-green-500">
+              <span className="flex items-center rounded-lg border-2 border-green-500 px-2 py-1 text-sm font-medium text-green-500 md:px-2.5 md:py-1.5">
                 ${product.price}
               </span>
             </div>
-            <div className="flex justify-between mt-auto">
-              <span className="text-sm text-gray-500 ">
+            <div className="mt-auto flex justify-between">
+              <span className="text-sm text-gray-500">
                 Qty {product.quantity}
               </span>
 
               <Button
-                className="p-0 text-sm text-blue-600 font-semibold bg-transparent h-max"
+                className="h-max bg-transparent p-0 text-sm font-semibold text-blue-600"
                 onClick={() => {
                   removeItem(product.id)
                   refresh()

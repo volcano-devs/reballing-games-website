@@ -8,9 +8,9 @@ export interface CheckoutProps {}
 
 export default function Checkout(props: CheckoutProps) {
   return (
-    <div className="container my-24 mx-auto p-8 bg-white">
+    <div className="container mx-auto my-24 bg-white p-8">
       <div>
-        <h1 className="text-3xl font-bold text-gray-700 mb-1">
+        <h1 className="mb-1 text-3xl font-bold text-gray-700">
           Finalizar compra
         </h1>
         <Breadcrumbs
@@ -27,9 +27,9 @@ export default function Checkout(props: CheckoutProps) {
         />
       </div>
 
-      <Divider className="mb-4 mt-6 md:mt-16 bg-gray-200" />
+      <Divider className="mt-6 mb-4 bg-gray-200 md:mt-16" />
 
-      <div className="flex flex-col lg:flex-row items-stretch w-full gap-10 lg:gap-0 pt-4 md:pt-12">
+      <div className="flex w-full flex-col items-stretch gap-10 pt-4 md:pt-12 lg:flex-row lg:gap-0">
         <CheckoutProductList />
         <CheckoutInfo />
       </div>

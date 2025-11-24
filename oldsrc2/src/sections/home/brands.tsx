@@ -1,7 +1,7 @@
 export default function BrandsSection() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold tracking-tight xl:text-3xl text-white capitalize dark:text-white">
+      <h1 className="text-2xl font-semibold tracking-tight text-white capitalize xl:text-3xl dark:text-white">
         Nuestros productos
       </h1>
 
@@ -10,10 +10,10 @@ export default function BrandsSection() {
         controles hasta repuestos para tu consola de videojuegos.
       </p>
 
-      <div className=" mt-6 flex flex-col sm:grid grid-cols-3 lg:max-w-5xl mx-auto gap-20 md:gap-10 py-12 md:py-0">
-        <div className="flex items-center justify-center ">
+      <div className="mx-auto mt-6 flex grid-cols-3 flex-col gap-20 py-12 sm:grid md:gap-10 md:py-0 lg:max-w-5xl">
+        <div className="flex items-center justify-center">
           <svg
-            className="filter brightness-150 h-8 lg:h-10"
+            className="h-8 brightness-150 filter lg:h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="-3.734 0 1004.5267543546614 181.25623795219727"
           >
@@ -28,11 +28,11 @@ export default function BrandsSection() {
           </svg>
         </div>
 
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 62.59 19.022"
-            className="filter brightness-150 w-[130px] h-max"
+            className="h-max w-[130px] brightness-150 filter"
           >
             <path
               fill="#0F7C10"
@@ -44,10 +44,10 @@ export default function BrandsSection() {
             />
           </svg>
         </div>
-        <div className="flex items-center justify-center overflow-y-hidden h-20">
+        <div className="flex h-20 items-center justify-center overflow-y-hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="filter brightness-150 w-[140px] lg:w-[160px] h-max"
+            className="h-max w-[140px] brightness-150 filter lg:w-[160px]"
             viewBox="0 0 192.756 192.756"
           >
             <g fillRule="evenodd" clip-rule="evenodd">

@@ -2,32 +2,32 @@ import {Button} from '@nextui-org/button'
 
 export default function GetInTouch() {
   return (
-    <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col justify-center gap-2">
-      <div className="container mx-auto pt-14 leading-tight px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900">
+    <div className="container mx-auto mt-20 flex min-h-[80vh] flex-col justify-center gap-2">
+      <div className="container mx-auto px-6 pt-14 text-center leading-tight">
+        <h1 className="text-center text-4xl font-bold text-gray-900 md:text-5xl">
           ¡Conéctate con nosotros ahora mismo!
         </h1>
 
-        <p className="mt-4 max-w-2xl mx-auto text-center text-gray-500">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-gray-500">
           Si tienes alguna duda o consulta sobre nuestros servicios, no dudes en
           contactarnos a través de nuestro formulario de contacto o en nuestras
           redes sociales.
           <br />
         </p>
       </div>
-      <section className="bg-white dark:bg-gray-900 container mx-auto">
-        <div className=" px-6 py-12">
-          <div className="lg:flex lg:items-center lg:-mx-6 justify-center gap-10">
+      <section className="container mx-auto bg-white dark:bg-gray-900">
+        <div className="px-6 py-12">
+          <div className="justify-center gap-10 lg:-mx-6 lg:flex lg:items-center">
             <div className="lg:w-2/6">
-              <h1 className="text-2xl text-center md:text-left font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
+              <h1 className="text-center text-2xl font-semibold text-gray-800 capitalize md:text-left lg:text-3xl dark:text-white">
                 Contáctenos para <br /> más información.
               </h1>
 
               <div className="mt-6 space-y-8 md:mt-8">
-                <p className="flex items-start -mx-2">
+                <p className="-mx-2 flex items-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-2 text-red-500 dark:text-red-400"
+                    className="mx-2 h-6 w-6 text-red-500 dark:text-red-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -45,16 +45,16 @@ export default function GetInTouch() {
                     />
                   </svg>
 
-                  <span className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                  <span className="mx-2 w-72 truncate text-gray-700 dark:text-gray-400">
                     Bolonia, Frente a Auto-banco lafise.
                     <br /> Managua, Nicaragua.
                   </span>
                 </p>
 
-                <p className="flex items-start -mx-2">
+                <p className="-mx-2 flex items-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-2 text-red-500 dark:text-red-400"
+                    className="mx-2 h-6 w-6 text-red-500 dark:text-red-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -67,15 +67,15 @@ export default function GetInTouch() {
                     />
                   </svg>
 
-                  <span className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                  <span className="mx-2 w-72 truncate text-gray-700 dark:text-gray-400">
                     +505 8471-3436
                   </span>
                 </p>
 
-                <p className="flex items-start -mx-2">
+                <p className="-mx-2 flex items-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-2 text-red-500 dark:text-red-400"
+                    className="mx-2 h-6 w-6 text-red-500 dark:text-red-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -88,25 +88,25 @@ export default function GetInTouch() {
                     />
                   </svg>
 
-                  <span className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                  <span className="mx-2 w-72 truncate text-gray-700 dark:text-gray-400">
                     reballing.games@gmail.com
                   </span>
                 </p>
               </div>
 
               <div className="mt-6 w-80 md:mt-8">
-                <h3 className="text-gray-600 dark:text-gray-300 ">
+                <h3 className="text-gray-600 dark:text-gray-300">
                   Síguenos en
                 </h3>
 
-                <div className="flex mt-4 -mx-1.5 ">
+                <div className="-mx-1.5 mt-4 flex">
                   <a
-                    className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5 transform text-gray-400 transition-colors duration-300 hover:text-blue-500 dark:hover:text-blue-400"
                     href="https://www.facebook.com/ReballingGames"
                     target="_blank"
                   >
                     <svg
-                      className="w-8 h-8"
+                      className="h-8 w-8"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -119,12 +119,12 @@ export default function GetInTouch() {
                   </a>
 
                   <a
-                    className="mx-1.5 dark:hover:text-pink-400 text-gray-400 transition-colors duration-300 transform hover:text-pink-500"
+                    className="mx-1.5 transform text-gray-400 transition-colors duration-300 hover:text-pink-500 dark:hover:text-pink-400"
                     target="_blank"
                     href="https://www.instagram.com/reballing.games"
                   >
                     <svg
-                      className="w-8 h-8"
+                      className="h-8 w-8"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -139,8 +139,8 @@ export default function GetInTouch() {
               </div>
             </div>
 
-            <div className="mt-8 lg:w-2/5 ">
-              <div className="w-full md:px-12 pt-6 md:pt-0 md:py-14 overflow-hidden md:bg-white md:rounded-2xl md:shadow-xl md:dark:bg-gray-900 lg:max-w-xl md:shadow-gray-300/60 md:dark:shadow-black/50">
+            <div className="mt-8 lg:w-2/5">
+              <div className="w-full overflow-hidden pt-6 md:rounded-2xl md:bg-white md:px-12 md:py-14 md:pt-0 md:shadow-xl md:shadow-gray-300/60 lg:max-w-xl md:dark:bg-gray-900 md:dark:shadow-black/50">
                 <h1 className="text-lg font-medium text-gray-700">
                   Qué podemos hacer por ti?
                 </h1>
@@ -149,7 +149,7 @@ export default function GetInTouch() {
                   <div className="flex-1">
                     <label
                       htmlFor="name"
-                      className="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                      className="mb-2 block text-sm text-gray-600 dark:text-gray-200"
                     >
                       Nombre completo
                     </label>
@@ -157,14 +157,14 @@ export default function GetInTouch() {
                       name="name"
                       type="text"
                       placeholder="Kevin Aguilar"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="focus:ring-opacity-40 mt-2 block w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:placeholder-gray-600 dark:focus:border-blue-400"
                     />
                   </div>
 
-                  <div className="flex-1 mt-6">
+                  <div className="mt-6 flex-1">
                     <label
                       htmlFor="email"
-                      className="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                      className="mb-2 block text-sm text-gray-600 dark:text-gray-200"
                     >
                       Correo electrónico
                     </label>
@@ -172,27 +172,27 @@ export default function GetInTouch() {
                       name="email"
                       type="email"
                       placeholder="email@example.com"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="focus:ring-opacity-40 mt-2 block w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:placeholder-gray-600 dark:focus:border-blue-400"
                     />
                   </div>
 
-                  <div className="w-full mt-6">
+                  <div className="mt-6 w-full">
                     <label
                       htmlFor="message"
-                      className="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                      className="mb-2 block text-sm text-gray-600 dark:text-gray-200"
                     >
                       Mensaje
                     </label>
                     <textarea
                       name="message"
-                      className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="focus:ring-opacity-40 mt-2 block h-32 w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:outline-none md:h-48 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:placeholder-gray-600 dark:focus:border-blue-400"
                       placeholder="Escribe tu mensaje aquí"
                     ></textarea>
                   </div>
 
                   <Button
                     color="primary"
-                    className="w-full px-6 py-6 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary-500 rounded-md hover:bg-primary-400 focus:outline-none focus:ring focus:ring-primary-300 focus:ring-opacity-50"
+                    className="bg-primary-500 hover:bg-primary-400 focus:ring-primary-300 focus:ring-opacity-50 mt-6 w-full transform rounded-md px-6 py-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 focus:ring focus:outline-none"
                   >
                     Enviar mensaje
                   </Button>

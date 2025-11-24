@@ -41,9 +41,9 @@ export default function ProductCard({product, size = 'lg'}: ProductCardProps) {
       onClick={() => push(`/products/${product.slug}`)}
     >
       <div
-        className={`relative group overflow-hidden w-full ${sizeClasses.image[size]} bg-gray-200 rounded-xl`}
+        className={`group relative w-full overflow-hidden ${sizeClasses.image[size]} rounded-xl bg-gray-200`}
       >
-        <div className={`overflow-hidden w-full h-full bg-gray-200`}>
+        <div className={`h-full w-full overflow-hidden bg-gray-200`}>
           <Image
             src={
               product.media[0]?.original_url || 'https://placehold.co/800x800'
@@ -54,17 +54,11 @@ export default function ProductCard({product, size = 'lg'}: ProductCardProps) {
             className="h-full w-full object-cover"
           />
         </div>
-        <div
-          className="z-50 absolute bottom-0 left-0 w-full overflow-hidden h-[40%]  flex items-end pb-8 px-4 justify-center
-          transition-transform duration-[200ms] ease
-          transform translate-y-full group-hover:translate-y-0
-          bg-gradient-to-t from-gray-800 to-transparent rounded-xl
-        "
-        >
+        <div className="ease absolute bottom-0 left-0 z-50 flex h-[40%] w-full translate-y-full transform items-end justify-center overflow-hidden rounded-xl bg-gradient-to-t from-gray-800 to-transparent px-4 pb-8 transition-transform duration-[200ms] group-hover:translate-y-0">
           <Button
             color="primary"
             variant="shadow"
-            className="w-max z-50 text-white text-xs rounded-xl"
+            className="z-50 w-max rounded-xl text-xs text-white"
             onClick={() => {
               addItem(product, 1, product.variants[0])
               refresh()
@@ -78,22 +72,22 @@ export default function ProductCard({product, size = 'lg'}: ProductCardProps) {
       <div className="mt-6 flex justify-between pb-4">
         <div className="w-full">
           {product.variants && (
-            <div className="flex gap-2 mb-4">
+            <div className="mb-4 flex gap-2">
               {product.variants?.map((variant, i) => (
                 <div
                   key={i}
                   style={{background: variant.color}}
-                  className={`flex items-center justify-center w-4 h-4 rounded-full`}
+                  className={`flex h-4 w-4 items-center justify-center rounded-full`}
                 />
               ))}
             </div>
           )}
-          <div className="flex justify-between text-sm w-full">
+          <div className="flex w-full justify-between text-sm">
             <span className={`${sizeClasses.title[size]} font-semibold`}>
               {product.name}
             </span>
 
-            <span className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium text-green-500 h-max">
+            <span className="flex h-max items-center rounded-lg border-2 border-green-500 px-2 py-1 text-sm font-medium text-green-500 md:px-2.5 md:py-1.5">
               {`$${Number(product.price).toFixed(2)}`}
             </span>
           </div>

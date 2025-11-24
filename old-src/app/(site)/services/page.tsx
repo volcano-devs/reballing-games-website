@@ -40,10 +40,10 @@ export default async function ServicesPage({
   const {data: service}: {data: ServiceOrder} = await getData(searchParams)
 
   return (
-    <div className="container min-h-[80vh] mx-auto mt-20 flex flex-col justify-center gap-2">
-      <div className="flex flex-col gap-12 text-center max-w-sm mx-auto px-6 md:px-0">
+    <div className="container mx-auto mt-20 flex min-h-[80vh] flex-col justify-center gap-2">
+      <div className="mx-auto flex max-w-sm flex-col gap-12 px-6 text-center md:px-0">
         <div className="flex flex-col gap-2 text-left md:text-center">
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-800 tracking-tight">
+          <h1 className="text-2xl font-bold tracking-tight text-gray-800 md:text-4xl">
             Consultar el estado de tu servicio
           </h1>
           <p className="text-md text-gray-500">

@@ -21,7 +21,7 @@ export default function ProductForm({product}: ProductFormProps) {
 
   return (
     <>
-      <div className="flex  flex-col md:flex-row gap-4 items-center">
+      <div className="flex flex-col items-center gap-4 md:flex-row">
         <Input
           value={`${quantity}`}
           className="md:max-w-[280px]"
@@ -35,7 +35,7 @@ export default function ProductForm({product}: ProductFormProps) {
               size="sm"
               variant="flat"
               color="secondary"
-              className="rounded-lg h-10 w-6"
+              className="h-10 w-6 rounded-lg"
               disabled={quantity === 1}
               onClick={() => setQuantity(quantity - 1)}
             >
@@ -47,7 +47,7 @@ export default function ProductForm({product}: ProductFormProps) {
               size="sm"
               variant="flat"
               color="secondary"
-              className="rounded-lg h-10 w-6"
+              className="h-10 w-6 rounded-lg"
               onClick={() => setQuantity(quantity + 1)}
             >
               +
@@ -66,7 +66,7 @@ export default function ProductForm({product}: ProductFormProps) {
             refresh()
           }}
         >
-          <ShoppingBagIcon className="w-4 h-4" />
+          <ShoppingBagIcon className="h-4 w-4" />
           {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}{' '}
         </Button>
       </div>

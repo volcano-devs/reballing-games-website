@@ -70,11 +70,11 @@ export default function SiteLayout({children}: SiteLayoutProps) {
             className="lg:hidden"
           />
           <NavbarBrand>
-            <Logo className="h-8 sm:h-10 md:h-12 w-28 md:w-32" />
+            <Logo className="h-8 w-28 sm:h-10 md:h-12 md:w-32" />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify="center">
-          <div className="hidden lg:flex gap-10">
+          <div className="hidden gap-10 lg:flex">
             {NAV_LINKS.map(({href, label}) => {
               const isActive =
                 href === '/'
@@ -115,7 +115,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
               >
                 <Link
                   href={href}
-                  className={`text-lg text-center px-2 bg-transparent w-full py-10 ${
+                  className={`w-full bg-transparent px-2 py-10 text-center text-lg ${
                     isActive ? 'text-primary' : 'text-white'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -137,25 +137,25 @@ export default function SiteLayout({children}: SiteLayoutProps) {
         {children}
       </main>
 
-      <footer className="relative bg-background-600 pt-10 pb-6">
-        <div className="w-full flex items-center justify-center">
-          <div className="md:container w-full px-4 text-white flex flex-col">
+      <footer className="bg-background-600 relative pt-10 pb-6">
+        <div className="flex w-full items-center justify-center">
+          <div className="flex w-full flex-col px-4 text-white md:container">
             <div className="flex flex-col">
-              <div className="flex mt-24 mb-12 flex-row justify-between items-center px-4">
-                <Logo className="h-8 sm:h-10 md:h-12 w-28" />
+              <div className="mt-24 mb-12 flex flex-row items-center justify-between px-4">
+                <Logo className="h-8 w-28 sm:h-10 md:h-12" />
 
                 <div className="flex gap-4 lg:gap-10">
                   {NAV_LINKS.map(({href, label}) => (
                     <Link
                       key={href}
                       href={href}
-                      className="hidden md:block text-sm lg:text-md cursor-pointer text-gray-400 hover:text-white uppercase"
+                      className="lg:text-md hidden cursor-pointer text-sm text-gray-400 uppercase hover:text-white md:block"
                     >
                       {label}
                     </Link>
                   ))}
                 </div>
-                <div className="flex flex-row space-x-8 items-center justify-between">
+                <div className="flex flex-row items-center justify-between space-x-8">
                   <a
                     href="https://www.facebook.com/ReballingGames"
                     target="_blank"
@@ -203,7 +203,7 @@ export default function SiteLayout({children}: SiteLayoutProps) {
                 </div>
               </div>
               <hr className="border-background-400" />
-              <p className="w-full text-center my-12 text-gray-400">
+              <p className="my-12 w-full text-center text-gray-400">
                 Copyright © 2024 Reballing Games
               </p>
             </div>

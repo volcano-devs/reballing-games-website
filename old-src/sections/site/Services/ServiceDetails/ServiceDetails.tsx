@@ -81,7 +81,7 @@ export default function ServiceDetailsSection({
             input: 'text-left text-md',
           }}
           endContent={
-            <Button type="submit" color="primary" className="px-2 min-w-max">
+            <Button type="submit" color="primary" className="min-w-max px-2">
               Consultar
               <ArrowRightFromBracketIcon />
             </Button>
@@ -93,9 +93,9 @@ export default function ServiceDetailsSection({
         {currentServiceId && !order?.order_id && (
           <Card className="bg-warning-200 text-warning-800">
             <CardBody>
-              <div className="flex px-4 gap-4">
+              <div className="flex gap-4 px-4">
                 <CircleExclamationIcon />
-                <span className="text-center w-max flex-1 pr-8">
+                <span className="w-max flex-1 pr-8 text-center">
                   No hay información disponible.
                 </span>
               </div>
@@ -106,18 +106,18 @@ export default function ServiceDetailsSection({
         {order?.status && (
           <>
             <Card className="dark bg-neutral-700">
-              <CardHeader className="flex gap-2 md:gap-6 p-4 md:p-6">
-                <div className="h-12 w-12 rounded-xl overflow-hidden">
+              <CardHeader className="flex gap-2 p-4 md:gap-6 md:p-6">
+                <div className="h-12 w-12 overflow-hidden rounded-xl">
                   <Image
                     priority
                     src={ReballingGamesIcon.src}
                     alt="Reballing games"
                     width={40}
                     height={40}
-                    className="h-full w-full mix-blend-lighten object-contain"
+                    className="h-full w-full object-contain mix-blend-lighten"
                   />
                 </div>
-                <div className="text-left w-full">
+                <div className="w-full text-left">
                   <div className="flex w-full justify-between">
                     <span className="text-md">Servicio {order?.order_id}</span>
 
@@ -151,7 +151,7 @@ export default function ServiceDetailsSection({
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 160 38"
                       fill="currentColor"
-                      className="!max-w-[4rem] !md:max-w-[6rem]"
+                      className="!md:max-w-[6rem] !max-w-[4rem]"
                       height="6rem"
                     >
                       <g>

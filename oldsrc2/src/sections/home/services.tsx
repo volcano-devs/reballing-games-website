@@ -126,10 +126,10 @@ export default function OurServicesSection() {
   return (
     <section
       id="services"
-      className="w-full py-12 md:py-24 lg:py-32 bg-gray-50"
+      className="w-full bg-gray-50 py-12 md:py-24 lg:py-32"
     >
       <div>
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+        <h2 className="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
           Nuestros servicios
         </h2>
 
@@ -137,26 +137,19 @@ export default function OurServicesSection() {
           {services.map(({title, description, icon}, index) => {
             return (
               <div className="embla__slide" key={index}>
-                <div className="min-w-[240px] p-4 rounded-lg border bg-white shadow-md border-gray-200'">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div
-                      className="w-8 h-8 flex justify-center items-center rounded-full bg-blue-100' : 'bg-purple-100'
-                      "
-                    >
+                <div className="border-gray-200' min-w-[240px] rounded-lg border bg-white p-4 shadow-md">
+                  <div className="mb-2 flex items-center space-x-2">
+                    <div className="bg-blue-100' : 'bg-purple-100' flex h-8 w-8 items-center justify-center rounded-full">
                       {icon}
                     </div>
-                    <h3
-                      className="text-lg font-medium text-gray-800' : 'text-gray-600'
-                      "
-                    >
+                    <h3 className="text-gray-800' : 'text-gray-600' text-lg font-medium">
                       {title}
                     </h3>
                   </div>
                   <p className="text-sm text-gray-600">{description}</p>
                   <a
                     href="#"
-                    className="mt-4 inline-flex items-center text-sm font-medium text-blue-500' : 'text-gray-400'
-                    "
+                    className="text-blue-500' : 'text-gray-400' mt-4 inline-flex items-center text-sm font-medium"
                   >
                     Explore Now <span className="ml-1">→</span>
                   </a>

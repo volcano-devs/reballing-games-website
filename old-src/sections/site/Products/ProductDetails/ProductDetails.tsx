@@ -10,10 +10,10 @@ export interface ProductDetailsProps {
 
 export default function ProductDetails({product}: ProductDetailsProps) {
   return (
-    <div className="container my-20 lg:my-32 mx-auto p-8 bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+    <div className="container mx-auto my-20 bg-white p-8 lg:my-32">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
         <div>
-          <div className="w-full h-[280px] md:h-[680px] bg-gray-100 rounded-xl overflow-hidden">
+          <div className="h-[280px] w-full overflow-hidden rounded-xl bg-gray-100 md:h-[680px]">
             <Image
               src={
                 product.media[0].original_url ?? 'https://placehold.co/800x800'
@@ -21,11 +21,11 @@ export default function ProductDetails({product}: ProductDetailsProps) {
               alt={product.name}
               width={800}
               height={800}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
 
-          <div className="flex mt-4 gap-4 w-full overflow-x-auto">
+          <div className="mt-4 flex w-full gap-4 overflow-x-auto">
             {[
               ...product.media,
               ...product.variants?.reduce(
@@ -35,14 +35,14 @@ export default function ProductDetails({product}: ProductDetailsProps) {
             ].map((media, i) => (
               <div
                 key={i}
-                className="w-24 min-w-24 h-24 bg-gray-100 rounded-lg overflow-hidden"
+                className="h-24 w-24 min-w-24 overflow-hidden rounded-lg bg-gray-100"
               >
                 <Image
                   src={media.original_url ?? 'https://placehold.co/200x200'}
                   alt={product.name}
                   width={200}
                   height={200}
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
             ))}
@@ -66,15 +66,15 @@ export default function ProductDetails({product}: ProductDetailsProps) {
                 },
               ]}
             />
-            <h1 className="text-2xl tracking-tight font-semibold text-gray-700">
+            <h1 className="text-2xl font-semibold tracking-tight text-gray-700">
               {product.name}
             </h1>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium text-green-500">
+            <div className="mt-2 flex items-center gap-2">
+              <span className="flex items-center rounded-lg border-2 border-green-500 px-2 py-1 text-sm font-medium text-green-500 md:px-2.5 md:py-1.5">
                 ${product.price}
               </span>
 
-              <span className="text-sm text-gray-500 font-semibold border-l border-gray-300 pl-3 ml-3">
+              <span className="ml-3 border-l border-gray-300 pl-3 text-sm font-semibold text-gray-500">
                 {product.stock > 0
                   ? product.stock < 3
                     ? 'Almost out of stock'
@@ -85,7 +85,7 @@ export default function ProductDetails({product}: ProductDetailsProps) {
           </div>
 
           <div className="py-6">
-            <h2 className="text-md font-semibold text-gray-700 mb-4">Color</h2>
+            <h2 className="text-md mb-4 font-semibold text-gray-700">Color</h2>
             <div className="flex gap-3.5">
               {product.variants
                 .slice(0, Math.min(product.variants.length, 5))
@@ -93,7 +93,7 @@ export default function ProductDetails({product}: ProductDetailsProps) {
                   <div
                     key={i}
                     style={{background: variant.color}}
-                    className={`flex items-center justify-center w-10 h-10 rounded-full`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full`}
                   />
                 ))}
             </div>

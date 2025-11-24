@@ -12,7 +12,7 @@ export default function Page({children, title}: PageProps) {
     )
 
   return (
-    <div className="w-full min-h-screen p-8">
+    <div className="min-h-screen w-full p-8">
       <div className="flex flex-col gap-4">
         {titleMarkup}
         {children}

@@ -24,5 +24,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-.old-src/
-.oldsrc2/
+.old-src/**
+.oldsrc2/**

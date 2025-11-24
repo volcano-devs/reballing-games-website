@@ -2,12 +2,12 @@ import Image from 'next/image'
 
 import Link from 'next/link'
 
-export interface LogoProps {
+export interface TheLogoProps {
   className?: string
   href?: string
 }
 
-export default function Logo({className, href}: LogoProps) {
+export default function TheLogo({className, href}: TheLogoProps) {
   return (
     <Link href={href ?? '/'}>
       <div className={`h-10 ${className}`}>

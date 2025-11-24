@@ -1,7 +1,8 @@
 import type {Metadata} from 'next'
 import {Geist, Geist_Mono} from 'next/font/google'
 import './globals.css'
-import Logo from '#/components/Logo'
+import Logo from '#/components/TheLogo'
+import Navigation from '#/components/TheNavigation'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-white font-sans text-gray-900 dark:bg-gray-900 dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} dark bg-white font-sans text-gray-900 dark:bg-gray-900`}
       >
-        <header className="bg-white dark:bg-gray-900">
+        <header className="dark:bg-gray-900">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="md:flex md:items-center md:gap-12">
@@ -36,44 +37,7 @@ export default function RootLayout({
               </div>
 
               <div className="hidden md:block">
-                <nav aria-label="Global">
-                  <ul className="flex items-center gap-6 text-sm">
-                    <li>
-                      <a
-                        className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                        href="#"
-                      >
-                        Inicio
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                        href="#"
-                      >
-                        Servicios
-                      </a>
-                    </li>
-
-                    <li>
-                      <a
-                        className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                        href="#"
-                      >
-                        Tienda
-                      </a>
-                    </li>
-
-                    <li>
-                      <a
-                        className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                        href="#"
-                      >
-                        Contacto
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
+                <Navigation />
               </div>
 
               <div className="flex items-center gap-4">

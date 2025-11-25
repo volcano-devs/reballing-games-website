@@ -1,7 +1,8 @@
 import Navigation from './TheNavigation'
 import Logo from './TheLogo'
-import {Button} from './ui/button'
-import {Menu, ShoppingCart} from 'lucide-react'
+
+import TheShoppingCart from './TheShoppingCart'
+import TheMobileNavigation from './TheMobileNavigation'
 
 export default function TheHeader() {
   return (
@@ -17,15 +18,10 @@ export default function TheHeader() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Button variant="ghost">
-              $0
-              <ShoppingCart />
-            </Button>
+            <TheShoppingCart />
 
             <div className="block md:hidden">
-              <Button variant="outline" size="icon">
-                <Menu />
-              </Button>
+              <TheMobileNavigation />
             </div>
           </div>
         </div>

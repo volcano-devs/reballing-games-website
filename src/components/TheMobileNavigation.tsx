@@ -10,13 +10,27 @@ import {
 } from '#/components/ui/drawer'
 import {Button} from './ui/button'
 import {Menu, XIcon} from 'lucide-react'
-import {links} from './TheNavigation'
 import Link from 'next/link'
 import React from 'react'
 
 export interface TheMobileNavigationProps {}
 
 export default function TheMobileNavigation(props: TheMobileNavigationProps) {
+  const links = [
+    {name: 'Inicio', href: '/'},
+    {name: 'Servicios', href: '/services'},
+    {
+      name: 'Tienda',
+      href: '/shop',
+      menu: [
+        {name: 'PS5', href: '/shop/ps5'},
+        {name: 'XBOX', href: '/shop/xbox'},
+        {name: 'Nintendo', href: '/shop/nintendo'},
+      ],
+    },
+    {name: 'Contacto', href: '/get-in-touch'},
+  ]
+
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>

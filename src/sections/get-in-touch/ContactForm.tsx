@@ -1,16 +1,18 @@
+'use client'
 import {Button} from '#/components/ui/button'
 import {Input} from '#/components/ui/input'
 import {Textarea} from '#/components/ui/textarea'
 import {Mail, Smartphone, MapPinned} from 'lucide-react'
-import MapSection from './MapSection'
+import MapComponent from './MapSection'
+import {Suspense} from 'react'
 
 export interface ContactFormSectionProps {}
 
 export default function ContactFormSection(props: ContactFormSectionProps) {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-[#0C0D11] p-16">
+        <div className="h-max bg-[#0C0D11] px-6 py-20 lg:px-16">
           <div>
             <p className="text-sm font-semibold text-rose-600 uppercase">
               Contacto
@@ -21,10 +23,9 @@ export default function ContactFormSection(props: ContactFormSectionProps) {
           </div>
 
           <p className="mt-4 text-pretty text-gray-700 dark:text-gray-200">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
-            voluptas delectus alias magni velit! Dicta corrupti dignissimos
-            dolor consequatur illum tempore consectetur hic a cupiditate sunt
-            quam, earum nisi aperiam.
+            Si tienes alguna pregunta o necesitas más información, no dudes en
+            contactarnos. Estamos aquí para ayudarte y brindarte el mejor
+            servicio posible.
           </p>
 
           <dl className="mt-10 space-y-6">
@@ -63,8 +64,12 @@ export default function ContactFormSection(props: ContactFormSectionProps) {
         </div>
 
         <div>
-          <MapSection />
-          <form action="#" className="space-y-6 bg-blue-700 p-16">
+          {typeof window !== 'undefined' && <MapComponent />}
+
+          <form
+            action="#"
+            className="space-y-6 bg-blue-700 px-6 py-10 lg:px-16"
+          >
             <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl dark:text-white">
               Envíanos un mensaje
             </h2>

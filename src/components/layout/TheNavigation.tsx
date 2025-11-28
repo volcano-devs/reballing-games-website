@@ -49,7 +49,7 @@ export default function Navigation() {
                   <NavigationMenuTrigger className="bg-transparent">
                     {link.name}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white">
+                  <NavigationMenuContent>
                     <ul className="grid w-[200px] gap-4">
                       {link.menu.map((sublink) => (
                         <li key={sublink.name}>

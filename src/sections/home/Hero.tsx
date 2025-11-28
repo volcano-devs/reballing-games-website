@@ -1,78 +1,68 @@
 import {Button} from '#/components/ui/button'
 import {Award, ChevronsRight, Stars, ThumbsUp} from 'lucide-react'
+import FeatureCard from './components/FeatureCard'
+import Link from 'next/link'
 
 export interface HeroSectionProps {}
 
 export default function HeroSection(props: HeroSectionProps) {
   return (
-    <section className="bg-white lg:grid lg:h-screen lg:place-content-center dark:bg-gray-900">
-      <div className="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-        <div className="max-w-prose">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl dark:text-white">
+    <section className="relative bg-gray-900 lg:grid lg:h-[85vh] lg:place-content-center">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center brightness-125 contrast-125 filter"
+        style={{
+          backgroundImage:
+            'url(https://images.unsplash.com/photo-1643489069237-3548135218c8?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+        }}
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 z-0 bg-black/80" />
+
+      <div className="z-20 mx-auto w-screen max-w-7xl py-16 sm:py-24 lg:px-12 lg:py-44">
+        <div className="relative z-10 pt-20 lg:max-w-[40vw]">
+          <h1 className="text-4xl font-bold text-white lg:text-5xl">
             Servicio técnico especializado <br />
-            <strong className="text-rose-400"> Reballing Games</strong>
+            {/* <strong className="text-rose-400"> Reballing Games</strong> */}
           </h1>
 
-          <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed dark:text-gray-200">
+          <p className="mt-4 text-base text-pretty text-gray-200 sm:text-lg/relaxed">
             Damos soporte técnico a tus consolas y mandos de videojuegos.
           </p>
 
           <div className="mt-4 flex gap-4 sm:mt-6">
-            <Button>Contáctanos</Button>
+            <Button size="lg" asChild>
+              <Link href="/get-in-touch">Contáctanos</Link>
+            </Button>
 
-            <Button variant="outline">
-              Ver Productos
-              <ChevronsRight />
+            <Button variant="secondary" size="lg" asChild>
+              <Link href="/shop">
+                Ver Productos
+                <ChevronsRight />
+              </Link>
             </Button>
           </div>
         </div>
         <div className="mt-24 w-full">
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="rounded-lg border border-gray-200 p-6 dark:border-gray-700">
-              <div className="inline-flex rounded-lg bg-gray-100 p-3 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-                <Award />
-              </div>
+            <FeatureCard
+              title="Calidad y Garantía"
+              description="Ofrecemos servicios de alta calidad con garantía en todas nuestras reparaciones y mantenimientos."
+              icon={<Award />}
+            />
 
-              <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
-                Calidad y Garantía
-              </h3>
+            <FeatureCard
+              title="Compromiso y responsabilidad"
+              description="Trabajamos con dedicación y seriedad para asegurar la satisfacción de nuestros clientes."
+              icon={<ThumbsUp />}
+            />
 
-              <p className="mt-2 text-pretty text-gray-700 dark:text-gray-200">
-                Ofrecemos servicios de alta calidad con garantía en todas
-                nuestras reparaciones y mantenimientos.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-gray-200 p-6 dark:border-gray-700">
-              <div className="inline-flex rounded-lg bg-gray-100 p-3 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-                <ThumbsUp />
-              </div>
-
-              <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
-                Compromiso y responsabilidad
-              </h3>
-
-              <p className="mt-2 text-pretty text-gray-700 dark:text-gray-200">
-                Trabajamos con dedicación y seriedad para asegurar la
-                satisfacción de nuestros clientes.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-gray-200 p-6 dark:border-gray-700">
-              <div className="inline-flex rounded-lg bg-gray-100 p-3 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-                <Stars />
-              </div>
-
-              <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
-                Profesionalismo
-              </h3>
-
-              <p className="mt-2 text-pretty text-gray-700 dark:text-gray-200">
-                Contamos con un equipo de técnicos altamente capacitados y con
-                amplia experiencia, profesionales dedicados a ofrecer el mejor
-                servicio.
-              </p>
-            </div>
+            <FeatureCard
+              title="Profesionalismo"
+              description="Contamos con un equipo de técnicos altamente capacitados y con amplia experiencia, profesionales dedicados a ofrecer el mejor servicio."
+              icon={<Stars />}
+            />
           </div>
         </div>
       </div>

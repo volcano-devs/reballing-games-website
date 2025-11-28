@@ -1,10 +1,10 @@
 import type {Metadata} from 'next'
 import {Oxanium, Inter} from 'next/font/google'
 
-import {ThemeProvider} from '#/components/ThemeProvider'
-import TheHeader from '#/components/TheHeader'
+import {ThemeProvider} from '#/components/layout/ThemeProvider'
+import TheHeader from '#/components/layout/TheHeader'
+import TheFooter from '#/components/layout/TheFooter'
 import './globals.css'
-import TheFooter from '#/components/TheFooter'
 
 export const oxanium = Oxanium({
   variable: '--font-oxanium',
@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={`${oxanium.variable} ${inter.variable} dark font-sans`}>
         <ThemeProvider>
           <TheHeader />
-          {children}
+          <main>{children}</main>
           <TheFooter />
         </ThemeProvider>
       </body>

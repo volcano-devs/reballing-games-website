@@ -8,7 +8,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '#/components/ui/drawer'
-import {Button} from './ui/button'
+import {Button} from '../ui/button'
 import {Menu, XIcon} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -34,7 +34,7 @@ export default function TheMobileNavigation(props: TheMobileNavigationProps) {
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" color="yellow">
           <Menu />
         </Button>
       </DrawerTrigger>

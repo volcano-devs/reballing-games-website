@@ -8,6 +8,7 @@ import {
   NavigationMenuTrigger,
 } from '#/components/ui/navigation-menu'
 import {usePathname} from 'next/navigation'
+import {Button} from '../ui/button'
 
 export default function Navigation() {
   const links = [
@@ -17,7 +18,7 @@ export default function Navigation() {
       name: 'Tienda',
       href: '/shop',
       menu: [
-        {name: 'PS5', href: '/shop/ps5'},
+        {name: 'PlayStation', href: '/shop/playstation'},
         {name: 'XBOX', href: '/shop/xbox'},
         {name: 'Nintendo', href: '/shop/nintendo'},
       ],
@@ -45,8 +46,10 @@ export default function Navigation() {
             >
               {link.menu ? (
                 <>
-                  <NavigationMenuTrigger>{link.name}</NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuTrigger className="bg-transparent">
+                    {link.name}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white">
                     <ul className="grid w-[200px] gap-4">
                       {link.menu.map((sublink) => (
                         <li key={sublink.name}>

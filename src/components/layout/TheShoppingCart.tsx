@@ -11,8 +11,8 @@ import {
   DrawerTrigger,
 } from '#/components/ui/drawer'
 import {ShoppingCart, XIcon} from 'lucide-react'
-import {Button} from './ui/button'
 import {useMediaQuery} from 'usehooks-ts'
+import {Button} from '#/components/ui/button'
 
 export interface TheShoppingCartProps {}
 

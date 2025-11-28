@@ -3,9 +3,7 @@ import {Award, ChevronsRight, Stars, ThumbsUp} from 'lucide-react'
 import FeatureCard from './components/FeatureCard'
 import Link from 'next/link'
 
-export interface HeroSectionProps {}
-
-export default function HeroSection(props: HeroSectionProps) {
+export default function HeroSection() {
   return (
     <section className="relative bg-gray-900 lg:grid lg:h-[85vh] lg:place-content-center">
       {/* Background image */}

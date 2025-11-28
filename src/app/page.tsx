@@ -1,7 +1,7 @@
 import {
   BrandsSection,
   HeroSection,
-  TrendingProductsSection,
+  // TrendingProductsSection,
 } from '#/sections/home'
 
 export default function Home() {

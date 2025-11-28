@@ -164,7 +164,7 @@ export function MicrochipIcon(props: IconProps) {
 
 export function PenToSquareIcon(props: IconProps) {
   return (
-    <IconWrapper>
+    <IconWrapper {...props}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="16"

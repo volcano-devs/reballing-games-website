@@ -114,9 +114,8 @@ export default function ServiceFormSection({
             className="items-stretch sm:flex sm:gap-4"
           >
             <div className="sm:flex-1">
-              <form.Field
-                name="orderCode"
-                children={(field) => {
+              <form.Field name="orderCode">
+                {(field) => {
                   const isInvalid =
                     field.state.meta.isTouched && !field.state.meta.isValid
 
@@ -136,7 +135,7 @@ export default function ServiceFormSection({
                     />
                   )
                 }}
-              />
+              </form.Field>
             </div>
 
             <Button

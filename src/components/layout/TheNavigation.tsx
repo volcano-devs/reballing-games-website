@@ -8,7 +8,6 @@ import {
   NavigationMenuTrigger,
 } from '#/components/ui/navigation-menu'
 import {usePathname} from 'next/navigation'
-import {Button} from '../ui/button'
 
 export default function Navigation() {
   const links = [

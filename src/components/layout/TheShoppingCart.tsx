@@ -14,9 +14,7 @@ import {ShoppingCart, XIcon} from 'lucide-react'
 import {useMediaQuery} from 'usehooks-ts'
 import {Button} from '#/components/ui/button'
 
-export interface TheShoppingCartProps {}
-
-export default function TheShoppingCart(props: TheShoppingCartProps) {
+export default function TheShoppingCart() {
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (

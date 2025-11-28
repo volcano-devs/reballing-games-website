@@ -3,7 +3,6 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -13,9 +12,7 @@ import {Menu, XIcon} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
-export interface TheMobileNavigationProps {}
-
-export default function TheMobileNavigation(props: TheMobileNavigationProps) {
+export default function TheMobileNavigation() {
   const links = [
     {name: 'Inicio', href: '/'},
     {name: 'Servicios', href: '/services'},

@@ -4,11 +4,8 @@ import {Input} from '#/components/ui/input'
 import {Textarea} from '#/components/ui/textarea'
 import {Mail, Smartphone, MapPinned} from 'lucide-react'
 import MapComponent from './MapSection'
-import {Suspense} from 'react'
 
-export interface ContactFormSectionProps {}
-
-export default function ContactFormSection(props: ContactFormSectionProps) {
+export default function ContactFormSection() {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="grid grid-cols-1 md:grid-cols-2">

@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Overlay */}
       <div className="absolute inset-0 z-0 bg-black/80" />
 
-      <div className="z-20 mx-auto w-screen max-w-7xl py-16 sm:py-24 lg:px-12 lg:py-44">
+      <div className="z-20 mx-auto w-screen max-w-7xl px-6 py-16 sm:py-24 lg:px-12 lg:py-44">
         <div className="relative z-10 pt-20 lg:max-w-[40vw]">
           <h1 className="text-4xl font-bold text-white lg:text-5xl">
             Servicio técnico especializado <br />

@@ -4,7 +4,7 @@ import TheLogo from './TheLogo'
 
 export default function TheFooter() {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-gray-900">
       <div className="mx-auto max-w-7xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <TheLogo className="mr-auto h-8 w-max" />
@@ -15,7 +15,7 @@ export default function TheFooter() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                className="text-gray-200 transition hover:opacity-75"
               >
                 <span className="sr-only">Facebook</span>
 
@@ -39,7 +39,7 @@ export default function TheFooter() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                className="text-gray-200 transition hover:opacity-75"
               >
                 <span className="sr-only">Instagram</span>
 
@@ -63,7 +63,7 @@ export default function TheFooter() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                className="text-gray-200 transition hover:opacity-75"
               >
                 <span className="sr-only">Twitter</span>
 
@@ -80,17 +80,15 @@ export default function TheFooter() {
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
+        <div className="grid grid-cols-1 gap-8 border-t border-gray-800 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16">
           <div>
-            <p className="font-medium text-gray-900 dark:text-white">
-              Services
-            </p>
+            <p className="font-medium text-white">Services</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   1on1 Coaching
                 </a>
@@ -99,7 +97,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Company Review
                 </a>
@@ -108,7 +106,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Accounts Review
                 </a>
@@ -117,7 +115,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   HR Consulting
                 </a>
@@ -126,7 +124,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   SEO Optimisation
                 </a>
@@ -135,13 +133,13 @@ export default function TheFooter() {
           </div>
 
           <div>
-            <p className="font-medium text-gray-900 dark:text-white">Company</p>
+            <p className="font-medium text-white">Company</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   About
                 </a>
@@ -150,7 +148,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Meet the Team
                 </a>
@@ -159,7 +157,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Accounts Review
                 </a>
@@ -168,15 +166,13 @@ export default function TheFooter() {
           </div>
 
           <div>
-            <p className="font-medium text-gray-900 dark:text-white">
-              Helpful Links
-            </p>
+            <p className="font-medium text-white">Helpful Links</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Contact
                 </a>
@@ -185,7 +181,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   FAQs
                 </a>
@@ -194,7 +190,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Live Chat
                 </a>
@@ -203,13 +199,13 @@ export default function TheFooter() {
           </div>
 
           <div>
-            <p className="font-medium text-gray-900 dark:text-white">Legal</p>
+            <p className="font-medium text-white">Legal</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Accessibility
                 </a>
@@ -218,7 +214,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Returns Policy
                 </a>
@@ -227,7 +223,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Refund Policy
                 </a>
@@ -236,7 +232,7 @@ export default function TheFooter() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-gray-200 transition hover:opacity-75"
                 >
                   Hiring-3 Statistics
                 </a>
@@ -245,8 +241,8 @@ export default function TheFooter() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()}. Company Name. All rights reserved.
+        <p className="text-xs text-gray-400">
+          © {new Date().getFullYear()}. Reballing Games. All rights reserved.
         </p>
       </div>
     </footer>

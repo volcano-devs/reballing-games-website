@@ -21,6 +21,7 @@ import {
 import * as z from 'zod'
 import {useForm} from '@tanstack/react-form'
 import {redirect} from 'next/navigation'
+import {Label} from '#/components/ui/label'
 
 export interface ServiceFormSectionProps {
   orderId: string | null | undefined
@@ -88,9 +89,9 @@ export default function ServiceFormSection({
   })
 
   return (
-    <section className="flex min-h-[60vh] flex-col justify-center">
-      <div className="flex flex-col items-center justify-center p-8 md:p-12 lg:flex-row lg:px-16 lg:py-24">
-        <div className="max-w-md text-center lg:text-left">
+    <section className="flex min-h-[60vh] flex-col items-center justify-center">
+      <div className="flex max-w-6xl flex-col items-center justify-center gap-4 p-6 lg:flex-row">
+        <div className="flex-1 text-left">
           <div>
             <p className="text-sm font-semibold text-rose-600 uppercase">
               Estado del servicio
@@ -99,21 +100,21 @@ export default function ServiceFormSection({
               Consultar el estado de tu servicio
             </h2>
           </div>
-          <p className="hidden text-gray-500 sm:mt-4 sm:block dark:text-gray-400">
+          <p className="text-gray-500 sm:mt-4 sm:block dark:text-gray-400">
             Ingresa el número de orden que te fue proporcionado al momento de
             dejar tu equipo en servicio para consultar el estado actual del
             mismo.
           </p>
         </div>
 
-        <div className="mt-8 max-w-xl">
+        <div className="mt-6 min-h-[200px] w-full flex-1 self-start">
           <form
             id="service-order-form"
             onSubmit={(e) => {
               e.preventDefault()
               form.handleSubmit()
             }}
-            className="items-stretch sm:flex sm:gap-4"
+            className="flex flex-1 items-center justify-between gap-4"
           >
             <div className="sm:flex-1">
               <form.Field name="orderCode">
@@ -122,19 +123,24 @@ export default function ServiceFormSection({
                     field.state.meta.isTouched && !field.state.meta.isValid
 
                   return (
-                    <Input
-                      id={field.name}
-                      name={field.name}
-                      value={field.state.value}
-                      onBlur={field.handleBlur}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                      aria-invalid={isInvalid}
-                      type="text"
-                      placeholder="Número de orden: ej. OR-1234"
-                      pattern="^OR-\d{4}$"
-                      className="py-5"
-                      autoComplete="off"
-                    />
+                    <>
+                      <Label className="mb-2 block text-sm font-medium text-gray-500">
+                        Número de orden
+                      </Label>
+                      <Input
+                        id={field.name}
+                        name={field.name}
+                        value={field.state.value}
+                        onBlur={field.handleBlur}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        aria-invalid={isInvalid}
+                        type="text"
+                        placeholder="Número de orden: ej. OR-1234"
+                        pattern="^OR-\d{4}$"
+                        className="py-5"
+                        autoComplete="off"
+                      />
+                    </>
                   )
                 }}
               </form.Field>
@@ -143,7 +149,7 @@ export default function ServiceFormSection({
             <Button
               type="submit"
               size="lg"
-              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-yellow-600 px-5 py-3 text-white transition focus:ring-2 focus:ring-yellow-400 focus:outline-hidden sm:mt-0 sm:w-auto"
+              className="group flex items-center justify-center gap-2 rounded-md bg-yellow-600 px-5 py-3 text-white transition focus:ring-2 focus:ring-yellow-400 focus:outline-hidden sm:mt-0 sm:w-auto"
             >
               Consultar
               <ArrowRight />
@@ -151,7 +157,7 @@ export default function ServiceFormSection({
           </form>
 
           {service?.status && (
-            <Item variant="muted" className="mx-auto mt-12 md:w-max">
+            <Item variant="muted" className="mx-auto mt-6">
               <ItemMedia
                 variant="icon"
                 className={

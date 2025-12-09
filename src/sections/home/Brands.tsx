@@ -4,7 +4,7 @@ export default function BrandsSection() {
   return (
     <section id="services" className="bg-amber-400 px-6 py-20 text-gray-950">
       <div className="mx-auto mt-4 max-w-xl text-center md:mt-0">
-        <h1 className="text-2xl font-semibold tracking-tight capitalize xl:text-3xl">
+        <h1 className="mx-auto text-center text-3xl font-bold sm:text-4xl">
           Nuestros productos
         </h1>
 

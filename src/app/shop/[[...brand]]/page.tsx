@@ -1,3 +1,6 @@
+import Breadcrumbs from '#/components/Breadcrumbs'
+import {CategoriesSection} from '#/sections/shop'
+
 export interface ShopByBrandPageProps {
   params: Promise<{
     brand: string
@@ -6,9 +9,21 @@ export interface ShopByBrandPageProps {
 
 export default async function ShopByBrandPage(props: ShopByBrandPageProps) {
   const {brand} = await props.params
+
+  const pathBrand = brand ? [{label: brand, href: `/shop/${brand}`}] : []
+
   return (
-    <div>
-      <h1>Shop by brand: {brand}</h1>
-    </div>
+    <>
+      <Breadcrumbs
+        pageTitle={brand ? `Tienda - ${brand}` : 'Tienda'}
+        paths={[
+          {label: 'Inicio', href: '/'},
+          {label: 'Tienda', href: '/shop'},
+          ...pathBrand,
+        ]}
+      />
+
+      <CategoriesSection />
+    </>
   )
 }

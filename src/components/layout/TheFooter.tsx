@@ -10,7 +10,7 @@ export default function TheFooter() {
         className="absolute inset-0 z-0 bg-cover bg-center contrast-125 filter"
         style={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1643489069237-3548135218c8?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+            'url(https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=1778&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
         }}
       />
 

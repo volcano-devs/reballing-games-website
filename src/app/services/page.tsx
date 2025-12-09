@@ -1,3 +1,4 @@
+import Breadcrumbs from '#/components/Breadcrumbs'
 import ServiceFormSection from '#/sections/services/ServiceForm'
 
 export interface ServicePageProps {
@@ -39,5 +40,16 @@ export default async function ServicePage(props: ServicePageProps) {
 
   console.log('ServicePage fetched data:', response)
 
-  return <ServiceFormSection orderId={order_id} service={response.data} />
+  return (
+    <>
+      <Breadcrumbs
+        pageTitle="Estado del servicio"
+        paths={[
+          {label: 'Inicio', href: '/'},
+          {label: 'Estado del servicio', href: '/services'},
+        ]}
+      />
+      <ServiceFormSection orderId={order_id} service={response.data} />
+    </>
+  )
 }

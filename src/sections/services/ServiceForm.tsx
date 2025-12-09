@@ -75,8 +75,6 @@ export default function ServiceFormSection({
   orderId,
   service,
 }: ServiceFormSectionProps) {
-  console.log('ServiceFormSection rendered with orderId:', orderId, service)
-
   const form = useForm({
     defaultValues: {
       orderCode: orderId || '',
@@ -90,13 +88,17 @@ export default function ServiceFormSection({
   })
 
   return (
-    <section className="flex min-h-[60vh] flex-col justify-center bg-gray-50 dark:bg-gray-900">
-      <div className="p-8 md:p-12 lg:px-16 lg:py-24">
-        <div className="mx-auto max-w-lg text-center">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white">
-            Consultar el estado de tu servicio
-          </h2>
-
+    <section className="flex min-h-[60vh] flex-col justify-center">
+      <div className="flex flex-col items-center justify-center p-8 md:p-12 lg:flex-row lg:px-16 lg:py-24">
+        <div className="max-w-md text-center lg:text-left">
+          <div>
+            <p className="text-sm font-semibold text-rose-600 uppercase">
+              Estado del servicio
+            </p>
+            <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl dark:text-white">
+              Consultar el estado de tu servicio
+            </h2>
+          </div>
           <p className="hidden text-gray-500 sm:mt-4 sm:block dark:text-gray-400">
             Ingresa el número de orden que te fue proporcionado al momento de
             dejar tu equipo en servicio para consultar el estado actual del
@@ -104,7 +106,7 @@ export default function ServiceFormSection({
           </p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-xl">
+        <div className="mt-8 max-w-xl">
           <form
             id="service-order-form"
             onSubmit={(e) => {
@@ -141,57 +143,57 @@ export default function ServiceFormSection({
             <Button
               type="submit"
               size="lg"
-              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:ring-2 focus:ring-yellow-400 focus:outline-hidden sm:mt-0 sm:w-auto"
+              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-yellow-600 px-5 py-3 text-white transition focus:ring-2 focus:ring-yellow-400 focus:outline-hidden sm:mt-0 sm:w-auto"
             >
               Consultar
               <ArrowRight />
             </Button>
           </form>
-        </div>
 
-        {service?.status && (
-          <Item variant="muted" className="mx-auto mt-12 md:w-max">
-            <ItemMedia
-              variant="icon"
-              className={
-                service?.status && statusAttrs[service.status]
-                  ? `${statusAttrs[service.status].color}`
-                  : 'text-yellow-500'
-              }
-            >
-              {service?.status && statusAttrs[service.status] ? (
-                statusAttrs[service.status].icon
-              ) : (
-                <Info />
-              )}
-            </ItemMedia>
-            <ItemContent>
-              <ItemTitle>
-                <h2>
-                  Servicio{' '}
-                  {service?.status ? (
-                    <>
-                      #${service.order_id}{' '}
-                      <strong
-                        className={`${statusAttrs[service.status].color}`}
-                      >
-                        {' - '}
-                        {statusAttrs[service.status].label}
-                      </strong>
-                    </>
-                  ) : (
-                    'no encontrado'
-                  )}
-                </h2>
-              </ItemTitle>
-              <ItemDescription>
-                {service?.status
-                  ? `${statusAttrs[service.status].description}`
-                  : 'Por favor verifica que el número de orden sea correcto e inténtalo de nuevo.'}
-              </ItemDescription>
-            </ItemContent>
-          </Item>
-        )}
+          {service?.status && (
+            <Item variant="muted" className="mx-auto mt-12 md:w-max">
+              <ItemMedia
+                variant="icon"
+                className={
+                  service?.status && statusAttrs[service.status]
+                    ? `${statusAttrs[service.status].color}`
+                    : 'text-yellow-500'
+                }
+              >
+                {service?.status && statusAttrs[service.status] ? (
+                  statusAttrs[service.status].icon
+                ) : (
+                  <Info />
+                )}
+              </ItemMedia>
+              <ItemContent>
+                <ItemTitle>
+                  <h2>
+                    Servicio{' '}
+                    {service?.status ? (
+                      <>
+                        #${service.order_id}{' '}
+                        <strong
+                          className={`${statusAttrs[service.status].color}`}
+                        >
+                          {' - '}
+                          {statusAttrs[service.status].label}
+                        </strong>
+                      </>
+                    ) : (
+                      'no encontrado'
+                    )}
+                  </h2>
+                </ItemTitle>
+                <ItemDescription>
+                  {service?.status
+                    ? `${statusAttrs[service.status].description}`
+                    : 'Por favor verifica que el número de orden sea correcto e inténtalo de nuevo.'}
+                </ItemDescription>
+              </ItemContent>
+            </Item>
+          )}
+        </div>
       </div>
     </section>
   )

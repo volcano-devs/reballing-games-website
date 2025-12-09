@@ -5,6 +5,8 @@ import {ThemeProvider} from '#/components/layout/ThemeProvider'
 import TheHeader from '#/components/layout/TheHeader'
 import TheFooter from '#/components/layout/TheFooter'
 import './globals.css'
+import 'leaflet/dist/leaflet.css'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 
 export const oxanium = Oxanium({
   variable: '--font-oxanium',

@@ -1,13 +1,11 @@
 'use client'
-
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
-// Importa el CSS de compatibilidad si lo instalaste
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
+
 import 'leaflet-defaulticon-compatibility' // Importa el JS
+import {type LatLngExpression} from 'leaflet'
 
 export default function MapComponent() {
-  const position = [12.1364171, -86.2778053]
+  const position = [12.1364171, -86.2778053] as const as LatLngExpression
   const mapUrl = '{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
   const attribution =
     '&copy; <a href="www.openstreetmap.org">OpenStreetMap</a> contributors'

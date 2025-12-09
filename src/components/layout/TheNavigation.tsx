@@ -27,8 +27,6 @@ export default function Navigation() {
 
   const pathname = usePathname()
 
-  console.log('')
-
   return (
     <nav aria-label="Global">
       <NavigationMenu>
@@ -36,12 +34,12 @@ export default function Navigation() {
           {links.map((link) => (
             <NavigationMenuItem
               key={link.name}
-              className={
+              className={`${
                 pathname === link.href ||
                 (link.href !== '/' && pathname.startsWith(link.href))
-                  ? 'text-rose-400'
+                  ? 'text-yellow-400'
                   : ''
-              }
+              } font-semibold tracking-wide hover:text-yellow-400`.trim()}
             >
               {link.menu ? (
                 <>

@@ -3,13 +3,17 @@ import {Button} from '#/components/ui/button'
 import {Input} from '#/components/ui/input'
 import {Textarea} from '#/components/ui/textarea'
 import {Mail, Smartphone, MapPinned} from 'lucide-react'
-import MapComponent from './MapSection'
+import dynamic from 'next/dynamic'
+const MapComponent = dynamic(
+  () => import('./MapSection').then((mod) => mod.default),
+  {ssr: false},
+)
 
 export default function ContactFormSection() {
   return (
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-7xl pt-20">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="h-max bg-[#0C0D11] px-6 py-20 lg:px-16">
+        <div className="bg-dark-section h-max px-6 py-20 lg:px-16">
           <div>
             <p className="text-sm font-semibold text-rose-600 uppercase">
               Contacto
@@ -61,7 +65,7 @@ export default function ContactFormSection() {
         </div>
 
         <div>
-          {typeof window !== 'undefined' && <MapComponent />}
+          <MapComponent />
 
           <form
             action="#"

@@ -5,6 +5,8 @@ import {ThemeProvider} from '#/components/layout/ThemeProvider'
 import TheHeader from '#/components/layout/TheHeader'
 import TheFooter from '#/components/layout/TheFooter'
 import './globals.css'
+import 'leaflet/dist/leaflet.css'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 
 export const oxanium = Oxanium({
   variable: '--font-oxanium',
@@ -34,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" style={{colorScheme: 'dark'}}>
-      <body className={`${oxanium.variable} ${inter.variable} dark font-sans`}>
+      <body
+        className={`${oxanium.variable} ${inter.variable} dark bg-[#11111B] font-sans`}
+      >
         <ThemeProvider>
           <TheHeader />
           <main>{children}</main>

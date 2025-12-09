@@ -17,7 +17,7 @@ export default function Breadcrumbs({paths, pageTitle}: BreadcrumbsProps) {
   return (
     <section className="relative w-full bg-gray-900 lg:grid lg:h-[35vh] lg:place-content-center">
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center brightness-125 contrast-125 filter"
+        className="absolute inset-0 z-0 bg-cover bg-center contrast-125 filter"
         style={{
           backgroundImage:
             'url(https://images.unsplash.com/photo-1643489069237-3548135218c8?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
@@ -39,7 +39,12 @@ export default function Breadcrumbs({paths, pageTitle}: BreadcrumbsProps) {
                 {paths?.map(({label, href}, index) => (
                   <Fragment key={index}>
                     <BreadcrumbItem>
-                      <BreadcrumbLink href={href}>{label}</BreadcrumbLink>
+                      <BreadcrumbLink
+                        href={href}
+                        className="font-bold tracking-wide"
+                      >
+                        {label}
+                      </BreadcrumbLink>
                     </BreadcrumbItem>
                     {index < paths.length - 1 && <BreadcrumbSeparator />}
                   </Fragment>

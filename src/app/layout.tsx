@@ -36,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" style={{colorScheme: 'dark'}}>
-      <body className={`${oxanium.variable} ${inter.variable} dark font-sans`}>
+      <body
+        className={`${oxanium.variable} ${inter.variable} dark bg-[#11111B] font-sans`}
+      >
         <ThemeProvider>
           <TheHeader />
           <main>{children}</main>

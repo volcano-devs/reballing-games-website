@@ -13,7 +13,7 @@ export default function ContactFormSection() {
   return (
     <div className="mx-auto max-w-7xl pt-20">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="h-max bg-[#0C0D11] px-6 py-20 lg:px-16">
+        <div className="bg-dark-section h-max px-6 py-20 lg:px-16">
           <div>
             <p className="text-sm font-semibold text-rose-600 uppercase">
               Contacto

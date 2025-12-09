@@ -4,15 +4,26 @@ import TheLogo from './TheLogo'
 
 export default function TheFooter() {
   return (
-    <footer className="bg-gray-900">
-      <div className="mx-auto max-w-7xl space-y-8 px-6 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+    <footer className="relative bg-gray-900 lg:grid lg:place-content-center">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center contrast-125 filter"
+        style={{
+          backgroundImage:
+            'url(https://images.unsplash.com/photo-1643489069237-3548135218c8?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+        }}
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 z-0 bg-black/85" />
+      <div className="relative mx-auto w-screen max-w-7xl space-y-8 px-6 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <TheLogo className="mr-auto h-8 w-max" />
 
-          <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
-            <li>
+          <ul className="mt-8 flex justify-start gap-4 sm:mt-0 sm:justify-end">
+            <li className="rounded-xs bg-blue-800 p-2">
               <a
-                href="#"
+                href="https://www.facebook.com/ReballingGames"
                 rel="noreferrer"
                 target="_blank"
                 className="text-gray-200 transition hover:opacity-75"
@@ -20,7 +31,7 @@ export default function TheFooter() {
                 <span className="sr-only">Facebook</span>
 
                 <svg
-                  className="size-6"
+                  className="size-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -34,9 +45,9 @@ export default function TheFooter() {
               </a>
             </li>
 
-            <li>
+            <li className="rounded-xs bg-blue-800 p-2">
               <a
-                href="#"
+                href="https://www.instagram.com/reballing.games"
                 rel="noreferrer"
                 target="_blank"
                 className="text-gray-200 transition hover:opacity-75"
@@ -44,7 +55,7 @@ export default function TheFooter() {
                 <span className="sr-only">Instagram</span>
 
                 <svg
-                  className="size-6"
+                  className="size-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -58,190 +69,99 @@ export default function TheFooter() {
               </a>
             </li>
 
-            <li>
+            <li className="rounded-xs bg-blue-800 p-2">
               <a
-                href="#"
+                href="https://api.whatsapp.com/send/?phone=50582374900&text&type=phone_number&app_absent=0"
                 rel="noreferrer"
                 target="_blank"
                 className="text-gray-200 transition hover:opacity-75"
               >
-                <span className="sr-only">Twitter</span>
+                <span className="sr-only">Whatsapp</span>
 
                 <svg
-                  className="size-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  className="size-5"
                   fill="currentColor"
-                  viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                  {/* !Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. */}
+                  <path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z" />
                 </svg>
               </a>
             </li>
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 border-t border-gray-800 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16">
+        <div className="grid grid-cols-1 gap-8 border-t border-gray-800 pt-8 tracking-wide lg:grid-cols-3 lg:pt-16">
           <div>
-            <p className="font-medium text-white">Services</p>
+            <p className="font-medium text-white">Servicios</p>
 
-            <ul className="mt-6 space-y-4 text-sm">
+            <ul className="mt-6 space-y-4 text-sm text-gray-400">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  1on1 Coaching
+                <a href="#" className="transition hover:opacity-75">
+                  Rework BGA (REBALLING)
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Company Review
+                <a href="#" className="transition hover:opacity-75">
+                  Desbloqueo de consolas
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Accounts Review
+                <a href="#" className="transition hover:opacity-75">
+                  Reset Glitch Hack (RGH) Xbox 360
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  HR Consulting
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  SEO Optimisation
+                <a href="#" className="transition hover:opacity-75">
+                  Y Más...
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <p className="font-medium text-white">Company</p>
+            <p className="font-medium text-white">Empresa</p>
 
-            <ul className="mt-6 space-y-4 text-sm">
+            <ul className="mt-6 space-y-4 text-sm text-gray-400">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  About
+                <a href="#" className="transition hover:opacity-75">
+                  Sobre Nosotros
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Meet the Team
+                <a href="#" className="transition hover:opacity-75">
+                  Nuestro Equipo
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Accounts Review
+                <a href="#" className="transition hover:opacity-75">
+                  Vision &amp; Mission
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <p className="font-medium text-white">Helpful Links</p>
+            <p className="font-medium text-white">Soporte</p>
 
-            <ul className="mt-6 space-y-4 text-sm">
+            <ul className="mt-6 space-y-4 text-sm text-gray-400">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Contact
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  FAQs
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Live Chat
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-medium text-white">Legal</p>
-
-            <ul className="mt-6 space-y-4 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Accessibility
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Returns Policy
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Refund Policy
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-200 transition hover:opacity-75"
-                >
-                  Hiring-3 Statistics
+                <a href="/get-in-touch" className="transition hover:opacity-75">
+                  Contacto
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <p className="text-xs text-gray-400">
+        <p className="text-xs font-bold tracking-wide text-gray-300">
           © {new Date().getFullYear()}. Reballing Games. All rights reserved.
         </p>
       </div>

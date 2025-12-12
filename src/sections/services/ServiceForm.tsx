@@ -89,9 +89,9 @@ export default function ServiceFormSection({
   })
 
   return (
-    <section className="flex min-h-[60vh] flex-col items-center justify-center">
-      <div className="flex max-w-6xl flex-col items-center justify-center gap-4 p-6 lg:flex-row">
-        <div className="flex-1 text-left">
+    <section className="flex flex-col items-center justify-center md:py-10">
+      <div className="bg-dark-section flex min-h-full max-w-2xl flex-col items-center justify-center gap-10 px-8 py-16 md:p-10">
+        <div className="mt-auto text-left">
           <div>
             <p className="text-sm font-semibold text-rose-600 uppercase">
               Estado del servicio
@@ -107,7 +107,7 @@ export default function ServiceFormSection({
           </p>
         </div>
 
-        <div className="mt-6 min-h-[200px] w-full flex-1 self-start">
+        <div className="w-full flex-1 self-start">
           <form
             id="service-order-form"
             onSubmit={(e) => {
@@ -124,9 +124,6 @@ export default function ServiceFormSection({
 
                   return (
                     <>
-                      <Label className="mb-2 block text-sm font-medium text-gray-500">
-                        Número de orden
-                      </Label>
                       <Input
                         id={field.name}
                         name={field.name}

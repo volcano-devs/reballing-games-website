@@ -4,7 +4,7 @@ export default function BrandsSection() {
   return (
     <section id="services" className="bg-amber-400 px-6 py-20 text-gray-950">
       <div className="mx-auto mt-4 max-w-xl text-center md:mt-0">
-        <h1 className="mx-auto text-center text-3xl font-bold sm:text-4xl">
+        <h1 className="text-2xl font-semibold tracking-tight capitalize xl:text-3xl">
           Nuestros productos
         </h1>
 
@@ -14,11 +14,11 @@ export default function BrandsSection() {
         </p>
       </div>
 
-      <div className="mx-auto mt-10 flex grid-cols-3 flex-col gap-10 sm:grid sm:divide-x lg:max-w-5xl">
+      <div className="mx-auto mt-10 flex grid-cols-3 flex-col gap-14 sm:grid sm:divide-x lg:max-w-5xl">
         <div className="flex items-center justify-center">
           <Link href="/shop/playstation">
             <svg
-              className="h-6 brightness-0 saturate-0 filter hover:brightness-100 hover:saturate-100 lg:h-12"
+              className="h-10 brightness-0 saturate-0 filter hover:brightness-100 hover:saturate-100 lg:h-12"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="-3.734 0 1004.5267543546614 181.25623795219727"
             >
@@ -39,7 +39,7 @@ export default function BrandsSection() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 62.59 19.022"
-              className="h-6 brightness-0 saturate-0 filter hover:brightness-100 hover:saturate-100 lg:h-12"
+              className="h-10 brightness-0 saturate-0 filter hover:brightness-100 hover:saturate-100 lg:h-12"
             >
               <path
                 fill="#0F7C10"
@@ -56,8 +56,9 @@ export default function BrandsSection() {
           <Link href="/shop/nintendo">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-20 brightness-0 saturate-0 filter hover:brightness-100 hover:saturate-100 lg:h-32"
-              viewBox="0 0 192.756 192.756"
+              className="h-10 brightness-0 saturate-0 filter hover:brightness-100 hover:saturate-100 lg:h-12"
+              viewBox="0 73 192.756 45"
+              preserveAspectRatio="xMidYMid meet"
             >
               <g fillRule="evenodd" clipRule="evenodd">
                 <path

@@ -8,10 +8,10 @@ export default function HeroSection() {
     <section className="relative bg-gray-900 lg:grid lg:h-[85vh] lg:place-content-center">
       {/* Background image */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center brightness-125 contrast-125 filter"
+        className="absolute inset-0 z-0 bg-cover brightness-125 contrast-125 filter"
         style={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1643489069237-3548135218c8?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+            'url(https://images.unsplash.com/photo-1643489069237-3548135218c8?q=80&w=3269&auto=format&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
         }}
       />
 

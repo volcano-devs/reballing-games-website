@@ -25,7 +25,7 @@ export default function TheShoppingCart() {
           <ShoppingCart />
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="z-9999 min-h-[50dvh]">
         <DrawerHeader>
           <DrawerTitle className="flex items-center justify-center gap-4 md:justify-between">
             <span>Carrito de Compras</span>

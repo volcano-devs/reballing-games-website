@@ -11,10 +11,10 @@ const MapComponent = dynamic(
 
 export default function ContactFormSection() {
   return (
-    <div className="mx-auto max-w-7xl pt-20">
+    <div className="mx-auto max-w-7xl md:py-20 lg:py-32">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="bg-dark-section h-max px-6 py-20 lg:px-16">
-          <div>
+          <div className="text-center md:text-left">
             <p className="text-sm font-semibold text-rose-600 uppercase">
               Contacto
             </p>
@@ -23,7 +23,7 @@ export default function ContactFormSection() {
             </h2>
           </div>
 
-          <p className="mt-4 text-pretty text-gray-700 dark:text-gray-200">
+          <p className="mt-4 text-center text-pretty text-gray-700 md:text-left dark:text-gray-200">
             Si tienes alguna pregunta o necesitas más información, no dudes en
             contactarnos. Estamos aquí para ayudarte y brindarte el mejor
             servicio posible.
@@ -69,7 +69,7 @@ export default function ContactFormSection() {
 
           <form
             action="#"
-            className="space-y-6 bg-blue-700 px-6 py-10 lg:px-16"
+            className="space-y-6 bg-blue-800 px-6 py-10 lg:px-16"
           >
             <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl dark:text-white">
               Envíanos un mensaje
@@ -80,6 +80,7 @@ export default function ContactFormSection() {
                 type="text"
                 placeholder="Nombre"
                 color="neutral"
+                className="rounded-xs"
               />
             </div>
 
@@ -88,6 +89,7 @@ export default function ContactFormSection() {
                 id="email"
                 type="email"
                 placeholder="Correo Electrónico, Ej: kevin@gmail.com"
+                className="rounded-xs"
               />
             </div>
 
@@ -96,7 +98,7 @@ export default function ContactFormSection() {
                 id="message"
                 rows={10}
                 placeholder="Escribe tu mensaje aquí..."
-                className="min-h-[120px]"
+                className="min-h-[120px] rounded-xs"
               ></Textarea>
             </div>
 

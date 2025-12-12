@@ -8,7 +8,7 @@ declare interface Middleware {
 declare type SearchParams = Record<string, string | string[] | undefined>
 
 declare interface APIResponse<TData> {
-  data: TData
+  data: TData[]
   links:
     | {
         first: string
